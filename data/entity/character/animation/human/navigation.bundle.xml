@@ -4843,7 +4843,6 @@
 		<FrameData index="0" label="run">
 			<FrameEvent method="setEyes">
 				<param>squint</param>
-				<param>front</param>
 			</FrameEvent>
 		</FrameData>
 		
@@ -5508,8 +5507,7 @@
 		
 		<FrameData index="0" label="walk">
 			<FrameEvent method="setEyes">
-				<param>squint</param>
-				<param>front</param>
+				<param>default</param>
 			</FrameEvent>
 		</FrameData>
 		

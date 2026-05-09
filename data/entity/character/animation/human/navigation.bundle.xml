@@ -1564,7 +1564,7 @@
 
 		<Motion xmlns="fl.motion.*" xmlns:filters="flash.filters.*" xmlns:geom="flash.geom.*" duration="6">
 			<source>
-				<Source rotation="-152" frameRate="31" scaleX="1" elementType="movie clip" y="0" x="0" scaleY="1" instanceName="foot1" symbolName="parts/Foot">
+				<Source rotation="0" frameRate="31" scaleX="1" elementType="movie clip" y="103.25" x="44.35" scaleY="1" instanceName="foot1" symbolName="parts/Foot">
 					<dimensions>
 						<geom:Rectangle top="-6.15" height="12.7" left="-37.95" width="41.3"/>
 					</dimensions>
@@ -1624,7 +1624,7 @@
 
 		<Motion xmlns="fl.motion.*" xmlns:filters="flash.filters.*" xmlns:geom="flash.geom.*" duration="6">
 			<source>
-				<Source rotation="-151.4" frameRate="31" scaleX="1" elementType="movie clip" y="96.55" x="19.35" scaleY="1" instanceName="foot2" symbolName="parts/Foot">
+				<Source rotation="0" frameRate="31" scaleX="1" elementType="movie clip" y="99.85" x="-6.65" scaleY="1" instanceName="foot2" symbolName="parts/Foot">
 					<dimensions>
 						<geom:Rectangle top="-6.15" height="12.7" left="-37.95" width="41.3"/>
 					</dimensions>

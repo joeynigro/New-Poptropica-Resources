@@ -5624,7 +5624,7 @@
 
 		<Motion xmlns="fl.motion.*" xmlns:filters="flash.filters.*" xmlns:geom="flash.geom.*" duration="34">
 			<source>
-				<Source rotation="0" frameRate="31" scaleX="1" elementType="movie clip" y="-42.8" x="18" scaleY="1" instanceName="neck" symbolName="parts/Joint">
+				<Source rotation="0" frameRate="31" scaleX="1" elementType="movie clip" y="-35" x="1" scaleY="1" instanceName="neck" symbolName="parts/Joint">
 					<dimensions>
 						<geom:Rectangle top="-5" height="10" left="-5" width="10"/>
 					</dimensions>

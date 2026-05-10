@@ -1,0 +1,540 @@
+<merged><file path="/vendor_cart/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<layers>
+		<layer hit="true">
+			<asset>vendorCart.zip</asset><offsetX>1180</offsetX>
+			<offsetY>935</offsetY>
+		</layer>
+	</layers>
+</scene></file>
+
+<file path="/photo_booth.xml"><scene>
+	<layers>
+		<layer id="PhotoBooth">
+			<offsetX>2780</offsetX>
+			<offsetY>930</offsetY>
+		</layer>
+	</layers>
+</scene></file>
+
+<file path="/custom.xml"><ad>
+	<offset>
+		<x>3494</x>
+		<y>922</y>
+	</offset>
+</ad></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0xffff00" id="climb">
+		<component type="climb"/>
+	</hit>
+	<hit id="climb1">
+		<component type="climb"/>
+	</hit>
+	
+	<hit color="0xA3A085" id="dinerRoof" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x93BBA3" id="concreteRoof" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xC26B5F" id="cinemaSign" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x94B8AD" id="lampPost" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xDED781" id="metalSign" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xF17878" id="gasPump" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file>
+
+<file path="/vendor_cart.xml"><vendor_cart>
+</vendor_cart></file>
+
+<file path="/blimp.xml"><scene>
+	<layers>
+		<layer id="blimp">
+			<offsetX>730</offsetX>
+			<offsetY>468</offsetY> <!-- 10 pixels lower than in-scene blimp -->
+		</layer>
+	</layers>
+</scene></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="char1">
+		<conversation>
+			<exchange>
+				<question>What's wrong?</question>
+				<answer>Our beloved town is in ruins!</answer>
+			</exchange>
+			<exchange>
+				<question>What happened?</question>
+				<answer>The carrots have vanished! We're nothing without them!</answer>
+			</exchange>
+			<exchange>
+				<question>What can I do to help?</question>
+				<answer>Find out what’s happened to our carrots!</answer>
+			</exchange>
+		</conversation>
+		
+		<statement id="destroyed_rabbot" triggerEvent="triggerEvent" triggerEventArgs="award_medal">You're a hero! You've saved 24 Carrot Island! Now we can rebuild.</statement>
+		
+		<statement event="gotItem_medalCarrot">You're a hero! You've saved 24 Carrot Island! Now we can rebuild.</statement>
+	</character>
+	<character id="char2">
+		<statement>They closed the Carrot Cake Factory and now I'm out of work.</statement>
+		<statement event="destroyed_rabbot">Thanks to you, I can go back to work!</statement>
+	</character>
+	<character id="char3">
+		<statement>Sorry, but we're all out of gas.</statement>
+		<statement event="destroyed_rabbot" link="reopen">Things are looking up around here.</statement>
+		<statement id="reopen">I should be able to reopen the station soon!</statement>
+	</character>
+	<character id="sleepyBird">
+		<statement>I feel like I woke up from a dream! A really boring dream...</statement>
+	</character>
+	<character id="shySky">
+		<statement>You're a hero!</statement>
+	</character>
+	<character id="crazyComet">
+		<statement>Those rabbot ears were itchy!</statement>
+	</character>
+	<character id="magicSocks">
+		<statement>I'm so glad to be free! No more mindless, repetitive work for me.</statement>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="char1">
+		<animations random="true" loop="true">
+			<animation>game.data.animation.entity.character.Cry</animation>
+			<animation duration="60">game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xB17251</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>14</mouth>
+			<hair>mayor</hair>
+			<shirt>mayor</shirt>
+			<pants>ss</pants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>346</x>
+			<y>940</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc event="destroyed_rabbot" id="char1">
+		<animations>
+			<animation></animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xB17251</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>14</mouth>
+			<hair>mayor</hair>
+			<shirt>mayor</shirt>
+			<pants>ss</pants>
+			<eyeState>squint</eyeState>
+		</skin>
+	</npc>
+	<npc id="char2">
+		<animations>
+			<animation>game.data.animation.entity.character.Sit</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xD2996C</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>shadycop</mouth>
+			<marks>rowboatman</marks>
+			<hair>hobo</hair>
+			<shirt>hobo</shirt>
+			<pants>spanishcon</pants>
+			<pack>hiker</pack>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1856.3</x>
+			<y>940</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc id="char3">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0x713E10</hairColor>
+			<mouth>prisoner1</mouth>
+			<hair>gasdude</hair>
+			<shirt>gasdude</shirt>
+			<pants>gasdude</pants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2705</x>
+			<y>940</y>
+		</position>
+		<range>
+			<x>150</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc event="destroyed_rabbot" id="char3">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0x713E10</hairColor>
+			<mouth>6</mouth>
+			<hair>gasdude</hair>
+			<shirt>gasdude</shirt>
+			<pants>gasdude</pants>
+			<eyeState>squint</eyeState>
+		</skin>
+	</npc>
+	<npc event="cat_following" id="cat" variant="creature">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xBFAE8B</skinColor>
+			<hairColor>0xBFAE8B</hairColor>
+			<mouth>cat</mouth>
+			<facial>cat</facial>
+			<hair>cat</hair>
+			<shirt>bare</shirt>
+			<pants>bare</pants>
+			<pack>cat</pack>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>346</x>
+			<y>940</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc id="sleepyBird" event="destroyed_rabbot">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xCE8058</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>sponsor_mh</mouth>
+			<hair>39</hair>
+			<shirt>23</shirt>
+			<pants>hero5</pants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>160</x>
+			<y>940</y>
+		</position>
+		<range>
+	<x>50</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc id="shySky" event="destroyed_rabbot">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xFAC6C1</skinColor>
+			<hairColor>0x332217</hairColor>
+			<mouth>pshedevil</mouth>
+			<hair>29</hair>
+			<shirt>19</shirt>
+			<pants>14</pants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>500</x>
+			<y>940</y>
+		</position>
+		<range>
+	<x>50</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc id="crazyComet" event="destroyed_rabbot">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x743D2B</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>6</mouth>
+			<hair>6</hair>
+			<shirt>22</shirt>
+			<pants>sponsornm2guard</pants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>650</x>
+			<y>940</y>
+		</position>
+		<range>
+	<x>50</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc id="magicSocks" event="destroyed_rabbot">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xDBAD6D</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>1</mouth>
+			<hair>7</hair>
+			<shirt>26</shirt>
+			<pants>patron1</pants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>830</x>
+			<y>940</y>
+		</position>
+		<range>
+	<x>50</x>
+<y>0</y>
+</range>
+	</npc>
+  <npc id="npc_friend">
+    <skin>
+      <gender>male</gender>
+      <skinColor>0x000000</skinColor>
+      <hairColor>0x000000</hairColor>
+    </skin>
+    <position>
+      <x>1070</x>
+      <y>940</y>
+    </position>
+    <range>
+		<x>0</x>
+		<y>0</y>
+	</range>
+  </npc>
+  <npc id="npc_friend_bitmap">
+	<bitmap>Blank.zip</bitmap>
+    <position>
+      <x>1070</x>
+      <y>940</y>
+    </position>
+    <range>
+		<x>0</x>
+		<y>0</y>
+	</range>
+	<ignoreDepth>true</ignoreDepth>
+  </npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">24_Carrot_Main_Theme.mp3</asset>
+		<asset event="destroyed_rabbot" fade="true" exclusiveType="true" loop="false">MocktropicaMainTheme.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">ghost_town.mp3</asset>
+	</sound>
+	
+	<sound action="climb" type="effects">
+		<asset allowOverlap="false" id="climb1">grab_rope_03.mp3</asset>
+	</sound>
+	
+	<sound action="climbDown" type="effects">
+		<asset allowOverlap="false" id="climb1">slide_down_rope_01.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset id="door3">door_pushbar_open_02.mp3</asset>
+		<asset id="door5">door_pushbar_open_02.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<!-- <asset triggeredByEvent="gotItem_medalCarrot">card_get.mp3</asset> -->
+		<!-- <asset triggeredByEvent="gotItem_betaCostume">card_get.mp3</asset> -->
+		<asset triggeredByEvent="victory">medallion_fanfare_02.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="dinerRoof">ls_metal_01.mp3, ls_metal_02.mp3</asset>
+		<asset id="concreteRoof">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="cinemaSign">ls_heavy_metal_01.mp3, ls_heavy_metal_02.mp3</asset>
+		<asset id="lampPost">ls_general_metal_01.mp3, ls_general_metal_02.mp3</asset>
+		<asset id="metalSign">ls_heavy_metal_01.mp3, ls_heavy_metal_02.mp3</asset>
+		<asset id="gasPump">ls_metal_01.mp3, ls_metal_02.mp3</asset>
+		<asset id="baseGround">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="dinerRoof">fs_metal_01.mp3, fs_metal_02.mp3, fs_metal_03.mp3, fs_metal_04.mp3</asset>
+		<asset id="concreteRoof">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="cinemaSign">fs_heavy_metal_01.mp3, fs_heavy_metal_02.mp3, fs_heavy_metal_03.mp3, fs_heavy_metal_04.mp3</asset>
+		<asset id="lampPost">fs_general_metal_01.mp3, fs_general_metal_02.mp3, fs_general_metal_03.mp3, fs_general_metal_04.mp3</asset>
+		<asset id="metalSign">fs_heavy_metal_01.mp3, fs_heavy_metal_02.mp3, fs_heavy_metal_03.mp3, fs_heavy_metal_04.mp3</asset>
+		<asset id="gasPump">fs_metal_01.mp3, fs_metal_02.mp3, fs_metal_03.mp3, fs_metal_04.mp3</asset>
+		<asset id="baseGround">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>mainstreet</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>4073</right>
+		<bottom>1000</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>-100</left>
+		<top>0</top>
+		<right>4175</right>
+		<bottom>940</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,custom.xml,vendor_cart.xml,photo_booth.xml,blimp.xml</data>
+	<assets>bundle.zip,backdropFinale.zip</assets>
+	<layers>
+		<layer event="destroyed_rabbot" id="backdrop">
+			<asset>backdropFinale.zip</asset>
+		</layer>
+		<layer>
+			<asset>backdrop.zip</asset>
+		</layer>
+		<layer id="background">
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>740</x>
+			<y>940</y>
+		</defaultPosition>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.carrot.adGroundH3.AdGroundH3</scene>
+		<x>900</x>
+		<y>1620</y>
+		<direction>left</direction>
+		<label>
+			<text>Exit</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>150</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.carrot.farm.Farm</scene>
+				<x>3490</x>
+				<y>1100</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.carrot.mainStreet.MainStreet</scene>
+				<x>40</x>
+				<y>940</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	<door id="door3">
+		<scene>game.scenes.carrot.diner.Diner</scene>
+		<x>1516</x>
+		<y>475</y>
+		<label>
+			<text>Enter</text>
+			<type>exit3D</type>
+		</label>
+	</door>
+	<door id="door2">
+		<scene>game.scenes.carrot.adGroundH3R.AdGroundH3R</scene>
+		<x>60</x>
+		<y>1620</y>
+		<direction>right</direction>
+		<label>
+			<text>Exit</text>
+			<type>exitRight</type>
+			<offset>
+				<x>-160</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.carrot.mainStreet.MainStreet</scene>
+				<x>4030</x>
+				<y>940</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.carrot.factory.Factory</scene>
+				<x>160</x>
+				<y>1669</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	<door id="exitToMap">
+		<scene>game.scenes.map.map.Map</scene>
+		<x>0</x>
+		<y>0</y>
+		<label>
+			<text>TRAVEL</text>
+			<type>exitUp</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="exitCommonRoom">
+		<scene>game.scenes.carrot.common.Common</scene>
+		<x>472</x>
+		<y>380</y>
+		<label>
+			<text>COMMON ROOM</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="door5">
+		<scene>game.scenes.carrot.surplus.Surplus</scene>
+		<x>258</x>
+		<y>653</y>
+		<direction>right</direction>
+		<label>
+			<text>Enter</text>
+			<type>exit3D</type>
+		</label>
+	</door>
+</doors></file></merged>

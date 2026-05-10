@@ -1,0 +1,230 @@
+<merged><file path="/hits.xml"><hits>
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-600</y>
+			</velocity>
+		</component>
+	</hit>
+	
+	<hit color="0x4E8CCC" id="counterTops" platform="true">
+		<component type="platform"/>		
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="reflectiveFloor">
+		<component type="ignore-reflective">
+		    <surface>1</surface>
+		    <type>default</type>
+		    <offsetX>0</offsetX>
+		    <offsetY>0</offsetY>
+		    <alpha>0.25</alpha>
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="char1">
+		<conversation>
+			<exchange>
+				<question>Who are you?</question>
+				<answer>I’m Tony, the owner of this diner.</answer>
+			</exchange>
+			<exchange>
+				<question>How's business?</question>
+				<answer>Momma Mia! My customers have disappeared.</answer>
+			</exchange>
+			<exchange>
+				<question>Are those the people on the bulletin board?</question>
+				<answer triggerEventArgs="show_poster" triggerEvent="triggerEvent">They were some of my best customers!</answer>
+			</exchange>
+		</conversation>
+		<statement event="destroyed_rabbot">Grazie tanto! Thank you for bringing back business!</statement>
+	</character>
+	<character id="waitress">
+		<conversation>
+			<exchange>
+				<question>Do you work here?</question>
+				<answer>Of course. You think I hang out here for fun?</answer>
+			</exchange>
+			<exchange>
+				<question>Doesn't seem very busy.</question>
+				<answer>Honey, I'm just happy to have a job!</answer>
+			</exchange>
+			<exchange>
+				<question>What's that in your hand?</question>
+				<answer>It's a pitcher of milk.</answer>
+			</exchange>
+		</conversation>
+		<conversation event="destroyed_rabbot">
+			<exchange>
+				<question>How's work?</question>
+				<answer>Things are going much better now!</answer>
+			</exchange>
+		</conversation>
+		<conversation event="gotItem_bowlOfMilk">
+			<exchange>
+				<question>Thanks for the milk.</question>
+				<answer>No problem, honey.</answer>
+			</exchange>
+		</conversation>
+		<conversation event="gotItem_emptyBowl">
+			<exchange>
+				<question>Can you fill this bowl with milk?</question>
+				<answer triggerEventArgs="emptyBowl,bowlOfMilk" triggerEvent="exchangeItems">Sure!</answer>
+			</exchange>
+		</conversation>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="char1">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0x332217</hairColor>
+			<mouth>hades</mouth>
+			<marks>shadow2</marks>
+			<hair>dinercook</hair>
+			<shirt>1</shirt>
+			<pants>stor_winter_jack</pants>
+			<item>spatula</item>
+			<overshirt>dinercook</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>232</x>
+			<y>473</y>
+		</position>
+		<range>
+			<x>150</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc event="destroyed_rabbot" id="char1">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0x332217</hairColor>
+			<mouth>wwtrader</mouth>
+			<marks>shadow2</marks>
+			<hair>dinercook</hair>
+			<shirt>1</shirt>
+			<pants>stor_winter_jack</pants>
+			<item>spatula</item>
+			<overshirt>dinercook</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+	</npc>
+	<npc id="waitress" questMarker="talked_with_mayor,talked_with_waitress">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0xFFE97F</hairColor>
+			<mouth>mime</mouth>
+			<marks>astroprincess</marks>
+			<hair>dinerwaitress</hair>
+			<shirt>dinerwaitress</shirt>
+			<pants>dinerwaitress</pants>
+			<item>pitcher</item>
+			<overpants>dinerwaitress</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1007</x>
+			<y>473</y>
+		</position>
+		<range>
+			<x>150</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc event="destroyed_rabbot" id="waitress">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0xFFE97F</hairColor>
+			<mouth>ad_dork</mouth>
+			<marks>astroprincess</marks>
+			<hair>dinerwaitress</hair>
+			<shirt>dinerwaitress</shirt>
+			<pants>dinerwaitress</pants>
+			<item>pitcher</item>
+			<overpants>dinerwaitress</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">ghost_town_indoors.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>openDoor_pushBar.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="bounce">ls_spring_misc_furniture_01.mp3, ls_spring_misc_furniture_02.mp3, ls_spring_misc_furniture_03.mp3</asset>
+		<asset id="counterTops">ls_hard_plastic_01.mp3, ls_hard_plastic_02.mp3</asset>
+		<asset id="baseGround">ls_linoleum_01.mp3, ls_linoleum_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="counterTops">fs_hard_plastic_01.mp3, fs_hard_plastic_02.mp3, fs_hard_plastic_03.mp3, fs_hard_plastic_04.mp3</asset>
+		<asset id="baseGround">fs_linoleum_01.mp3, fs_linoleum_02.mp3, fs_linoleum_03.mp3, fs_linoleum_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>1916</right>
+		<bottom>532</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>40</left>
+		<top>0</top>
+		<right>1880</right>
+		<bottom>475</bottom>
+	</bounds>
+	<assets>bundle.zip</assets>
+	<data>doors.xml,dialog.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset><tileSize>1024</tileSize>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>1515</x>
+			<y>475</y>
+		</defaultPosition>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.carrot.mainStreet.MainStreet</scene>
+		<x>923</x>
+		<y>940</y>
+		<label>
+			<text>Exit</text>
+			<type>exit3D</type>
+		</label>
+	</door>
+</doors></file></merged>

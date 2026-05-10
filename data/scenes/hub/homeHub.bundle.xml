@@ -1,0 +1,396 @@
+<merged>
+
+<file path="/custom1.xml"><ad>
+	<offset>
+		<x>3782</x>
+		<y>860</y>
+	</offset>
+</ad></file>
+
+<file path="/custom2.xml"><ad>
+    <offset>
+        <x>965</x>
+        <y>860</y>
+    </offset>
+</ad></file>
+
+<file path="/hits.xml"><hits>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="platform" color="0x333333" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="wall" color="0xff6600">
+		<component type="wall"/>
+	</hit>
+	<hit id="ceiling" color="0xffcc00">
+		<component type="ceiling"/>
+	</hit>
+	<hit id="climb" color="0xffff00">
+		<component type="climb"/>
+	</hit>
+	<hit id="trees" color="0x00FF66" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="grass" color="0x006633" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="dirt" color="0x993300" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="stone" color="0xC2D6D6" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="metal" color="0xF4DFA3" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="clay" color="0xFF3366" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="ceramics" color="0x99CCCC" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="sand" color="0xFFA84A" platform="true">
+		<component type="platform"/>
+	</hit>
+		<hit color="0x660000" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFF66FF" id="rope" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file>
+	
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="locked">It's locked!</statement>
+		<statement id="adventure">They're on their way to adventure!</statement>
+	</character>
+
+	<character id="amelia">
+		<statement id="intro" link="outfitted">Welcome to Poptropica!</statement>
+		<statement id="outfitted" link="everyone" triggerEventArgs="award" triggerEvent="triggerEvent">Let's get you an outfit!</statement>
+		<statement id="everyone" link="greatest">Everyone is headed out on their own adventures!</statement>
+		<statement id="greatest" link="took_off" triggerEventArgs="robot,true" triggerEvent="triggerEvent">Just like the greatest adventurers of our time!</statement>
+		<statement id="took_off" link="chase" triggerEventArgs="setAnim-amelia-Grief" triggerEvent="triggerEvent">They're taking off with Xavier's statue!</statement>
+		<statement id="chase" triggerEventArgs="into_ends,true" triggerEvent="triggerEvent">Go after them!</statement>
+	</character>
+	
+	<character id="amelia2">
+		<statement>Go find that robot!</statement>
+		<!--
+		<statement event="talked_to_amelia_store">Go out on your own adventure! Help the people of Poptropica!</statement>
+		<statement event="has_home" link="store">I've made some exciting renovations to my store, want to check it out?</statement>
+		<conversation id="store">
+			<exchange>
+				<question triggerEventArgs="talked_to_amelia_store,true" triggerEvent="triggerEvent">Sure</question>
+				<answer triggerEventArgs="runToStore" triggerEvent="triggerEvent">Let's go!</answer>
+			</exchange>
+			<exchange>
+				<question>Another time</question>
+				<answer triggerEventArgs="talked_to_amelia_store,true" triggerEvent="triggerEvent">Okay. Check it out soon!</answer>
+			</exchange>
+		</conversation>
+		-->
+		<statement event="has_home" link="tea">You know, I don’t think I've introduced myself properly.</statement>
+		<statement id="tea" link="quest">My name's Amelia. Wanna come over for some tea?</statement>
+		<conversation id="quest">
+			<exchange>
+				<question>Sure, I'd love to.</question>
+				<answer triggerEventArgs="runToStore,true" triggerEvent="triggerEvent">Great! I just live on the second floor of my store. Come on over.</answer>
+			</exchange>
+			<exchange>
+				<question>Nice to meet you, but I'm busy right now.</question>
+				<answer>I understand, but let me know if you ever have time!</answer>
+			</exchange>
+		</conversation>
+		<statement event="runToStore">Meet me inside on the second floor of my store, I have a job for you.</statement>
+	</character>
+	
+	<character id="npcDriver">
+		<statement link="help">Did you know you can play islands for credits!</statement>
+		<statement id="help" link="response">Do you want 24 Carrot Island?</statement>
+		<conversation id="response">
+			<exchange>
+				<question triggerEventArgs="load_island_carrot_mainStreet" triggerEvent="triggerEvent">Sure!</question>
+			</exchange>
+			<exchange>
+				<question>I've got enough credits, kid.</question>
+			</exchange>
+		</conversation>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="amelia2">
+		<animations random="false" loop="true">
+			<animation>game.data.animation.entity.character.Tremble</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfdd9c8</skinColor>
+			<hairColor>0xf5894e</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>farmerboy</mouth>
+			<hair>home_crash</hair>
+			<shirt>home_crash</shirt>
+			<pants>adams</pants>
+			<overshirt>home_crash</overshirt>
+		</skin>
+		<direction>right</direction>
+		<position>
+			<x>2208</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="has_home" id="amelia2" questMarker="has_home,start_amelias_quest">
+		<animations>
+			<animation></animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfdd9c8</skinColor>
+			<hairColor>0xf5894e</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>mthfishmonger</mouth>
+			<facial>empty</facial>
+			<hair>home_crash</hair>
+			<shirt>home_crash</shirt>
+			<pants>adams</pants>
+			<overshirt>home_crash</overshirt>
+		</skin>
+		<direction>right</direction>
+		<position>
+			<x>2208</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="has_home" id="npcDriver">
+        <skin>
+            <gender>male</gender>
+            <skinColor>0xD2AA72</skinColor>
+            <hairColor>0xE75C2E</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>15</mouth>
+            <marks>ad_peterpan</marks>
+            <facial>empty</facial>
+            <hair>ftue_adventurer</hair>
+            <shirt>gtour</shirt>
+            <pants>tt_elf1</pants>
+            <pack>ftue_adventurer</pack>
+            <item>ftue_map</item>
+            <overshirt>mk_mainstreet_kid01</overshirt>
+            <overpants>egyptarch</overpants>
+            <eyeState>open</eyeState>
+        </skin>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" baseVolume=".7" loop="true">Drive.mp3</asset>
+	</sound>
+	
+	<sound type="effects" action="impact">
+		<asset id="platform">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="baseGround">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="mp1">ls_cobble_01.mp3, ls_cobble_02.mp3</asset>
+		<asset id="mp2">ls_cobble_01.mp3, ls_cobble_02.mp3</asset>
+		<asset id="water">ls_water_splash_01.mp3, ls_water_splash_02.mp3</asset>
+		<asset id="trees">ls_leaves_01.mp3, ls_leaves_02.mp3</asset>
+		<asset id="grass">ls_grass_01.mp3, ls_grass_02.mp3</asset>
+		<asset id="dirt">ls_dirt_01.mp3, ls_dirt_02.mp3</asset>
+		<asset id="stone">ls_concrete_2_01.mp3, ls_concrete_2_02.mp3</asset>
+		<asset id="metal">ls_general_metal_01.mp3, ls_general_metal_02.mp3</asset>
+		<asset id="clay">ls_clay_tile_01.mp3, ls_clay_tile_02.mp3</asset>
+		<asset id="ceramics">ls_linoleum_01.mp3, ls_linoleum_02.mp3</asset>
+		<asset id="sand">ls_sand_01.mp3, ls_sand_02.mp3</asset>
+		<asset id="bounce">ls_bounce_01.mp3, ls_bounce_02.mp3, ls_bounce_03.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+
+	</sound>
+	<sound type="effects" action="step">
+		<asset id="platform">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="baseGround">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="mp1">fs_cobble_01.mp3, fs_cobble_02.mp3, fs_cobble_03.mp3, fs_cobble_04.mp3</asset>
+		<asset id="mp2">fs_cobble_01.mp3, fs_cobble_02.mp3, fs_cobble_03.mp3, fs_cobble_04.mp3</asset>
+		<asset id="water">fs_water_01.mp3, fs_water_02.mp3, fs_water_03.mp3, fs_water_04.mp3, fs_swim_water_01.mp3, fs_swim_water_02.mp3, fs_swim_water_03.mp3</asset>
+		<asset id="trees">fs_leaves_01.mp3, fs_leaves_02.mp3, fs_leaves_03.mp3, fs_leaves_04.mp3</asset>
+		<asset id="grass">fs_grass_01.mp3, fs_grass_02.mp3, fs_grass_03.mp3, fs_grass_04.mp3</asset>
+		<asset id="dirt">fs_dirt_01.mp3, fs_dirt_02.mp3, fs_dirt_03.mp3, fs_dirt_04.mp3</asset>
+		<asset id="stone">fs_concrete_2_01.mp3, fs_concrete_2_02.mp3, fs_concrete_2_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="metal">fs_general_metal_01.mp3, fs_general_metal_02.mp3, fs_general_metal_03.mp3, fs_general_metal_04.mp3</asset>
+		<asset id="clay">fs_clay_tile_01.mp3, fs_clay_tile_02.mp3, fs_clay_tile_03.mp3, fs_clay_tile_04.mp3</asset>
+		<asset id="ceramics">fs_linoleum_01.mp3, fs_linoleum_02.mp3, fs_linoleum_03.mp3, fs_linoleum_04.mp3</asset>
+		<asset id="sand">fs_sand_01.mp3, fs_sand_02.mp3, fs_sand_03.mp3, fs_sand_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<asset triggeredByEvent="grab_box">fs_cardboard_01.mp3</asset>
+		<asset triggeredByEvent="whip">whoosh_05.mp3</asset>
+		<asset triggeredByEvent="slam" baseVolume="1.5">wood_heavy_impact_01.mp3</asset>
+		<asset triggeredByEvent="land">ls_concrete_01.mp3</asset>
+		<asset triggeredByEvent="opens" baseVolume="1.5">fridge_door_close_01.mp3</asset>
+		<asset triggeredByEvent="twinkle" baseVolume="1.5">get_gem_13.mp3</asset>
+		<asset triggeredByEvent="jump">whoosh_08.mp3</asset>
+		<asset triggeredByEvent="land_chest">getHit.mp3</asset>
+		<asset triggeredByEvent="crash0" baseVolume=".1">robot_step01.mp3</asset>
+		<asset triggeredByEvent="crash0" baseVolume=".3">robot_step01.mp3</asset>
+		<asset triggeredByEvent="robot_end">robot_steps.mp3</asset>
+		<asset triggeredByEvent="hits">door_hatch_verb_01.mp3</asset>	
+		<asset triggeredByEvent="catches" baseVolume="2">rubber_stretch_01.mp3</asset>
+	</sound>
+	
+	<sound action="climb" type="effects">
+		<asset allowOverlap="false" id="climb">ls_rope_01.mp3, ls_rope_02.mp3</asset>
+	</sound>
+	<sound action="climbDown" type="effects">
+		<asset allowOverlap="false" id="climb">slide_down_rope_01.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>mainstreet</sceneType>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>4753</right>
+		<bottom>966</bottom>
+	</bounds>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>4753</right>
+		<bottom>966</bottom>
+	</cameraLimits>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,<!--blimp.xml,-->custom1.xml,custom2.xml</data>
+	<assets>bundle.zip, backdrop.zip</assets>
+	<layers>
+		<layer>
+			<condition type="blockMerge">true</condition>
+			<asset>backdrop.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive2.zip</asset>
+		</layer>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive3.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2350</x>
+			<y>801</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+	<suppressAdPopup>true</suppressAdPopup>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="doorBaron">
+		<scene>game.scenes.hub.baronDeck.BaronDeck</scene>
+		<x>800</x>
+		<y>700</y>
+		<label>
+			<text>Enter</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="doorShop">
+		<scene>game.scenes.hub.store.Store</scene>
+		<x>800</x>
+		<y>550</y>
+		<label>
+			<text>Shop</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+
+	<door id="doorClubhouse">
+		<scene>game.scenes.clubhouse.clubhouse.Clubhouse</scene>
+		<x>683</x>
+		<y>1003</y>
+		<label>
+			<text>Club House</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	
+	<door id="doorYard">
+		<scene>game.scenes.hub.homeHubQuest.HomeHubQuest</scene>
+		<x>162</x>
+		<y>935</y>
+		<direction>right</direction>
+		<label>
+			<text>Back Yard</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	
+	<door id="exitToMapLeft">
+		<scene>game.scenes.map.map.Map</scene>
+		<x>0</x>
+		<y>0</y>
+		<label>
+			<text>TRAVEL</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+
+	<door id="exitToMapRight">
+		<scene>game.scenes.map.map.Map</scene>
+		<x>0</x>
+		<y>0</y>
+		<label>
+			<text>TRAVEL</text>
+			<type>exitRight</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file></merged>

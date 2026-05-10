@@ -1,0 +1,337 @@
+<merged><file path="/hits.xml"><hits>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xD5C779" id="crates" platform="true">
+		<component type="platform"/>
+	</hit> 
+	<hit color="0xAF8DBA" id="colorTower" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xEFB894" id="blender" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x97C0FF" id="lights" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xD6D1D5" id="platform" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xDEDEDA" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x72548D" id="pillars" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xEEAD4D" id="thinPipes" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="bucketHit1">
+		<component type="movingPlatform">
+			<visible>bucket1</visible>
+			<velocity>100</velocity>
+			<points>
+				<point>
+					<x>0</x>
+					<y>831</y>
+				</point>
+				<point>
+					<x>3411</x>
+					<y>831</y>
+				</point>
+			</points>
+		</component>
+	</hit>
+	
+	<hit id="bucketHit2">
+		<component type="movingPlatform">
+			<visible>bucket2</visible>
+			<velocity>100</velocity>
+			<points>
+				<point>
+					<x>0</x>
+					<y>831</y>
+				</point>
+				<point>
+					<x>3411</x>
+					<y>831</y>
+				</point>
+			</points>
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="drone2">
+		<conversation>
+			<exchange>
+				<question>Who are you?</question>
+				<answer>Can't talk. Processing carrots.</answer>
+			</exchange>
+			<exchange>
+				<question>What are you doing?</question>
+				<answer>Can't talk. Processing carrots.</answer>
+			</exchange>
+			<exchange>
+				<question>Look behind you! A kid in a hot dog costume!</question>
+				<answer triggerEvent="triggerEvent" triggerEventArgs="drone_tricked_2">Where?</answer> 
+			</exchange>
+		</conversation>
+		
+		<statement triggeredByEvent="drone_freed_2">Be careful! If Dr. Hare sees you without drone ears, you'll be in big trouble!</statement>
+	</character>
+	
+	<character id="drone3">
+		<conversation>
+			<exchange>
+				<question>Who are you?</question>
+				<answer>Can't talk. Processing carrots.</answer>
+			</exchange>
+			<exchange>
+				<question>What are you doing?</question>
+				<answer>Can't talk. Processing carrots.</answer>
+			</exchange>
+			<exchange>
+				<question>Look! A flying buffalo!</question>
+				<answer triggerEvent="triggerEvent" triggerEventArgs="drone_tricked_3">Where?</answer>
+			</exchange>
+		</conversation>
+
+		<statement triggeredByEvent="drone_freed_3">I'm free! You should probably find some drone ears, or Dr. Hare will get you!</statement>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="drone2">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xCE8058</skinColor>
+			<hairColor>0x000000</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>rabbitcon</mouth>
+			<marks></marks>
+			<facial>rabbitcon</facial>
+			<hair>39</hair>
+			<shirt>23</shirt>
+			<pants>hero5</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<eyes>drone</eyes>
+		</skin>
+		<position>
+			<x>938.1</x>
+			<y>1630</y>
+		</position>
+		<range>
+	<x>0</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc event="drone_freed_2" id="drone2">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xCE8058</skinColor>
+			<hairColor>0x000000</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>sponsor_mh</mouth>
+			<marks></marks>
+			<facial>rabbitcon2</facial>
+			<hair>39</hair>
+			<shirt>23</shirt>
+			<pants>hero5</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<eyes>eyes</eyes>
+		</skin>
+	</npc>
+	<npc id="drone3">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xDBAD6D</skinColor>
+			<hairColor>0x000000</hairColor>
+			<eyeState>squint</eyeState>
+			<mouth>rabbitcon</mouth>
+			<marks></marks>
+			<facial>rabbitcon</facial>
+			<hair>7</hair>
+			<shirt>26</shirt>
+			<pants>patron1</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<eyes>drone</eyes>
+		</skin>
+		<position>
+			<x>2122.3</x>
+			<y>1630</y>
+		</position>
+		<range>
+	<x>0</x>
+<y>0</y>
+</range>
+	</npc>	
+	<npc event="drone_freed_3" id="drone3">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xDBAD6D</skinColor>
+			<hairColor>0x000000</hairColor>
+			<eyeState>squint</eyeState>
+			<mouth>1</mouth>
+			<marks></marks>
+			<facial>rabbitcon2</facial>
+			<hair>7</hair>
+			<shirt>26</shirt>
+			<pants>patron1</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<eyes>eyes</eyes>
+		</skin>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">Deadly_Virus.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" loop="true">production_factory.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<asset exclusiveType="true" id="interaction" triggeredByEvent="set_to_mix">blender_01_L.mp3</asset>
+		<asset exclusiveType="true" id="interaction" triggeredByEvent="set_to_blend">blender_02_L.mp3</asset>
+		<asset exclusiveType="true" id="interaction" triggeredByEvent="set_to_liquify">blender_03_L.mp3</asset>
+		<asset exclusiveType="true" id="interaction" triggeredByEvent="set_to_vaporize">blender_04_L.mp3</asset>
+		<asset fade="true" exclusiveType="true" id="interaction" triggeredByEvent="set_off">power_down_03.mp3</asset>
+		
+		<asset id="bunnyCam" loop="true" triggeredByEvent="cam_active">machine_alarm_01_L.mp3</asset>
+		<asset id="zap" triggeredByEvent="player_caught">event_06.mp3</asset>
+		<asset id="zoneLight" triggeredByEvent="player_surrender">event_06.mp3</asset>
+		<asset id="doorTrap" triggeredByEvent="fell_in_trap">trap_door_01.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset id="doorSecurity">door_metal_lab_01.mp3</asset>
+		<asset id="door1">door_squeaky_metal_swing_01.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="crates">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="colorTower">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+		<asset id="blender">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="lights">ls_metal_verb_01.mp3, ls_metal_verb_02.mp3</asset>
+		<asset id="platform">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+		<asset id="floor">ls_concrete_verb_01.mp3, ls_concrete_verb_02.mp3</asset>
+		<asset id="pillars">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="thinPipes">ls_thin_metal_verb_01.mp3, ls_thin_metal_verb_02.mp3</asset>
+		
+		<asset event="bucket_full_1" id="bucketHit1">ls_crunchy_verb_01.mp3, ls_crunchy_verb_02.mp3</asset>
+		<asset event="bucket_empty_1" id="bucketHit1">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+		
+		<asset event="bucket_full_2" id="bucketHit2">ls_crunchy_verb_01.mp3, ls_crunchy_verb_02.mp3</asset>
+		<asset event="bucket_empty_2" id="bucketHit2">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="crates">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="colorTower">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_03.mp3, fs_general_metal_04.mp3</asset>
+		<asset id="blender">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="lights">fs_metal_verb_01.mp3, fs_metal_verb_02.mp3, fs_metal_verb_03.mp3, fs_metal_verb_04.mp3</asset>
+		<asset id="platform">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+		<asset id="floor">fs_concrete_verb_01.mp3, fs_concrete_verb_02.mp3, fs_concrete_verb_03.mp3, fs_concrete_verb_04.mp3</asset>
+		<asset id="pillars">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="thinPipes">fs_thin_metal_verb_01.mp3, fs_thin_metal_verb_02.mp3, fs_thin_metal_verb_03.mp3, fs_thin_metal_verb_04.mp3</asset>
+		
+		<asset event="bucket_full_1" id="bucketHit1">fs_crunchy_verb_01.mp3, fs_crunchy_verb_02.mp3, fs_crunchy_verb_03.mp3, fs_crunchy_verb_04.mp3</asset>
+		<asset event="bucket_empty_1" id="bucketHit1">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+	
+		<asset event="bucket_full_2" id="bucketHit2">fs_crunchy_verb_01.mp3, fs_crunchy_verb_02.mp3, fs_crunchy_verb_03.mp3, fs_crunchy_verb_04.mp3</asset>
+		<asset event="bucket_empty_2" id="bucketHit2">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>3411</right>
+		<bottom>1703</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>20</left>
+		<top>0</top>
+		<right>3411</right>
+		<bottom>1910</bottom>
+	</bounds>
+	<assets>bundle.zip</assets>
+	<data>doors.xml,dialog.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer event="security_disabled" id="foreground">
+			<asset>foregroundFinale.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>		
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>296</x>
+			<y>404</y>
+		</defaultPosition>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.carrot.vent.Vent</scene>
+		<x>1530</x>
+		<y>2580.8</y>
+		<label>
+			<text>Enter</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="doorTrap">
+		<scene>game.scenes.carrot.smelter.Smelter</scene>
+		<openOnHit>true</openOnHit>
+		<x>615</x>
+		<y>266</y>
+	</door>
+	<door id="doorSecurity">
+		<scene>game.scenes.carrot.robot.Robot</scene>
+		<x>318</x>
+		<y>2100</y>
+		<label>
+			<text>Enter</text>
+			<asset>exit3D</asset>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file></merged>

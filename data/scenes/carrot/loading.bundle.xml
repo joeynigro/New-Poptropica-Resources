@@ -1,0 +1,246 @@
+<merged>
+
+<file path="/items.xml"><items>
+	<item>
+		<id>systemPassword</id>
+		<asset>systemPassword.zip</asset>
+		<x>562</x>
+		<y>1509</y>
+		<label>
+			<text>Examine</text>
+			<type>exitDown</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	
+	<hit color="0xFF8484" id="chute" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x58A792" id="metalPlatform" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xA49959" id="crates" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCA7060" id="piping" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x809794" id="machine" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x94B18F" id="brackets" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x9C998D" id="vent" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xAFDE8F" id="smallPipe" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="crateHit1">
+		<component type="hazard">
+			<visible>crate1</visible>
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	<hit id="crateHit2">
+		<component type="hazard">
+			<visible>crate2</visible>
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	<hit id="crateHit3">
+		<component type="hazard">
+			<visible>crate3</visible>
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="drone1">
+		<conversation>
+			<exchange>
+				<question>Who are you?</question>
+				<answer>Can't talk. Loading carrots.</answer>
+			</exchange>
+			<exchange>
+				<question>What are you doing?</question>
+				<answer>Can't talk. Loading carrots.</answer>
+			</exchange>
+			<exchange>
+				<question>Look behind you! A three-headed rabbit!</question>
+				<answer triggerEvent="triggerEvent" triggerEventArgs="drone_tricked_1">Where?</answer>
+			</exchange>
+		</conversation>
+		<statement triggeredByEvent="drone_denial">You are not authorized to use this printer.</statement>
+		<statement triggeredByEvent="drone_free">I'm free! Follow me, there's something you should see.</statement>
+		<statement event="drone_freed_1">Thanks again! Watch out. If you're seen without drone ears, you’ll be captured!</statement>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="drone1" questMarker="start,gotItem_systemPassword">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xFAC6C1</skinColor>
+			<hairColor>0x332217</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>rabbitcon</mouth>
+			<facial>rabbitcon</facial>
+			<hair>29</hair>
+			<shirt>19</shirt>
+			<pants>14</pants>
+			<eyes>drone</eyes>
+		</skin>
+		<position>
+			<x>285.3</x>
+			<y>1643</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc event="drone_freed_1" id="drone1">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xFAC6C1</skinColor>
+			<hairColor>0x332217</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>pshedevil</mouth>
+			<facial>rabbitcon2</facial>
+			<hair>29</hair>
+			<shirt>19</shirt>
+			<pants>14</pants>
+			<eyes>eyes</eyes> 
+		</skin>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>	
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">Deadly_Virus.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">production_factory_muffled.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>door_squeaky_metal_swing_01.mp3</asset>
+	</sound>
+	
+	<sound action="random" type="effects">
+		<asset triggeredByEvent="printing_paper">print_paper_01.mp3</asset>
+		<!-- <asset triggeredByEvent="gotItem_systemPassword">card_get.mp3</asset> -->
+		<asset modifiers="position" id="crate1">chute_01.mp3</asset>
+		<asset modifiers="position" id="crate2">chute_02.mp3</asset>
+		<asset modifiers="position" id="crate3">chute_03.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="chute">ls_thin_metal_verb_01.mp3, ls_thin_metal_verb_02.mp3</asset>
+		<asset id="metalPlatform">ls_general_metal_verb_01.mp3, ls_general_metal_02.mp3</asset>
+		<asset id="crates">ls_tree_01.mp3, ls_tree_02.mp3</asset>
+		<asset id="piping">ls_metal_verb_01.mp3, ls_metal_verb_02.mp3</asset>
+		<asset id="machine">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="brackets">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+		<asset id="vent">ls_metal_shelf_verb_01.mp3, ls_metal_shelf_verb_02.mp3</asset>
+		<asset id="smallPipe">ls_thin_metal_verb_01.mp3, ls_thin_metal_verb_02.mp3</asset>
+		<asset id="baseGround">ls_concrete_verb_01.mp3, ls_concrete_verb_02.mp3</asset>
+		
+		<asset id="crateHit1">whack_03.mp3</asset>
+		<asset id="crateHit2">whack_03.mp3</asset>
+		<asset id="crateHit3">whack_03.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="chute">fs_thin_metal_verb_01.mp3, fs_thin_metal_verb_02.mp3, fs_thin_metal_verb_03.mp3, fs_thin_metal_verb_04.mp3</asset>
+		<asset id="metalPlatform">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+		<asset id="crates">fs_tree_01.mp3, fs_tree_02.mp3, fs_tree_03.mp3, fs_tree_04.mp3</asset>
+		<asset id="piping">fs_metal_verb_01.mp3, fs_metal_verb_02.mp3, fs_metal_verb_03.mp3, fs_metal_verb_04.mp3</asset>
+		<asset id="machine">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="brackets">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+		<asset id="vent">fs_metal_shelf_verb_01.mp3, fs_metal_shelf_verb_02.mp3, fs_metal_shelf_verb_03.mp3, fs_metal_shelf_verb_04.mp3</asset>
+		<asset id="smallPipe">fs_thin_metal_verb_01.mp3, fs_thin_metal_verb_02.mp3, fs_thin_metal_verb_03.mp3, fs_thin_metal_verb_04.mp3</asset>
+		<asset id="baseGround">fs_concrete_verb_01.mp3, fs_concrete_verb_02.mp3, fs_concrete_verb_03.mp3, fs_concrete_verb_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2273</right>
+		<bottom>1711</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>20</left>
+		<top>0</top>
+		<right>2273</right>
+		<bottom>1640</bottom>
+	</bounds>
+	<assets>bundle.zip</assets>
+	<data>doors.xml,items.xml,dialog.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>468</x>
+			<y>756</y>
+		</defaultPosition>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.carrot.vent.Vent</scene>
+		<x>5074</x>
+		<y>1396.3</y>
+		<label>
+			<text>Enter</text>
+			<asset>exit3D</asset>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

@@ -1,0 +1,285 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit id="climb1">
+		<component type="climb"/>
+	</hit>
+	
+	<hit color="0x5B9DFF" id="rabbot" platform="true">
+		<component type="platform"/>		
+	</hit>
+	<hit color="0xE18B0B" id="woodPlatforms" platform="true">
+		<component type="platform"/>		
+	</hit>
+	<hit color="0xDD4722" id="barrels" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x41E0FC" id="thinPipes" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xAB92A4" id="fuelTanks" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x6F8D95" id="computer" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xB59D82" id="lights" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>		
+	</hit>
+
+	<hit id="hoverPad">
+		<component type="platform">
+			<visible>hoverPadArt</visible>
+		</component>
+	</hit>
+	
+	<!-- <hit id="handHit1"><component type="movingPlatform"><visible>hand1</visible></component></hit><hit id="handHit2"><component type="movingPlatform"><visible>hand2</visible></component></hit> -->
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="drHare">
+		<statement triggeredByEvent="carrot_drhare_talk_to">Why are you standing around!? Get to the computer and start the launch sequence. I'll get into the cockpit.</statement>
+	</character>
+	<character id="drone4">
+		<conversation>
+			<exchange>
+				<question>Who are you?</question>
+				<answer>Can't talk. Must initiate launch sequence.</answer>
+			</exchange>
+			<exchange>
+				<question>What are you doing?</question>
+				<answer>Can't talk. Must initiate launch sequence.</answer>
+			</exchange>
+			<exchange>
+				<question>Look behind you! A giant bunny!</question>
+				<answer triggerEvent="triggerEvent" triggerEventArgs="drone_tricked_4">Where?</answer>
+			</exchange>
+		</conversation>
+		<statement triggeredByEvent="drone_denial">You are not authorized to use this computer.</statement>
+		<statement triggeredByEvent="drone_free">Dr. Hare is going to use his giant rabbot to mind-control the entire planet from space!</statement>
+		<statement event="drone_freed_4">Dr. Hare is going to use his giant rabbot to mind-control the entire planet from space!</statement>
+		<statement triggeredByEvent="carrot_drone_congrats">Dr. Hare's gone! We can finally leave the factory!</statement>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="drHare">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0x4A2C17</hairColor>
+			<eyes></eyes>
+			<mouth>drhare</mouth>
+			<marks></marks>
+			<facial>drhare</facial>
+			<hair>empty</hair>
+			<shirt>drhare</shirt>
+			<pants>1</pants>
+			<pack>drhare</pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants>drhare</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>564.1</x>
+			<y>1902.05</y>
+		</position>
+		<range>
+	<x>0</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc id="drone4" questMarker="start,rabbot_launch">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x743D2B</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>rabbitcon</mouth>
+			<marks></marks>
+			<facial>rabbitcon</facial>
+			<hair>6</hair>
+			<shirt>22</shirt>
+			<pants>sponsornm2guard</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<eyes>drone</eyes>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>1830.5</x>
+			<y>1040.25</y>
+		</position>
+		<range>
+	<x>0</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc event="drone_freed_4" id="drone4">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x743D2B</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>6</mouth>
+			<marks></marks>
+			<facial>rabbitcon2</facial>
+			<hair>6</hair>
+			<shirt>22</shirt>
+			<pants>sponsornm2guard</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<eyes>eyes</eyes>
+			<eyeState>open</eyeState>
+		</skin>
+	</npc>
+	<npc event="drone_freed_4" id="drone4">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x743D2B</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>6</mouth>
+			<marks></marks>
+			<facial>empty</facial>
+			<hair>6</hair>
+			<shirt>22</shirt>
+			<pants>sponsornm2guard</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<eyes>eyes</eyes>
+			<eyeState>open</eyeState>
+		</skin>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">Factory_Theme.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">tech_lab.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset id="door1">openDoor_pushBar.mp3</asset>
+	</sound>
+	
+	<sound action="climb" type="effects">
+		<asset allowOverlap="false" id="climb1">grab_rope_03.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<asset triggeredByEvent="raise_platform">dr_hares_ascent_01.mp3</asset>
+		<asset exclusiveType="true" id="handHit1" triggeredByEvent="move_left_hand">servo_spin_verb_01.mp3</asset>
+		<asset exclusiveType="true" id="handHit2" triggeredByEvent="move_right_hand">servo_spin_verb_01.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="rabbot">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="handHit1">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="handHit2">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="woodPlatforms">ls_wood_plank_verb_01.mp3, ls_wood_plank_verb_02.mp3</asset>
+		<asset id="barrels">ls_metal_verb_01.mp3, ls_metal_verb_02.mp3</asset>
+		<asset id="thinPipes">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+		<asset id="fuelTanks">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+		<asset id="computer">ls_metal_verb_01.mp3, ls_metal_verb_02.mp3</asset>
+		<asset id="lights">ls_thin_metal_verb_01.mp3, ls_thin_metal_verb_02.mp3</asset>
+		<asset id="baseGround">ls_concrete_verb_01.mp3, ls_concrete_verb_02.mp3</asset>
+		
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="rabbot">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="handHit1">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="handHit2">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="woodPlatforms">fs_wood_plank_verb_01.mp3, fs_wood_plank_verb_02.mp3, fs_wood_plank_verb_03.mp3, fs_wood_plank_verb_04.mp3</asset>
+		<asset id="barrels">fs_metal_verb_01.mp3, fs_metal_verb_02.mp3, fs_metal_verb_03.mp3, fs_metal_verb_04.mp3</asset>
+		<asset id="thinPipes">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+		<asset id="fuelTanks">fs_general_metal_verb_02.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+		<asset id="computer">fs_metal_verb_01.mp3, fs_metal_verb_02.mp3, fs_metal_verb_03.mp3, fs_metal_verb_04.mp3</asset>
+		<asset id="lights">fs_thin_metal_verb_01.mp3, fs_thin_metal_verb_02.mp3, fs_thin_metal_verb_03.mp3, fs_thin_metal_verb_04.mp3</asset>
+		<asset id="baseGround">fs_concrete_verb_01.mp3, fs_concrete_verb_02.mp3, fs_concrete_verb_03.mp3, fs_concrete_verb_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2298</right>
+		<bottom>2166</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>20</left>
+		<top>0</top>
+		<right>2298</right>
+		<bottom>2100</bottom>
+	</bounds>
+	<assets>bundle.zip</assets>
+	<data>doors.xml,dialog.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<layers>
+		<layer event="destroyed_rabbot" id="background">
+			<asset>backgroundFinale.zip</asset>
+		</layer>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer event="destroyed_rabbot" id="foreground">
+			<asset>foregroundFinale.zip</asset>
+		</layer>		
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>315</x>
+			<y>2096</y>
+		</defaultPosition>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.carrot.processing.Processing</scene>
+		<x>3264</x>
+		<y>1629.7</y>
+		<label>
+			<text>Exit</text>
+			<asset>exit3D</asset>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	
+	<door id="ropeExit">
+		<scene>game.scenes.carrot.mainStreet.MainStreet</scene>
+		<x>2760</x>
+		<y>940</y>
+		<label>
+			<text>Exit</text>
+			<type>exitUp</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

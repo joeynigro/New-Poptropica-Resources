@@ -1,0 +1,260 @@
+<merged><file path="/hits.xml"><hits>
+	<hit color="0xFF8B53" id="counter" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x96B8C5" id="shelves" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xD1D676" id="register" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="present_cat">I found your cat!</statement>
+		<statement linkEntityId="owner" id="where" link="farmhouse">Where did you last see your cat?</statement>
+	</character>
+	<character id="owner">
+		<conversation>
+			<exchange>
+				<question>Hi, do you know what happened around here?</question>
+				<answer linkEntityId="player" link="where">I have no idea. My cat, Whiskers, disappeared with everything else!</answer>
+			</exchange>
+		</conversation>
+		<statement id="farmhouse">She used to hang out by the old farmhouse where I'd bring her milk. If you find her I'll give you a reward.</statement>
+		<conversation event="cat_returned">
+			<exchange>
+				<question>Whiskers looks happy to be home.</question>
+				<answer>Yes, thank you so much for finding him!</answer>
+			</exchange>
+			<exchange>
+				<question>Is there anything else you need?</question>
+				<answer>It sure would help if you could figure out where all the carrots and kids disappeared to!</answer>
+			</exchange>	
+		</conversation>
+		<conversation event="destroyed_rabbot">
+			<exchange>
+				<question>Whiskers looks happy to be home.</question>
+				<answer>Yes, thank you so much for finding him!</answer>
+			</exchange>
+			<exchange>
+				<question>Is there anything else you need?</question>
+				<answer>Nope. You've helped me and the whole town already!</answer>
+			</exchange>						
+		</conversation>	
+		<statement id="cat_following" triggerEventArgs="cat_returned" link="crowbar_give" triggerEvent="completeEvent">Whiskers! Come here, you little rascal!</statement>
+		<statement id="crowbar_give" triggerEventArgs="crowbar" triggerEvent="giveItem" link="anything_else">Thanks for your help. Here's a crowbar, they always come in handy.</statement>
+		<conversation id="anything_else">
+			<exchange>
+				<question>Is there anything else you need?</question>
+				<answer>It sure would help if you could figure out where all the carrots and kids disappeared to!</answer>
+			</exchange>
+		</conversation>
+	</character>
+	<character id="char3">
+		<statement>I'm enjoying my freedom. Thanks!</statement>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="owner" questMarker="talked_with_mayor,cat_returned">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xB17251</skinColor>
+			<hairColor>0x5B3D2A</hairColor>
+			<eyes></eyes>
+			<mouth>skimask</mouth>
+			<marks></marks>
+			<facial></facial>
+			<hair>1</hair>
+			<shirt>3</shirt>
+			<pants>4</pants>
+			<pack></pack>
+			<item>screwdriver</item>
+			<overshirt>clerk</overshirt>
+			<overpants></overpants>
+			<lineColor></lineColor>
+			<eyeState>open</eyeState>
+			<lineWidth></lineWidth>
+		</skin>
+		<position>
+			<x>783</x>
+			<y>653</y>
+		</position>
+		<range>
+	<x>0</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc event="cat_following" id="owner">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xB17251</skinColor>
+			<hairColor>0x5B3D2A</hairColor>
+			<mouth>6</mouth>
+			<hair>1</hair>
+			<shirt>3</shirt>
+			<pants>4</pants>
+			<item>screwdriver</item>
+			<overshirt>clerk</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+	</npc>
+	<npc event="cat_returned" id="owner">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xB17251</skinColor>
+			<hairColor>0x5B3D2A</hairColor>
+			<mouth>6</mouth>
+			<hair>1</hair>
+			<shirt>3</shirt>
+			<pants>4</pants>
+			<item>screwdriver</item>
+			<overshirt>clerk</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+	</npc>
+	<npc event="cat_following" id="cat" variant="creature">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xBFAE8B</skinColor>
+			<hairColor>0xBFAE8B</hairColor>
+			<eyes></eyes>
+			<mouth>cat</mouth>
+			<marks></marks>
+			<facial>cat</facial>
+			<hair>cat</hair>
+			<shirt>bare</shirt>
+			<pants>bare</pants>
+			<pack>cat</pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<lineColor></lineColor>
+			<eyeState>squint</eyeState>
+			<lineWidth></lineWidth>
+		</skin>
+		<position>
+			<x>218</x>
+			<y>653</y>
+		</position>
+		<range>
+	<x>0</x>
+<y>0</y>
+</range>
+	</npc>
+	<npc event="cat_returned" id="cat" variant="creature">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xBFAE8B</skinColor>
+			<hairColor>0xBFAE8B</hairColor>
+			<eyes></eyes>
+			<mouth>cat</mouth>
+			<marks></marks>
+			<facial>cat</facial>
+			<hair>cat</hair>
+			<shirt>bare</shirt>
+			<pants>bare</pants>
+			<pack>cat</pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants></overpants>
+			<lineColor></lineColor>
+			<eyeState>squint</eyeState>
+			<lineWidth></lineWidth>
+		</skin>
+		<position>
+			<x>883</x>
+			<y>653</y>
+		</position>
+		<range>
+	<x>0</x>
+<y>0</y>
+</range>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">ghost_town_indoors.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>door_pushbar_open_02.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<!-- <asset triggeredByEvent="gotItem_crowbar">card_get.mp3</asset> -->
+		<asset id="interaction" triggeredByEvent="bell_ring">desk_bell_01.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="counter">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="shelves">ls_metal_shelf_01.mp3, ls_metal_shelf_02.mp3</asset>
+		<asset id="register">ls_machinery_01.mp3, ls_machinery_02.mp3</asset>
+		<asset id="baseGround">ls_wood_plank_01.mp3, ls_wood_plank_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="counter">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="shelves">fs_metal_shelf_01.mp3, fs_metal_shelf_02.mp3, fs_metal_shelf_03.mp3, fs_metal_shelf_04.mp3</asset>
+		<asset id="register">fs_machinery_01.mp3, fs_machinery_02.mp3, fs_machinery_03.mp3, fs_machinery_04.mp3</asset>
+		<asset id="baseGround">fs_wood_plank_01.mp3, fs_wood_plank_02.mp3, fs_wood_plank_03.mp3, fs_wood_plank_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>1397</right>
+		<bottom>698</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>20</left>
+		<top>0</top>
+		<right>1397</right>
+		<bottom>653</bottom>
+	</bounds>
+	<assets>bundle.zip</assets>
+	<data>doors.xml,npcs.xml,dialog.xml,sounds.xml,hits.xml</data>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>260</x>
+			<y>653</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.carrot.mainStreet.MainStreet</scene>
+		<x>2192</x>
+		<y>940</y>
+		<label>
+			<text>Exit</text>
+			<asset>exit3D</asset>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file></merged>

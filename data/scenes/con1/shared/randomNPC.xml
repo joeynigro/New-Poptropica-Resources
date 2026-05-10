@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<looks>
+	<look>
+		<tags>
+			<tag id="name">policeHero</tag>
+			<tag id="gender">male</tag>
+		</tags>
+		<parts>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0x5B3317</hairColor>
+			<mouth>15</mouth>
+			<marks>empty</marks>
+			<facial>policeman</facial>
+			<hair>ad_pranks_dylan</hair>
+			<shirt>policeman</shirt>
+			<pants>policeman</pants>
+			<pack>empty</pack>
+			<item>empty</item>
+			<overshirt>empty</overshirt>
+			<overpants>poptropicon_consec</overpants>
+			<eyeState>squint</eyeState>
+		</parts>
+	</look>
+	<look>
+		<tags>
+			<tag id="name">tenti</tag>
+			<tag id="gender">female</tag>
+		</tags>
+		<parts>
+			<skinColor>0x8dc63f</skinColor>
+			<hairColor>0x8dc63f</hairColor>
+			<mouth>sheep</mouth>
+			<marks>pwolf1</marks>
+			<facial>lc_astronaut</facial>
+			<hair>fm16</hair>
+			<shirt>ppromqueen1e</shirt>
+			<pants>pegyptq</pants>
+			<pack>monkey</pack>
+			<item>empty</item>
+			<overshirt>probot1b</overshirt>
+			<overpants>ubelt2</overpants>
+			<eyeState>open</eyeState>
+		</parts>
+	</look>
+	<look>
+		<tags>
+			<tag id="name">toof</tag>
+			<tag id="gender">male</tag>
+		</tags>
+		<parts>
+			<skinColor>0x744B30</skinColor>
+			<hairColor>0x744B30</hairColor>
+			<mouth>fm7</mouth>
+			<marks>ptroll</marks>
+			<facial>hero2</facial>
+			<hair>fm13</hair>
+			<shirt>plagoon</shirt>
+			<pants>1</pants>
+			<pack>probot2</pack>
+			<item>empty</item>
+			<overshirt>probot2</overshirt>
+			<overpants>probot2</overpants>
+			<eyeState>squint</eyeState>
+		</parts>
+	</look>
+	<look>
+		<tags>
+			<tag id="name">viking1</tag>
+			<tag id="gender">female</tag>
+		</tags>
+		<parts>
+			<skinColor>0xFFD3BA</skinColor>
+			<hairColor>0x9B3300</hairColor>
+			<mouth>6</mouth>
+			<marks>empty</marks>
+			<facial>empty</facial>
+			<hair>viking_river</hair>
+			<shirt>astropes2</shirt>
+			<pants>sponsormh_skirt5</pants>
+			<pack>blueknight</pack>
+			<item>vikingaxe</item>
+			<overshirt>ad_httyd2_twinnecklace</overshirt>
+			<overpants>nw_belt01</overpants>
+			<eyeState>squint</eyeState>
+		</parts>
+	</look>
+</looks>

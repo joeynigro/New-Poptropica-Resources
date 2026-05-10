@@ -5830,7 +5830,7 @@
 			<Keyframe rotation="3.7" index="1" y="0.4" x="1.65"/>
 			<Keyframe rotation="7.5" index="2" y="0.8" x="3.35"/>
 			<Keyframe rotation="11.3" index="3" y="1.2" x="5"/>
-			<Keyframe rotation="15" index="4" y="1.6" x="=6.65"/>
+			<Keyframe rotation="15" index="4" y="1.6" x="6.65"/>
 			<Keyframe rotation="18.7" index="5" y="1.95" x="7.05"/>
 			<Keyframe rotation="22.5" index="6" y="2.35" x="8.45"/>
 			<Keyframe rotation="26.2" index="7" y="2.75" x="9.85"/>

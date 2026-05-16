@@ -1,0 +1,150 @@
+<merged>
+
+<file path="/custom.xml"><ad>
+	<offset>
+		<x>480</x>
+		<y>546</y>
+	</offset>
+</ad></file>
+
+<file path="/hits.xml"><hits>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00FF00" id="hiddenHit" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="char1">
+		<conversation>
+			<exchange>
+				<question>Why are you talking?</question>
+				<answer>I don't know!</answer>
+			</exchange>
+		</conversation>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc event="cat_following" id="cat" variant="creature">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xBFAE8B</skinColor>
+			<hairColor>0xBFAE8B</hairColor>
+			<mouth>cat</mouth>
+			<facial>cat</facial>
+			<hair>cat</hair>
+			<shirt>bare</shirt>
+			<pants>bare</pants>
+			<pack>cat</pack>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>346</x>
+			<y>940</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">24_Carrot_Main_Theme.mp3</asset>
+		<asset event="destroyed_rabbot" fade="true" loop="true">MocktropicaMainTheme.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">ghost_town.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="baseGround">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>billboard</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>960</right>
+		<bottom>640</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>-100</left>
+		<top>0</top>
+		<right>1160</right>
+		<bottom>556</bottom>
+	</bounds>
+	<assets>bundle.zip,backdropFinale.zip</assets>
+	<data>doors.xml,hits.xml,npcs.xml,custom.xml,sounds.xml</data>
+	<layers>
+		<layer event="destroyed_rabbot" id="backdrop">
+			<asset>backdropFinale.zip</asset>
+		</layer>
+		<layer>
+			<asset>backdrop.zip</asset>
+		</layer>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>50</x>
+			<y>556</y>
+		</defaultPosition>
+	</player>
+	<saveLocation>false</saveLocation>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="doorLeft">
+		<scene>game.scenes.carrot.mainStreet.MainStreet</scene>
+		<x>4030</x>
+		<y>940</y>
+		<direction>left</direction>
+		<label>
+			<text>GO LEFT</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>150</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="doorRight">
+		<scene>game.scenes.carrot.factory.Factory</scene>
+		<x>160</x>
+		<y>1669</y>
+		<direction>right</direction>
+		<label>
+			<text>GO RIGHT</text>
+			<type>exitRight</type>
+			<offset>
+				<x>-150</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

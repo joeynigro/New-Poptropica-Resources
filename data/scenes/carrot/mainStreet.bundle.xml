@@ -347,7 +347,7 @@
 <file path="/sounds.xml"><sounds>
 	<sound type="music">
 		<asset fade="true" exclusiveType="true" loop="true">24_Carrot_Main_Theme.mp3</asset>
-		<asset event="destroyed_rabbot" fade="true" exclusiveType="true" loop="false">MocktropicaMainTheme.mp3</asset>
+		<asset event="destroyed_rabbot" fade="true" loop="true">MocktropicaMainTheme.mp3</asset>
 	</sound>
 	
 	<sound type="ambient">

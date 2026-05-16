@@ -101,11 +101,11 @@
 </dialogs></file>
 
 <file path="/npcs.xml"><npcs>
-	<npc id="drone1" questMarker="start,gotItem_systemPassword">
+	<npc id="drone1">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xFAC6C1</skinColor>
-			<hairColor>0x332217</hairColor>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0x000000</hairColor>
 			<eyeState>open</eyeState>
 			<mouth>rabbitcon</mouth>
 			<facial>rabbitcon</facial>
@@ -126,15 +126,15 @@
 	<npc event="drone_freed_1" id="drone1">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xFAC6C1</skinColor>
-			<hairColor>0x332217</hairColor>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0x000000</hairColor>
 			<eyeState>open</eyeState>
-			<mouth>pshedevil</mouth>
-			<facial>rabbitcon2</facial>
+			<mouth>9</mouth>
+			<facial>empty</facial>
 			<hair>29</hair>
 			<shirt>19</shirt>
 			<pants>14</pants>
-			<eyes>eyes</eyes> 
+			<eyes>eyes</eyes>
 		</skin>
 	</npc>
 </npcs></file>

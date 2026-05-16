@@ -61,13 +61,13 @@
 	<npc id="char1">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0x5B3D2A</hairColor>
-			<mouth>14</mouth>
-			<marks>wwslouch01</marks>
+			<skinColor>0xF4D8B0</skinColor>
+			<hairColor>0x55402D</hairColor>
+			<mouth>scuba</mouth>
+			<marks>beardshort2</marks>
 			<hair>farmer</hair>
-			<shirt>ad_pranks_kaz</shirt>
-			<pants>wwworker</pants>
+			<shirt>farmer</shirt>
+			<pants>1</pants>
 			<item>pitchfork</item>
 			<eyeState>open</eyeState>
 		</skin>
@@ -83,13 +83,13 @@
 	<npc event="destroyed_rabbot" id="char1">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0x5B3D2A</hairColor>
+			<skinColor>0xF4D8B0</skinColor>
+			<hairColor>0x55402D</hairColor>
 			<mouth>15</mouth>
 			<marks>beardshort2</marks>
 			<hair>farmer</hair>
 			<shirt>farmer</shirt>
-			<pants>wwworker</pants>
+			<pants>1</pants>
 			<item>pitchfork</item>
 			<eyeState>open</eyeState>
 		</skin>

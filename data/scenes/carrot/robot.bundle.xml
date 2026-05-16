@@ -75,7 +75,7 @@
 			<mouth>drhare</mouth>
 			<marks></marks>
 			<facial>drhare</facial>
-			<hair>empty</hair>
+			<hair>bald</hair>
 			<shirt>drhare</shirt>
 			<pants>1</pants>
 			<pack>drhare</pack>
@@ -93,17 +93,17 @@
 <y>0</y>
 </range>
 	</npc>
-	<npc id="drone4" questMarker="start,rabbot_launch">
+	<npc id="drone4">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0x743D2B</skinColor>
+			<skinColor>0xB77E48</skinColor>
 			<hairColor>0x000000</hairColor>
 			<mouth>rabbitcon</mouth>
 			<marks></marks>
 			<facial>rabbitcon</facial>
-			<hair>6</hair>
+			<hair>35</hair>
 			<shirt>22</shirt>
-			<pants>sponsornm2guard</pants>
+			<pants>2</pants>
 			<pack></pack>
 			<item></item>
 			<overshirt></overshirt>
@@ -123,33 +123,14 @@
 	<npc event="drone_freed_4" id="drone4">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0x743D2B</skinColor>
+			<skinColor>0xB77E48</skinColor>
 			<hairColor>0x000000</hairColor>
-			<mouth>6</mouth>
-			<marks></marks>
-			<facial>rabbitcon2</facial>
-			<hair>6</hair>
-			<shirt>22</shirt>
-			<pants>sponsornm2guard</pants>
-			<pack></pack>
-			<item></item>
-			<overshirt></overshirt>
-			<overpants></overpants>
-			<eyes>eyes</eyes>
-			<eyeState>open</eyeState>
-		</skin>
-	</npc>
-	<npc event="drone_freed_4" id="drone4">
-		<skin>
-			<gender>male</gender>
-			<skinColor>0x743D2B</skinColor>
-			<hairColor>0x000000</hairColor>
-			<mouth>6</mouth>
+			<mouth>5</mouth>
 			<marks></marks>
 			<facial>empty</facial>
-			<hair>6</hair>
+			<hair>35</hair>
 			<shirt>22</shirt>
-			<pants>sponsornm2guard</pants>
+			<pants>2</pants>
 			<pack></pack>
 			<item></item>
 			<overshirt></overshirt>

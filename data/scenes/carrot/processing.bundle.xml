@@ -107,15 +107,15 @@
 	<npc id="drone2">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xCE8058</skinColor>
+			<skinColor>0xB77E48</skinColor>
 			<hairColor>0x000000</hairColor>
-			<eyeState>open</eyeState>
+			<eyeState>squint</eyeState>
 			<mouth>rabbitcon</mouth>
 			<marks></marks>
 			<facial>rabbitcon</facial>
 			<hair>39</hair>
 			<shirt>23</shirt>
-			<pants>hero5</pants>
+			<pants>9</pants>
 			<pack></pack>
 			<item></item>
 			<overshirt></overshirt>
@@ -134,15 +134,15 @@
 	<npc event="drone_freed_2" id="drone2">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xCE8058</skinColor>
+			<skinColor>0xB77E48</skinColor>
 			<hairColor>0x000000</hairColor>
-			<eyeState>open</eyeState>
-			<mouth>sponsor_mh</mouth>
+			<eyeState>squint</eyeState>
+			<mouth>11</mouth>
 			<marks></marks>
-			<facial>rabbitcon2</facial>
+			<facial>empty</facial>
 			<hair>39</hair>
 			<shirt>23</shirt>
-			<pants>hero5</pants>
+			<pants>9</pants>
 			<pack></pack>
 			<item></item>
 			<overshirt></overshirt>
@@ -153,15 +153,15 @@
 	<npc id="drone3">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xDBAD6D</skinColor>
-			<hairColor>0x000000</hairColor>
-			<eyeState>squint</eyeState>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0xEABB00</hairColor>
+			<eyeState>open</eyeState>
 			<mouth>rabbitcon</mouth>
 			<marks></marks>
 			<facial>rabbitcon</facial>
 			<hair>7</hair>
 			<shirt>26</shirt>
-			<pants>patron1</pants>
+			<pants>1</pants>
 			<pack></pack>
 			<item></item>
 			<overshirt></overshirt>
@@ -180,15 +180,15 @@
 	<npc event="drone_freed_3" id="drone3">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xDBAD6D</skinColor>
-			<hairColor>0x000000</hairColor>
-			<eyeState>squint</eyeState>
-			<mouth>1</mouth>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0xEABB00</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>15</mouth>
 			<marks></marks>
-			<facial>rabbitcon2</facial>
+			<facial>empty</facial>
 			<hair>7</hair>
 			<shirt>26</shirt>
-			<pants>patron1</pants>
+			<pants>1</pants>
 			<pack></pack>
 			<item></item>
 			<overshirt></overshirt>

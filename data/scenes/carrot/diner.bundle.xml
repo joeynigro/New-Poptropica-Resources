@@ -84,13 +84,13 @@
 	<npc id="char1">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0x332217</hairColor>
-			<mouth>hades</mouth>
+			<skinColor>0xF4D8B0</skinColor>
+			<hairColor>0x55402D</hairColor>
+			<mouth>14</mouth>
 			<marks>shadow2</marks>
 			<hair>dinercook</hair>
 			<shirt>1</shirt>
-			<pants>stor_winter_jack</pants>
+			<pants>2</pants>
 			<item>spatula</item>
 			<overshirt>dinercook</overshirt>
 			<eyeState>open</eyeState>
@@ -107,25 +107,24 @@
 	<npc event="destroyed_rabbot" id="char1">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0x332217</hairColor>
-			<mouth>wwtrader</mouth>
+			<skinColor>0xF4D8B0</skinColor>
+			<hairColor>0x55402D</hairColor>
+			<mouth>15</mouth>
 			<marks>shadow2</marks>
 			<hair>dinercook</hair>
 			<shirt>1</shirt>
-			<pants>stor_winter_jack</pants>
+			<pants>2</pants>
 			<item>spatula</item>
 			<overshirt>dinercook</overshirt>
 			<eyeState>open</eyeState>
 		</skin>
 	</npc>
-	<npc id="waitress" questMarker="talked_with_mayor,talked_with_waitress">
+	<npc id="waitress">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0xFFE97F</hairColor>
-			<mouth>mime</mouth>
-			<marks>astroprincess</marks>
+			<skinColor>0xFFD7BB</skinColor>
+			<hairColor>0xF2C100</hairColor>
+			<mouth>10</mouth>
 			<hair>dinerwaitress</hair>
 			<shirt>dinerwaitress</shirt>
 			<pants>dinerwaitress</pants>
@@ -145,10 +144,9 @@
 	<npc event="destroyed_rabbot" id="waitress">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0xFFE97F</hairColor>
-			<mouth>ad_dork</mouth>
-			<marks>astroprincess</marks>
+			<skinColor>0xFFD7BB</skinColor>
+			<hairColor>0xF2C100</hairColor>
+			<mouth>9</mouth>
 			<hair>dinerwaitress</hair>
 			<shirt>dinerwaitress</shirt>
 			<pants>dinerwaitress</pants>

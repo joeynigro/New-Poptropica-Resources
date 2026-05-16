@@ -61,13 +61,13 @@
 </dialogs></file>
 
 <file path="/npcs.xml"><npcs>
-	<npc id="owner" questMarker="talked_with_mayor,cat_returned">
+	<npc id="owner">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xB17251</skinColor>
-			<hairColor>0x5B3D2A</hairColor>
+			<skinColor>0xB77E48</skinColor>
+			<hairColor>0x55402D</hairColor>
 			<eyes></eyes>
-			<mouth>skimask</mouth>
+			<mouth>19</mouth>
 			<marks></marks>
 			<facial></facial>
 			<hair>1</hair>
@@ -93,29 +93,43 @@
 	<npc event="cat_following" id="owner">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xB17251</skinColor>
-			<hairColor>0x5B3D2A</hairColor>
-			<mouth>6</mouth>
+			<skinColor>0xB77E48</skinColor>
+			<hairColor>0x55402D</hairColor>
+			<eyes></eyes>
+			<mouth>18</mouth>
+			<marks></marks>
+			<facial></facial>
 			<hair>1</hair>
 			<shirt>3</shirt>
 			<pants>4</pants>
+			<pack></pack>
 			<item>screwdriver</item>
 			<overshirt>clerk</overshirt>
+			<overpants></overpants>
+			<lineColor></lineColor>
 			<eyeState>open</eyeState>
+			<lineWidth></lineWidth>
 		</skin>
 	</npc>
 	<npc event="cat_returned" id="owner">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xB17251</skinColor>
-			<hairColor>0x5B3D2A</hairColor>
-			<mouth>6</mouth>
+			<skinColor>0xB77E48</skinColor>
+			<hairColor>0x55402D</hairColor>
+			<eyes></eyes>
+			<mouth>18</mouth>
+			<marks></marks>
+			<facial></facial>
 			<hair>1</hair>
 			<shirt>3</shirt>
 			<pants>4</pants>
+			<pack></pack>
 			<item>screwdriver</item>
 			<overshirt>clerk</overshirt>
+			<overpants></overpants>
+			<lineColor></lineColor>
 			<eyeState>open</eyeState>
+			<lineWidth></lineWidth>
 		</skin>
 	</npc>
 	<npc event="cat_following" id="cat" variant="creature">

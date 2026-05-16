@@ -119,12 +119,12 @@
 		</animations>
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xB17251</skinColor>
-			<hairColor>0x000000</hairColor>
+			<skinColor>0xB77E48</skinColor>
+			<hairColor>0x4A2C17</hairColor>
 			<mouth>14</mouth>
 			<hair>mayor</hair>
 			<shirt>mayor</shirt>
-			<pants>ss</pants>
+			<pants>1</pants>
 			<eyeState>squint</eyeState>
 		</skin>
 		<position>
@@ -142,12 +142,12 @@
 		</animations>
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xB17251</skinColor>
-			<hairColor>0x000000</hairColor>
+			<skinColor>0xB77E48</skinColor>
+			<hairColor>0x4A2C17</hairColor>
 			<mouth>15</mouth>
 			<hair>mayor</hair>
 			<shirt>mayor</shirt>
-			<pants>ss</pants>
+			<pants>1</pants>
 			<eyeState>squint</eyeState>
 		</skin>
 	</npc>
@@ -157,14 +157,13 @@
 		</animations>
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xD2996C</skinColor>
-			<hairColor>0x000000</hairColor>
-			<mouth>shadycop</mouth>
-			<marks>rowboatman</marks>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0x4A2C17</hairColor>
+			<mouth>17</mouth>
+			<marks>shadow1</marks>
 			<hair>hobo</hair>
 			<shirt>hobo</shirt>
 			<pants>spanishcon</pants>
-			<pack>hiker</pack>
 			<eyeState>squint</eyeState>
 		</skin>
 		<position>
@@ -181,9 +180,9 @@
 	<npc id="char3">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0x713E10</hairColor>
-			<mouth>prisoner1</mouth>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0x4A2C17</hairColor>
+			<mouth>17</mouth>
 			<hair>gasdude</hair>
 			<shirt>gasdude</shirt>
 			<pants>gasdude</pants>
@@ -201,9 +200,9 @@
 	<npc event="destroyed_rabbot" id="char3">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xFFD3BA</skinColor>
-			<hairColor>0x713E10</hairColor>
-			<mouth>6</mouth>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0x4A2C17</hairColor>
+			<mouth>haroldmews</mouth>
 			<hair>gasdude</hair>
 			<shirt>gasdude</shirt>
 			<pants>gasdude</pants>
@@ -235,13 +234,13 @@
 	<npc id="sleepyBird" event="destroyed_rabbot">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xCE8058</skinColor>
+			<skinColor>0xB77E48</skinColor>
 			<hairColor>0x000000</hairColor>
-			<mouth>sponsor_mh</mouth>
+			<mouth>11</mouth>
 			<hair>39</hair>
 			<shirt>23</shirt>
-			<pants>hero5</pants>
-			<eyeState>open</eyeState>
+			<pants>9</pants>
+			<eyeState>squint</eyeState>
 		</skin>
 		<position>
 			<x>160</x>
@@ -255,9 +254,9 @@
 	<npc id="shySky" event="destroyed_rabbot">
 		<skin>
 			<gender>female</gender>
-			<skinColor>0xFAC6C1</skinColor>
-			<hairColor>0x332217</hairColor>
-			<mouth>pshedevil</mouth>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0x000000</hairColor>
+			<mouth>9</mouth>
 			<hair>29</hair>
 			<shirt>19</shirt>
 			<pants>14</pants>
@@ -275,12 +274,12 @@
 	<npc id="crazyComet" event="destroyed_rabbot">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0x743D2B</skinColor>
+			<skinColor>0xB77E48</skinColor>
 			<hairColor>0x000000</hairColor>
-			<mouth>6</mouth>
-			<hair>6</hair>
+			<mouth>5</mouth>
+			<hair>35</hair>
 			<shirt>22</shirt>
-			<pants>sponsornm2guard</pants>
+			<pants>2</pants>
 			<eyeState>open</eyeState>
 		</skin>
 		<position>
@@ -295,13 +294,13 @@
 	<npc id="magicSocks" event="destroyed_rabbot">
 		<skin>
 			<gender>male</gender>
-			<skinColor>0xDBAD6D</skinColor>
-			<hairColor>0x000000</hairColor>
-			<mouth>1</mouth>
+			<skinColor>0xFFE271</skinColor>
+			<hairColor>0xEABB00</hairColor>
+			<mouth>15</mouth>
 			<hair>7</hair>
 			<shirt>26</shirt>
-			<pants>patron1</pants>
-			<eyeState>squint</eyeState>
+			<pants>1</pants>
+			<eyeState>open</eyeState>
 		</skin>
 		<position>
 			<x>830</x>

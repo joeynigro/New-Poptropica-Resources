@@ -16,47 +16,34 @@
 <file path="/dialog.xml"><dialogs>
 	<character id="player">
 		<statement id="present_cat">I found your cat!</statement>
-		<statement linkEntityId="owner" id="where" link="farmhouse">Where did you last see your cat?</statement>
 	</character>
 	<character id="owner">
 		<conversation>
 			<exchange>
-				<question>Hi, do you know what happened around here?</question>
-				<answer linkEntityId="player" link="where">I have no idea. My cat, Whiskers, disappeared with everything else!</answer>
+				<question>Who are you?</question>
+				<answer>I'm Charlie.</answer>
+			</exchange>
+			<exchange>
+				<question>Do you know what happened around here?</question>
+				<answer>I lost my cat, Whiskers. I can't find her anywhere.</answer>
+			</exchange>
+			<exchange>
+				<question>Where did you see her last?</question>
+				<answer>Well, she used to hang out by the old farmhouse.</answer>
 			</exchange>
 		</conversation>
-		<statement id="farmhouse">She used to hang out by the old farmhouse where I'd bring her milk. If you find her I'll give you a reward.</statement>
 		<conversation event="cat_returned">
 			<exchange>
 				<question>Whiskers looks happy to be home.</question>
-				<answer>Yes, thank you so much for finding him!</answer>
-			</exchange>
-			<exchange>
-				<question>Is there anything else you need?</question>
-				<answer>It sure would help if you could figure out where all the carrots and kids disappeared to!</answer>
-			</exchange>	
-		</conversation>
-		<conversation event="destroyed_rabbot">
-			<exchange>
-				<question>Whiskers looks happy to be home.</question>
-				<answer>Yes, thank you so much for finding him!</answer>
+				<answer>Yes, thank you so much for finding her!</answer>
 			</exchange>
 			<exchange>
 				<question>Is there anything else you need?</question>
 				<answer>Nope. You've helped me and the whole town already!</answer>
-			</exchange>						
-		</conversation>	
-		<statement id="cat_following" triggerEventArgs="cat_returned" link="crowbar_give" triggerEvent="completeEvent">Whiskers! Come here, you little rascal!</statement>
-		<statement id="crowbar_give" triggerEventArgs="crowbar" triggerEvent="giveItem" link="anything_else">Thanks for your help. Here's a crowbar, they always come in handy.</statement>
-		<conversation id="anything_else">
-			<exchange>
-				<question>Is there anything else you need?</question>
-				<answer>It sure would help if you could figure out where all the carrots and kids disappeared to!</answer>
-			</exchange>
+			</exchange>	
 		</conversation>
-	</character>
-	<character id="char3">
-		<statement>I'm enjoying my freedom. Thanks!</statement>
+		<statement id="cat_following" link="crowbar_give" triggerEvent="completeEvent" triggerEventArgs="cat_returned">Whiskers!!! Come here, you little rascal!</statement>
+		<statement id="crowbar_give" triggerEvent="giveItem" triggerEventArgs="crowbar">Thank you! I can't afford to give you much, but maybe you could use this crowbar.</statement>
 	</character>
 </dialogs></file>
 

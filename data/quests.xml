@@ -1,0 +1,13 @@
+<quests>
+	<quest id="test_quest">
+		<startEvent island="hub">start_amelias_quest</startEvent>
+		<completeEvent island="hub">complete_amelias_quest</completeEvent>
+		<startPopup>scenes/hub/ameliaHouse/start_amelia_cargo.zip</startPopup>
+		<completePopup>scenes/hub/ameliaHouse/end_amelia_cargo.zip</completePopup>
+		<rewards>7396</rewards>
+		<step id="step1">
+			<startEvent island="hub">start_amelias_quest</startEvent>
+			<completeEvent island="hub">got_cargo</completeEvent>
+		</step>
+	</quest>
+</quests>

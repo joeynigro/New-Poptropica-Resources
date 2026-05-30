@@ -1,0 +1,266 @@
+<merged><file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCC6600" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xF4DFA3" id="rails" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFF66FF" id="rug" platform="true">
+		<component type="platform"/>
+	</hit>
+		<hit color="0x9900FF" id="toys" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFF0000" id="bounce1" platform="true">
+		<component type="bounce">
+					<velocity>
+						<x>0</x>
+						<y>-1000</y>
+					</velocity>
+				</component>
+	</hit>
+	<hit color="0x0099FF" id="bounce2" platform="true">
+		<component type="bounce">
+					<velocity>
+						<x>0</x>
+						<y>-1500</y>
+					</velocity>
+				</component>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file><file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="must" link="ido" linkEntityId="amelia">You must really like unicorns, huh?</statement>
+		<statement id="boxInteraction">Wonder where all these shipments are headed.</statement>
+		<statement id="dishInteraction">Amelia's kind of a slob...</statement>
+		<statement id="wormInteraction">The heck is that thing?</statement>
+		<statement id="bedInteraction">This is all very...extra.</statement>
+	</character>
+	<character id="amelia">
+		<statement link="business">Welcome to my clubhouse! I have a job for you, a very secret job.</statement>
+		<statement id="business"  triggerEventArgs="tea" triggerEvent="triggerEvent" link="tea">But before we talk business, would you like some tea?</statement>
+		<conversation event="tea">
+			<exchange>
+				<question triggerEventArgs="setPart-item-tea" triggerEvent="triggerEvent">Sure, I'd like some tea.</question>
+				<answer>Here you are, it's tea all the way from Pelican Rock. I have to smuggle it out, ha!</answer>
+			</exchange>
+			<exchange>
+				<question>So this is where you live?</question>
+				<answer>Yep, right above my shop. It's small but it suits me.</answer>
+			</exchange>
+			<exchange>
+				<question>What's the job?</question>
+				<answer link="request">I've lost a shipment of extremely important cargo.</answer>
+			</exchange>
+		</conversation>
+		<statement id="request" link="response">Will you retrieve it for me? It's a secret, so bring it back to my clubhouse here.</statement>
+		<conversation id="response">
+			<exchange>
+				<question triggerEventArgs="start_amelias_quest,true" triggerEvent="triggerEvent" link="show" linkEntityId="amelia">Sure, I'll find it for you.</question>
+			</exchange>
+			<exchange>
+				<question>I don't have time right now.</question>
+			</exchange>
+		</conversation>
+		<statement triggeredByEvent="cancel_quest" triggerEventArgs="request" triggerEvent="triggerEvent">Unfortunately, I will need certain guarantees you won't just bail on me after I tell you my secret.</statement>
+		<statement id="show" triggerEvent="giveItem" triggerEventArgs="ameliaCargo" link="start_amelias_quest">Great! It should look a little something like this.</statement>
+		<conversation event="start_amelias_quest">
+			<exchange>
+				<question>Where will I find the missing cargo?</question>
+				<answer link="pirates" triggerEventArgs="ameliaCargo" triggerEvent="giveItem">The delivery was lost over Survival Island.</answer>
+			</exchange>
+			<exchange>
+				<question>What's in the cargo?</question>
+				<answer>It's secret, that's all I can say.</answer>
+			</exchange>
+			<exchange>
+				<question>About my reward.</question>
+				<answer>I'll give you a bunch of credits and an item for your trouble!</answer>
+			</exchange>
+		</conversation>
+		<statement id="pirates">I have a problem with sky pirates. Well, really one sky pirate...</statement>
+		<conversation event="got_cargo">
+			<exchange>
+				<question triggerEventArgs="ameliaCargo, amelia" triggerEvent="takeItem">I found your... very magical cargo...</question>
+				<answer link="must" linkEntityId="player" triggerEventArgs="setAnim-amelia-Embarrassed" triggerEvent="triggerEvent">Oh... oh you saw it? How embarrassing!</answer>
+			</exchange>
+		</conversation>
+		<statement id="ido" triggerFirst="true" triggerEventArgs="setAnim-amelia-Enamored" triggerEvent="triggerEvent" link="dumb">Oh I do, I do love unicorns.</statement>
+		<statement id="dumb" triggerFirst="true" triggerEventArgs="open_door" triggerEvent="triggerEvent" link="here">I know it's dumb but I love them!</statement>
+		<statement id="here" triggerEventArgs="complete_amelias_quest, true" triggerEvent="triggerEvent">Here, for your trouble!</statement>
+		<statement id="delivered">I had your decoration delivered to your clubhouse, check it out there. It's so cute!</statement>
+		<conversation event="complete_amelias_quest">
+			<exchange>
+				<question>Unicorns are pretty cute.</question>
+				<answer link="dont">Aren't they?! With their little hooves and ears and pokey horns!</answer>
+			</exchange>
+			<exchange>
+				<question>Unicorns are pretty dorky.</question>
+				<answer link="dont">But I can't help myself!</answer>
+			</exchange>
+		</conversation>
+		<statement id="dont">Don't tell anyone, please!</statement>
+		<statement id="teaInteraction">I collect tea from all across Poptropica. Right now my favorite is Dragon leaf from Fairy Tale Island.</statement>
+		<conversation id="deedInteraction">
+			<exchange>
+				<question>You own Home island?</question>
+				<answer link="setupShop">Yeah, I bought it way back with all the credits I got from adventuring.</answer>
+			</exchange>
+		</conversation>
+		<statement id="setupShop">Always wanted to set up shop and outfit the people of Poptropica.</statement>
+		<statement id="trophyInteraction">Won the Great Race that year.</statement>
+		<statement id="roomInteraction">Yeah, my room's a bit of… a mess.</statement>
+		<statement id="post_quest" triggerEventArgs="post_responses" triggerEvent="triggerEvent" link="post_responses">Welcome back, would you like some tea?</statement>
+		<conversation event="post_responses">
+			<exchange>
+				<question triggerEventArgs="setPart-item-tea" triggerEvent="triggerEvent">Sure, I'd like some tea.</question>
+				<answer>Here you are. This tea comes from trees found right here on the island!</answer>
+			</exchange>
+			<exchange>
+				<question>Seen any unicorns lately?</question>
+				<answer>Ha, ha, very funny. But yes! There are whole herds of them on Fairy Tale!</answer>
+			</exchange>
+			<exchange>
+				<question>Anything new going on?</question>
+				<answer>I may have some more quests for you in the future. I'll come find you when I do.</answer>
+			</exchange>
+		</conversation>
+	</character>
+</dialogs></file>
+	<file path="/npcs.xml"><npcs>
+	<!--  -->
+		<npc id="amelia">
+		<animations random="false" loop="true">
+			<animation>game.data.animation.entity.character.Drink</animation>
+			<animation duration="60">game.data.animation.entity.character.Sit</animation>
+		</animations>
+			<skin>
+				<gender>female</gender>
+				<skinColor>0xfdd9c8</skinColor>
+				<hairColor>0xf5894e</hairColor>
+				<eyeState>open</eyeState>
+				<mouth>mthfishmonger</mouth>
+				<hair>home_crash</hair>
+				<shirt>home_crash</shirt>
+				<pants>adams</pants>
+				<overshirt>home_crash</overshirt>
+				<item>tea</item>
+			</skin>
+			<scale>.52</scale>
+			<direction>left</direction>
+			<position>
+				<x>790</x> <!-- from left edge of ad unit -->
+				<y>975</y> <!-- add 5 pixels to custom Y value -->
+			</position>
+			<faceSpeaker>false</faceSpeaker>
+   		</npc>
+		<npc id="amelia" event="got_cargo">
+		<animations>
+			<animation></animation>
+		</animations>
+			<scale>.52</scale>
+			<direction>left</direction>
+			<position>
+				<x>1480</x> <!-- from left edge of ad unit -->
+				<y>1000</y> <!-- add 5 pixels to custom Y value -->
+			</position>
+			<faceSpeaker>true</faceSpeaker>
+		</npc>
+	</npcs></file>
+	<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" baseVolume="0.4" loop="true">grand_adventure.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_wood_plank_01.mp3, ls_wood_plank_02.mp3</asset>
+		<asset id="wood">ls_carpet_wood_01.mp3, ls_carpet_wood_02.mp3</asset>
+		<asset id="bounce1">ls_spring_misc_furniture_01.mp3</asset>
+		<asset id="bounce2">ls_bounce_01.mp3, ls_bounce_02.mp3, ls_bounce_03.mp3</asset>
+		<asset id="rails">ls_general_metal_01.mp3, ls_general_metal_02.mp3</asset>
+		<asset id="toys">ls_squeak_01.mp3</asset>
+		<asset id="rug">ls_carpet_01.mp3, ls_carpet_02.mp3,</asset>
+
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="floor">fs_carpet_wood_01.mp3, fs_carpet_wood_02.mp3, fs_carpet_wood_03.mp3, fs_carpet_wood_04.mp3</asset>
+		<asset id="wood">fs_wood_plank_01.mp3, fs_wood_plank_02.mp3, fs_wood_plank_03.mp3, fs_wood_plank_04.mp3</asset>
+		<asset id="rails">fs_general_metal_01.mp3, fs_general_metal_02.mp3, fs_general_metal_03.mp3</asset>
+		<asset id="toys">fs_squeak_01.mp3, fs_squeak_02.mp3, fs_squeak_03.mp3</asset>
+		<asset id="rug">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp4</asset>
+	</sound>
+		<sound type="effects">
+		<asset triggeredByEvent="over">ui_roll_over.mp3</asset>
+		<asset triggeredByEvent="down">ui_button_click.mp3</asset>
+		<asset triggeredByEvent="page_turn" baseVolume="0.2">door_pressure_short_01.mp3, door_pressure_short_02.mp3</asset>
+		<asset triggeredByEvent="magic">poof_02.mp3</asset>
+		<asset triggeredByEvent="dooropen">door_knob_turn_open_01.mp3</asset>
+		<asset triggeredByEvent="sparkle">sparkle_01.mp3</asset>
+		<asset triggeredByEvent="fire">fire_burst_01.mp3</asset>
+		<asset triggeredByEvent="spin">gears_04a.mp3</asset>
+
+	</sound>
+</sounds></file><file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2800</right>
+		<bottom>1066</bottom>
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>2826</right>
+		<bottom>1066</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,sounds.xml,hits.xml</data>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive2.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<scale>.52</scale>
+		<defaultPosition>
+			<x>382</x>
+			<y>975</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+	<saveLocation>false</saveLocation>
+</scene></file><file path="/doors.xml"><doors>
+	<door id="door_exit">
+		<scene>game.scenes.hub.store.Store</scene>
+		<x>2813</x>
+		<y>550</y>
+		<label>
+			<text>Exit</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file></merged>

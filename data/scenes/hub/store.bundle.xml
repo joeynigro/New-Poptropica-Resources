@@ -1,0 +1,148 @@
+<merged><file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCC6600" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file><file path="/dialog.xml"><dialogs>
+	<character id="amelia_store">
+		<statement link="questions_arcade">Welcome to the store! How can I help you?</statement>
+		<statement id="myth2" link="myth3">Get a cute little pet to follow you around and customize it in the Pets Section!</statement>
+		<statement id="myth3">And you'll find all sorts of cool stuff on the store floor, from house decorations to powers!</statement>
+		<conversation id="questions_arcade">
+			<exchange>
+				<question>What can I find here?</question>
+				<answer link="myth2">You'll find everything you need to customize your look in the Gear section.</answer>
+			</exchange>
+			<exchange>
+				<question>How do I earn more credits?</question>
+				<answer>Log back in each day for a reward! Complete quests and islands and keep an eye out for special events on your map!</answer>
+			</exchange>
+			<exchange>
+				<question>When will you get new stuff?</question>
+				<answer>I update the items here often, so check back each week for new things! I'll keep some of the coolest items out on the floor longer.</answer>
+			</exchange>
+		</conversation>
+		<statement event="runToStore">The door up to my room is on the far right. I'll be right up in a moment.</statement>
+		<statement event="got_cargo" link="up">Great you found it!</statement>
+		<statement id="up">Bring it up to my room, I'll be right up in a moment.</statement>
+		</character>
+</dialogs></file>
+	<file path="/npcs.xml"><npcs>
+	<!--  -->
+	<npc id="amelia_store">
+			<skin>
+				<gender>female</gender>
+				<skinColor>0xfdd9c8</skinColor>
+				<hairColor>0xf5894e</hairColor>
+				<eyeState>open</eyeState>
+				<mouth>mthfishmonger</mouth>
+				<hair>home_crash</hair>
+				<shirt>home_crash</shirt>
+				<pants>adams</pants>
+				<overshirt>home_crash</overshirt>
+			</skin>
+		<direction>left</direction>
+		<position>
+			<x>1297</x> <!-- from left edge of ad unit -->
+			<y>515</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>true</faceSpeaker>
+		<scale>.52</scale>
+		</npc></npcs></file>
+	<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" baseVolume="0.7" loop="true">grand_adventure.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_wood_plank_01.mp3, ls_wood_plank_02.mp3</asset>
+		<asset id="wood">ls_carpet_wood_01.mp3, ls_carpet_wood_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="floor">fs_carpet_wood_01.mp3, fs_carpet_wood_02.mp3, fs_carpet_wood_03.mp3, fs_carpet_wood_04.mp3</asset>
+		<asset id="wood">fs_wood_plank_01.mp3, fs_wood_plank_02.mp3, fs_wood_plank_03.mp3, fs_wood_plank_04.mp3</asset>
+	</sound>
+		<sound type="effects">
+		<asset triggeredByEvent="over">ui_roll_over.mp3</asset>
+		<asset triggeredByEvent="down">ui_button_click.mp3</asset>
+		<asset triggeredByEvent="page_turn" baseVolume="0.2">door_pressure_short_01.mp3, door_pressure_short_02.mp3</asset>
+	</sound>
+</sounds></file><file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>3000</right>
+		<bottom>640</bottom>
+	</cameraLimits>
+	<bounds>
+		<left>50</left>
+		<top>0</top>
+		<right>2950</right>
+		<bottom>640</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,sounds.xml,hits.xml</data>
+	<assets>bundle.zip</assets>
+	<layers>
+
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+
+	</layers>
+	<player>
+		<scale>.52</scale>
+		<defaultPosition>
+			<x>882</x>
+			<y>575</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+	<saveLocation>false</saveLocation>
+</scene></file><file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.hub.town.Town</scene>
+		<x>1650</x>
+		<y>832</y>
+		<label>
+			<text>Exit</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="door2">
+		<scene>game.scenes.hub.ameliaHouse.AmeliaHouse</scene>
+		<x>385</x>
+		<y>980</y>
+		<label>
+			<text>Enter</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file></merged>

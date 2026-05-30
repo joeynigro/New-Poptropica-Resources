@@ -1,0 +1,378 @@
+
+<merged><file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="gotIt" triggerEventArgs="give_back_phone" triggerEvent="triggerEvent">Got it!</statement>
+		<statement id="locked">Hmm. Not open yet...</statement>
+		<statement linkEntityId="forrest" id="need" link="we_need">So what do you need?</statement>
+		<statement linkEntityId="forrest" id="i_spy" link="def">Can I be a spy?</statement>
+	</character>
+	<character id="costume">
+		<statement id="ask_tutorial" link="tutorial">Great to see you again. Do you want to learn how to costumize?</statement>
+		<conversation id="tutorial">
+			<exchange>
+				<question triggerEventArgs="start_tutorial" triggerEvent="triggerEvent">Yes.</question>
+			</exchange>
+			<exchange>
+				<question triggerEventArgs="no_tutorial" triggerEvent="triggerEvent">No thanks.</question>
+				<answer>Make sure you save your current look if you don't want to lose any of the parts.</answer>
+			</exchange>
+		</conversation>
+		<statement>Make sure you save your current look if you don't want to lose any of the parts.</statement>
+		<statement id="tutorial_done">Make sure you save your current look if you don't want to lose any of the parts.</statement>
+    </character>
+	<character id="forrest">
+		<statement id="comere" link="spies">hey kid, come over here for a second. I want to talk to you about an amazing opportunity!</statement>
+		<statement linkEntityId="player" id="spies" link="need">Wicked Cool News relies on spies to get us inside information -- but we know almost nothing about the Mighty Action Force movie!</statement>
+		<statement linkEntityId="player" id="we_need" link="i_spy">We need to be the first site to post what Omegon looks like before the trailer premieres. The information has to be scattered around here somewhere.</statement>
+		<statement id="def" triggerEventArgs="givePhone" triggerEvent="triggerEvent">Definitely. Here's a phone. Get photos of Omegon and I'll help you put together an amazing costume!</statement>
+		<statement id="get_photos">Get photos of Omegon and I'll help you put together an amazing costume!</statement>
+		<statement id="scoop" link="deal">What a scoop! This is going up right away -- with a spoiler alert, obviously.</statement>
+		<statement id="deal" triggerEventArgs="getCostume" triggerEvent="triggerEvent">I didn't forget our deal. Give me a minute and I'll whip up a prize-winning costume for you.</statement>
+		<statement id="here_you_go" triggerEventArgs="giveCostume" triggerEvent="triggerEvent">Here you go!</statement>
+		<statement id="nice_costume">That's a really nice costume!</statement>
+    </character>
+	<character id="stan">
+		<conversation>
+			<exchange>
+				<question>Any idea where I can find out what Omegon looks like in the Mighty Action Force movie?</question>
+				<answer>Geez, another one? Someone else was just here trying to sell me on behind-the-scenes shots of Omegon.</answer>
+			</exchange>
+			<exchange>
+				<question>Who else was looking for Omegon?</question>
+				<answer>Sasha Capone -- the webmaster of Wicked Cool News' biggest rival, Totally Rad News.</answer>
+			</exchange>
+			<exchange>
+				<question>What does she look like?</question>
+				<answer triggerEventArgs="turn_stan" link="there" triggerEvent="triggerEvent">Blonde hair, glasses, ponytail, and a red leather jacket.</answer>
+			</exchange>
+		</conversation>
+		<statement id="there" triggerEventArgs="show_sasha" triggerEvent="triggerEvent">There she is over there.</statement>
+		<statement id="everyone">Everyone wants to know what Omegon looks like.</statement>
+    </character>
+	<character id="pizza">
+		<statement>This costume finally came in handy. They let me in for free!</statement>
+    </character>
+	<character id="eahero1">
+		<statement>These miniatures are amazing!</statement>
+    </character>
+	<character id="sasha">
+		<statement>This conference is just loaded with Rad News.</statement>
+    </character>
+</dialogs></file><file path="/doors.xml"><doors>
+	<door id="doorHallway">
+	<scene>game.scenes.con2.hallways.Hallways</scene>
+		<x>50</x>
+		<y>570</y>
+		<direction>right</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="doorExhibit">
+		<scene>game.scenes.con2.adStreet3.AdStreet3</scene>
+		<x>200</x>
+		<y>1000</y>
+		<direction>left</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.con2.expo.Expo</scene>
+				<x>3350</x>
+				<y>950</y>
+				<direction>left</direction>
+			</door>
+			<door id="exitRight">		
+				<scene>game.scenes.con2.exhibit.Exhibit</scene>
+				<x>2600</x>
+				<y>911</y>
+				<direction>left</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	<door id="doorDemo">
+		<scene>game.scenes.con2.adMixed2.AdMixed2</scene>
+		<x>1700</x>
+		<y>1000</y>
+		<direction>left</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitRight">
+				<scene>game.scenes.con2.expo.Expo</scene>
+				<x>750</x>
+				<y>950</y>
+				<direction>right</direction>
+			</door>
+			<door id="exitLeft">		
+				<scene>game.scenes.con2.demo.Demo</scene>
+				<x>419</x>
+				<y>932</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	<door id="doorTheater">
+		<scene>game.scenes.con2.adMixed.AdMixed</scene>
+		<x>1700</x>
+		<y>1000</y>
+		<direction>left</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitRight">
+				<scene>game.scenes.con2.expo.Expo</scene>
+				<x>250</x>
+				<y>950</y>
+				<direction>right</direction>
+			</door>
+			<door id="exitLeft">		
+				<scene>game.scenes.con2.theater.Theater</scene>
+				<x>2621</x>
+				<y>947</y>
+				<direction>left</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file><file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x99ccff" id="carpet" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+</hits></file><file path="/npcs.xml"><npcs>
+	<npc id="costume">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa71</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>pangelf</mouth>
+			<marks>beautymark</marks>
+			<facial>lc_mic</facial>
+			<hair>poptropicon_check</hair>
+			<shirt>poptropicon_check</shirt>
+			<pants>aeolus</pants>
+			<overshirt>poptropicon_costumecheck</overshirt>
+			<overpants>poptropicon_consec</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1080</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc id="forrest">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xCF4525</hairColor>
+			<mouth>sponsor_JE</mouth>
+			<marks>poptropicon_forrest</marks>
+			<facial>poptropicon_forrest</facial>
+			<hair>poptropicon_forrest</hair>
+			<shirt>1</shirt>
+			<pants>skullmainoldman</pants>
+			<overshirt>poptropicon_forrest</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1588</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>150</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc id="stan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xebd5ad</skinColor>
+			<hairColor>0xdbd6cd</hairColor>
+			<mouth>wkgrmpa</mouth>
+			<marks>poptropicon_stan</marks>
+			<facial>poptropicon_stan</facial>
+			<hair>poptropicon_stan</hair>
+			<shirt>bare</shirt>
+			<pants>wwponyexpress</pants>
+			<overshirt>poptropicon_stan</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2517</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="pizza">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfae0c9</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>prisoner5</mouth>
+			<marks>poptropicon_pizzapuff</marks>
+			<hair>1</hair>
+			<shirt>1</shirt>
+			<pants>astrozone</pants>
+			<overshirt>poptropicon_pizzapuff</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1300</x>
+			<y>470</y>
+		</position>
+		<range>
+			<x>150</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc id="eahero1">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xFFE1B5</skinColor>
+			<hairColor>0xBBBDBF</hairColor>
+			<mouth>wwsaloongirl</mouth>
+			<marks>bl_promqueenc3</marks>
+			<facial>grandma</facial>
+			<hair>poptropicon_elfarcher2</hair>
+			<shirt>poptropicon_eahero01</shirt>
+			<pants>poptropicon_eahero01</pants>
+			<pack>poptropicon_eahero01</pack>
+			<item>poptropicon_eahero01</item>
+			<overshirt>poptropicon_eahero01</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>2270</x>
+			<y>470</y>
+		</position>
+		<range>
+			<x>300</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc id="sasha">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xe5ad58</hairColor>
+			<mouth>astroguard1</mouth>
+			<facial>poptropicon_sasha</facial>
+			<hair>poptropicon_sasha</hair>
+			<shirt>poptropicon_sasha</shirt>
+			<pants>policeman</pants>
+			<overshirt>poptropicon_sasha</overshirt>
+			<overpants>skullnavigator</overpants>
+			<eyeState>squint</eyeState>
+			<item>mk_lead_designer01</item>
+		</skin>
+		<position>
+			<x>3580</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>300</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+</npcs></file><file path="/scene.xml"><scene>
+	<sceneType>shortmain</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>4025</right>
+		<bottom>1030</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>4025</right>
+		<bottom>1030</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>253</x>
+			<y>935</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file><file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">poptropicon2_main_theme.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>openDoor_pushBar.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="plastic">ls_plastic_01.mp3, ls_plastic_02.mp3</asset>
+		<asset id="baseGround">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="carpet">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="floor">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="plastic">fs_plastic_01.mp3, fs_plastic_02.mp3,fs_plastic_03.mp3, fs_plastic_04.mp3</asset>
+		<asset id="baseGround">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="carpet">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+	</sound>
+</sounds></file></merged>

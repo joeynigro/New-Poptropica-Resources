@@ -1,0 +1,441 @@
+<merged><file path="/hits.xml"><hits>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xD8DADA" id="toilets" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xE7ECE0" id="concrete" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xBDBE9D" id="bench" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xAAAAAF" id="billBoard" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x9FAEBE" id="signs" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="spFan">
+		<statement id="no cutting">Hey! No cutting!</statement>
+		<conversation>
+			<exchange>
+				<question>Any chance I can move ahead of you?</question>
+				<answer triggerEventArgs="spFan_quest_accepted, true" triggerEvent="triggerEvent">If you can replace my busted jetpack, you can steam right past me.</answer>
+			</exchange>
+		</conversation>
+		<statement event="spFan_quest_complete" id="spFan_quest_complete">To the sky!</statement>
+    </character>
+    
+    <character id="sfFan">
+    	<statement id="no cutting">Hey! No cutting!</statement>
+		<conversation>
+			<exchange>
+				<question>Excuse me, could I possibly trade your place in line?</question>
+				<answer triggerEventArgs="sfFan_quest_accepted, true" triggerEvent="triggerEvent">If you can trade me the Fremulon mask from the booth, i'll give up my spot.</answer>
+			</exchange>
+		</conversation>
+		<statement event="sfFan_quest_complete" linkEntityId="player" id="sfFan_quest_complete" link="idk" triggerEventArgs="sfFan_passed, true" triggerEvent="triggerEvent">May your zazzleblax be abundant.</statement>
+		<statement event="sfFan_passed" linkEntityId="player" id="sfFan_passed" link="idk">May your zazzleblax be abundant.</statement>
+    </character>
+    
+    <character id="shFan">
+   		<statement id="no cutting">Hey! No cutting!</statement>
+		<conversation>
+			<exchange>
+				<question>I'm in a real hurry. Can I cut past you?</question>
+				<answer linkEntityId="player" link="where">Only the one who wields the Power Amulet can displace me!</answer>
+			</exchange>
+		</conversation>
+		<statement id="cheetah" triggerEventArgs="shFan_quest_accepted, true" triggerEvent="triggerEvent">The Cheetah Bandit has it, of course!</statement>
+		<statement event="shFan_quest_complete" id="shFan_quest_complete" triggerEventArgs="shFan_passed, true" triggerEvent="triggerEvent">You are truly powerful! I cede my spot.</statement>
+		<statement event="shFan_passed" id="shFan_passed">You are truly powerful! I cede my spot.</statement>
+    </character>
+    
+    <character id="viking1">
+		<statement triggerEventArgs="viking1_quest_accepted, true" triggerEvent="triggerEvent">If you can find out what time the cosplay contest is, i'll give you my spot.</statement>
+		<conversation event="viking1_quest_complete">
+			<exchange>
+				<question>The contest starts at noon.</question>
+				<answer triggerEventArgs="viking1_passed, true" triggerEvent="triggerEvent">Thanks!</answer>
+			</exchange>
+		</conversation>
+		<statement id="no cutting">Hey! No cutting!</statement>
+    </character>
+    
+    <character id="viking2">
+    	<statement triggerEventArgs="viking2_quest_accepted, true" triggerEvent="triggerEvent">I'm wracking my brain to remember who played Thor in that old Viking movie. Remind me, and I'll trade my spot.</statement>
+		<conversation event="viking2_quest_complete">
+			<exchange>
+				<question>Bucky Lucas played Thor.</question>
+				<answer triggerEventArgs="viking2_passed, true" triggerEvent="triggerEvent">That's it! I was thinking of Kirk Strayer, for some reason. Thanks.</answer>
+			</exchange>
+		</conversation>
+		<statement id="no cutting">Hey! No cutting!</statement>
+    </character>
+    
+    <character id="friend">
+    	<statement>Hey pal, don't you know it's rude to cut in line?</statement>
+		<conversation event="friend_quest_complete" id="friend_quest_complete">
+			<exchange>
+				<question>Hey there, are you holding something for your friend?</question>
+				<answer link="in the bathroom">I had it when I went into the bathroom, but I must have left it there.</answer>
+			</exchange>
+		</conversation>
+		<conversation id="in the bathroom">
+			<exchange>
+				<question>In the bathroom, you say.</question>
+				<answer triggerEventArgs="friend_passed, true" triggerEvent="triggerEvent">Now the line is so long! Forget it, I'm going home. Nice costume, by the way.</answer>
+			</exchange>
+		</conversation>
+		<statement id="no cutting">Hey! Line for the bathroom is over here.</statement>
+		
+		<statement linkEntityId="player" id="cutter" link="ditto">How did you get in front of the line?</statement>
+		<statement id="enjoy" triggerEventArgs="jerk_leaves_bathrooms, true" triggerEvent="triggerEvent">Well, enjoy yourself in there. I kept it nice and warm for you.</statement>
+    </character>
+    
+     <character id="player">
+     	<statement linkEntityId="shFan" id="where" link="cheetah">Where is the power amulet?</statement>
+    	<statement id="idk">I still have no idea what zazzleblax is.</statement>
+    	<statement id="darn">Wish I'd thought of that.</statement>
+    	<statement linkEntityId="friend" id="ditto" link="enjoy">I could ask you the same thing.</statement>
+    	<statement id="never">I never want to go in there again!</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="spFan">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0x0075a3</hairColor>
+			<mouth>pCowgirl1</mouth>
+			<marks>pangelf</marks>
+			<facial>oldpilot</facial>
+			<hair>steammayor</hair>
+			<shirt>mttownie01</shirt>
+			<pants>wwcasinopatron2</pants>
+			<pack>probot3</pack>
+			<item>wrench</item>
+			<overshirt>egyptarch</overshirt>
+			<overpants>radioactive</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>600</x>
+			<y>1050</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="sfFan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x754A2F</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>sponsor_JE</mouth>
+			<marks>poptropicon_scifi</marks>
+			<facial>poptropicon_scifi</facial>
+			<hair>hippie</hair>
+			<shirt>poptropicon_scifi</shirt>
+			<pants>sears6</pants>
+			<pack>poptropicon_scifi</pack>
+			<item>poptropicon_scifi</item>
+			<overshirt>poptropicon_scifi</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>775</x>
+			<y>1050</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc event="sfFan_passed" id="sfFan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x754A2F</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>sponsor_JE</mouth>
+			<marks>empty</marks>
+			<facial>poptropicon_fremulon_boy</facial>
+			<hair>hippie</hair>
+			<shirt>poptropicon_scifi</shirt>
+			<pants>sears6</pants>
+			<pack>poptropicon_scifi</pack>
+			<item>poptropicon_scifi</item>
+			<overshirt>poptropicon_scifi</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>775</x>
+			<y>1050</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="shFan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x917151</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>fisherman</mouth>
+			<marks>bags</marks>
+			<facial>poptropicon_hero1</facial>
+			<hair>poptropicon_hero2</hair>
+			<shirt>poptropicon_hero1</shirt>
+			<pants>poptropicon_hero1</pants>
+			<pack>hero4</pack>
+			<overshirt>poptropicon_hero1</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>950</x>
+			<y>1050</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="viking1">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xf9aa18</hairColor>
+			<mouth>18</mouth>
+			<marks>pkarategirl</marks>
+			<facial>viking</facial>
+			<hair>sacagawea</hair>
+			<shirt>mthostess</shirt>
+			<pants>scottishman</pants>
+			<pack>poptropicon_thor</pack>
+			<item>vikingspear</item>
+			<overshirt>astroguard1</overshirt>
+			<overpants>nw_belt01</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1125</x>
+			<y>1050</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="viking2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xf5c455</hairColor>
+			<mouth>sponsorCityBoy</mouth>
+			<marks>srishmael</marks>
+			<facial>nerd</facial>
+			<hair>poptropicon_thor</hair>
+			<shirt>bl_smea</shirt>
+			<pants>hippie</pants>
+			<pack>4</pack>
+			<item>vikingaxe</item>
+			<overshirt>skullpirate2</overshirt>
+			<overpants>astrofarmer</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1300</x>
+			<y>1050</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="friend">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xecc59f</skinColor>
+			<hairColor>0x402312</hairColor>
+			<hair>1</hair>
+			<mouth>15</mouth>
+			<marks>poptropicon_jerk</marks>
+			<facial>poptropicon_jerk</facial>
+			<pants>frenchman</pants>
+			<shirt>poptropicon_jerk</shirt>
+			<item>bl_latte</item>
+			<overpants>poptropicon_jerk</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<animations random="true" loop="true">
+			<animation>game.data.animation.entity.character.Drink</animation>
+			<animation duration="60">game.data.animation.entity.character.Think</animation>
+			<animation duration="60">game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<position>
+			<x>1475</x>
+			<y>1050</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+	
+	<npc event="friend_quest_complete" id="friend">
+		<animations random="true" loop="true">
+			<animation>game.data.animation.entity.character.Cry</animation>
+			<animation>game.data.animation.entity.character.Grief</animation>
+			<animation duration="60">game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xeaaf9A</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>15</mouth>
+			<marks>grandma</marks>
+			<facial>poptropicon_wizard</facial>
+			<hair>poptropicon_wizard</hair>
+			<shirt>1</shirt>
+			<pants>1</pants>
+			<item>empty</item>
+			<pack>poptropicon_wizard</pack>
+			<overshirt>poptropicon_wizard</overshirt>
+			<overpants>empty</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1475</x>
+			<y>1050</y>
+		</position>
+	</npc>
+	
+	<npc event="friend_goes_home" id="friend">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xecc59f</skinColor>
+			<hairColor>0x402312</hairColor>
+			<hair>1</hair>
+			<mouth>15</mouth>
+			<marks>poptropicon_jerk</marks>
+			<facial>poptropicon_jerk</facial>
+			<pants>frenchman</pants>
+			<shirt>poptropicon_jerk</shirt>
+			<item>bl_latte</item>
+			<overpants>poptropicon_jerk</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<animations>
+			<animation>game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<position>
+			<x>375</x>
+			<y>975</y>
+		</position>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">PoptropicaHQ.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset loop="true">sunny_clear_day_02_loop.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="baseGround">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="concrete">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="toilets">ls_plastic_01.mp3, ls_plastic_02.mp3</asset>
+		<asset id="signs">ls_plastic_01.mp3, ls_plastic_02.mp3</asset>
+		<asset id="bench">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="billBoard">ls_thin_metal_01.mp3, ls_thin_metal_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="concrete">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="toilets">fs_plastic_01.mp3, fs_plastic_02.mp3, fs_plastic_03.mp3, fs_plastic_04.mp3</asset>
+		<asset id="signs">fs_plastic_01.mp3, fs_plastic_02.mp3, fs_plastic_03.mp3, fs_plastic_04.mp3</asset>
+		<asset id="bench">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="billBoard">fs_thin_metal_01.mp3, fs_thin_metal_02.mp3, fs_thin_metal_03.mp3, fs_thin_metal_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>250</top>
+		<right>2400</right>
+		<bottom>1080</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>2500</right>
+		<bottom>1050</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<absoluteFilePaths>scenes/con1/shared/dialog.xml</absoluteFilePaths>
+    <assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2300</x>
+			<y>920</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.con1.adStreet3.AdStreet3</scene>
+		<x>50</x>
+		<y>1015</y>
+		<label>
+			<text>Go Right</text>
+			<type>exitRight</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.con1.bathrooms.Bathrooms</scene>
+				<x>2200</x>
+				<y>1050</y>
+				<direction>left</direction>
+			</door>
+			<door id="exitRight">
+				<scene>game.scenes.con1.parking.Parking</scene>
+				<x>200</x>
+				<y>1470</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file></merged>

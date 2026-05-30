@@ -1,0 +1,416 @@
+
+<merged><file path="/dialog.xml"><dialogs>
+	<character id="worker1">
+		<statement id="missing_archer">Looks like we're just missing... Elf Archer? Is that right?</statement>
+		<statement id="dentists_convention" triggerEventArgs="off_to_work" triggerEvent="triggerEvent">Sigh... This is worse than the dentists' convention. Let's go look for it.</statement>
+   		<statement linkEntityId="worker2" id="wrong_costume" link="keep_looking">This isn't the right costume!</statement>
+   		<statement id="found_it">Hey, you found the Elf Archer!</statement>
+   		<statement id="unload">Whatever, let's just unload this stuff.</statement>
+    </character>
+    
+    <character id="worker2">
+    	<statement id="silver_age_archer" triggerEventArgs="sigh" triggerEvent="triggerEvent">"Silver Age" Elf Archer. The plan's around here somewhere.</statement>
+    	<statement id="keep_looking" triggerEventArgs="off_to_work" triggerEvent="triggerEvent">Ugh, let's keep looking.</statement>
+    	<statement id="found_it">Hey, you found the Elf Archer!</statement>
+    </character>
+    
+    <character id="player">
+    	<statement id="locked">There's got to be a way inside. Maybe the Elf Archer could get in!</statement>
+    	<statement id="dat_card">Is that a Might Action Force card? What luck! Now I just need to get it down.</statement>
+    	<statement id="so_sneaky">Hehe, I'm so sneaky. Time to snoop for Omegon's mask!</statement>
+		<statement id="sick_mask_bro">Wow! I really like the direction they went with his new mask. That's some fine work right there!</statement>
+    </character>
+</dialogs></file><file path="/doors.xml"><doors>
+	<door id="doorExpo">
+		<scene>game.scenes.con2.adStreet3.AdStreet3</scene>
+		<x>1700</x>
+		<y>1000</y>
+		<direction>left</direction>
+		<label>
+			<text>EXIT</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.con2.expo.Expo</scene>
+				<x>3350</x>
+				<y>950</y>
+				<direction>left</direction>
+			</door>
+			<door id="exitRight">		
+				<scene>game.scenes.con2.exhibit.Exhibit</scene>
+				<x>2600</x>
+				<y>911</y>
+				<direction>left</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file><file path="/hits.xml"><hits>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0x5664F2" id="floor" platform="true">
+		<component type="platform"/>
+		<depth>0</depth>
+	</hit>
+	
+	<hit color="0x00CC33" id="trash" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x00AA2A" id="crunchyTrash" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x0BD2F2" id="glass" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x9A672A" id="shelf" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x549A62" id="bucketHead" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x9A785D" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xF5BF94" id="cloth" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-800</y>
+			</velocity>
+		</component>
+	</hit>
+	
+	<hit color="0xFF8658" id="balloonArm" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-800</y>
+			</velocity>
+		</component>
+	</hit>
+	
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file><file path="/npcs.xml"><npcs>
+	<npc event="pre_cosplay" id="worker1">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0x754a2f</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>19</mouth>
+			<facial>tyson</facial>
+			<hair>poptropicon_worker1</hair>
+			<shirt>poptropicon_worker</shirt>
+			<pants>eiffel</pants>
+			<overshirt>poptropicon_worker1</overshirt>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>2194</x>
+			<y>940</y>
+		</position>
+		<direction>right</direction>
+	</npc>
+	
+	<npc event="cosplay_on" id="worker1">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0x754a2f</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>19</mouth>
+			<facial>tyson</facial>
+			<hair>poptropicon_worker1</hair>
+			<shirt>poptropicon_worker</shirt>
+			<pants>eiffel</pants>
+			<overshirt>poptropicon_worker1</overshirt>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1810</x>
+			<y>940</y>
+		</position>
+	</npc>
+	
+	<npc event="pre_cosplay" id="worker2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFD2C5</skinColor>
+			<hairColor>0x6e3e23</hairColor>
+			<mouth>17</mouth>
+			<facial>poptropicon_worker01</facial>
+			<hair>1</hair>
+			<shirt>poptropicon_worker</shirt>
+			<pants>2</pants>
+			<overpants>conworker1</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>2330</x>
+			<y>940</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+	
+	<npc event="cosplay_on" id="worker2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFD2C5</skinColor>
+			<hairColor>0x6e3e23</hairColor>
+			<mouth>17</mouth>
+			<facial>poptropicon_worker01</facial>
+			<hair>1</hair>
+			<shirt>poptropicon_worker</shirt>
+			<pants>2</pants>
+			<overpants>conworker1</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1620</x>
+			<y>940</y>
+		</position>
+	</npc>
+	
+	<!--  MANNEQUINs  -->
+	<npc id="fashionNinja">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xddc497</skinColor>
+			<hairColor>0xFFF09D</hairColor>
+			<mouth>gardener</mouth>
+			<marks>store_fashion_ninja</marks>
+			<facial>store_fashion_ninja</facial>
+			<hair>store_fashion_ninja</hair>
+			<shirt>1</shirt>
+			<pants>poptropicon_fashionninja</pants>
+			<item>poptropicon_fashionninja</item>
+			<item2>poptropicon_fashionninja</item2>
+			<overshirt>store_fashion_ninja</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>382</x>
+			<y>890</y>
+		</position>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="teenageArachnid">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xe4c596</skinColor>
+			<hairColor>0xa85b30</hairColor>
+			<mouth>teethgrin1</mouth>
+			<marks>poptropicon_arachnid</marks>
+			<hair>poptropicon_arachnid</hair>
+			<shirt>poptropicon_arachnid</shirt>
+			<pants>dd_diver</pants>
+			<overpants>poptropicon_arachnid</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>566</x>
+			<y>890</y>
+		</position>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="muttonChops">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xdb6640</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>flpirate3</mouth>
+			<marks>poptropicon_chops</marks>
+			<hair>poptropicon_chops</hair>
+			<shirt>bare</shirt>
+			<pants>poptropicon_chops</pants>
+			<item>poptropicon_chops</item>
+			<overshirt>poptropicon_chops</overshirt>
+			<overpants>tt_elf1</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>747</x>
+			<y>890</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="goldFace">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xE09C72</skinColor>
+			<hairColor>0xa85b30</hairColor>
+			<mouth>1</mouth>
+			<facial>poptropicon_sagoldface</facial>
+			<hair>1</hair>
+			<shirt>1</shirt>
+			<pants>wwgenericguy</pants>
+			<pack>poptropicon_sagoldface</pack>
+			<overshirt>poptropicon_sagoldface</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>1665</x>
+			<y>874</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="worldGuy">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x936043</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>wwannie</mouth>
+			<facial>poptropicon_saworldguy</facial>
+			<hair>1</hair>
+			<shirt>poptropicon_saworldguy</shirt>
+			<pants>poptropicon_saworldguy</pants>
+			<overpants>poptropicon_saworldguy</overpants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>1490</x>
+			<y>890</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="kMan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xe3c276</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>sponsorec2</mouth>
+			<marks>poptropicon_kman</marks>
+			<hair>poptropicon_kman</hair>
+			<shirt>poptropicon_kman</shirt>
+			<pants>nw_costume1</pants>
+			<pack>poptropicon_kman</pack>
+			<overshirt>poptropicon_kman</overshirt>
+			<overpants>poptropicon_kman</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>2213</x>
+			<y>792</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="clear">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0x7dbcb6</skinColor>
+			<hairColor>0x7166cc</hairColor>
+			<mouth>magician</mouth>
+			<marks>poptropicon_clear</marks>
+			<hair>poptropicon_clear</hair>
+			<shirt>poptropicon_clear</shirt>
+			<pants>poptropicon_clear</pants>
+			<item>poptropicon_clear</item>
+			<overshirt>poptropicon_clear</overshirt>
+			<overpants>realitywoman</overpants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>2821</x>
+			<y>915</y>
+		</position>
+		<direction>right</direction>
+	</npc>
+</npcs></file><file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2990</right>
+		<bottom>1012</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>40</left>
+		<top>0</top>
+		<right>2950</right>
+		<bottom>940</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,hits.xml,npcs.xml,sounds.xml</data>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2600</x>
+			<y>911</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+</scene></file><file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset>poptropicon2_main_theme.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>openDoor_pushBar.mp3</asset>
+	</sound>
+	
+	<sound action="trigger" type="effects">
+		<asset id="playerPlat">metal_impact_small_01.mp3</asset>
+		<asset id="block">door_pushbar_open_01.mp3</asset>
+		<asset modifier="position" id="dolly" loop="true">smooth_surface_drag_01_loop.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="trash">ls_hollow_plastic_01.mp3, ls_hollow_plastic_02.mp3</asset>
+		<asset id="crunchyTrash">ls_general_rubbish_01.mp3, ls_general_rubbish_02.mp3</asset>
+		<asset id="glass">ls_glass_01.mp3, ls_glass_02.mp3</asset>
+		<asset id="shelf">ls_wood_plank_01.mp3, ls_wood_plank_02.mp3</asset>
+		<asset id="bucketHead">ls_thin_metal_01.mp3, ls_thin_metal_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="cloth">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="bounce">balloon_bounce_01.mp3, balloon_bounce_02.mp3</asset>
+		<asset id="balloonArm">balloon_bounce_01.mp3, balloon_bounce_02.mp3</asset>
+		<asset id="baseGround">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="floor">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="trash">fs_hollow_plastic_01.mp3, fs_hollow_plastic_02.mp3, fs_hollow_plastic_03.mp3, fs_hollow_plastic_04.mp3</asset>
+		<asset id="crunchyTrash">fs_general_rubbish_01.mp3, fs_general_rubbish_02.mp3, fs_general_rubbish_03.mp3, fs_general_rubbish_04.mp3</asset>
+		<asset id="glass">fs_glass_01.mp3, fs_glass_02.mp3, fs_glass_03.mp3, fs_glass_04.mp3</asset>
+		<asset id="shelf">fs_wood_plank_01.mp3, fs_wood_plank_02.mp3, fs_wood_plank_03.mp3, fs_wood_plank_04.mp3</asset>
+		<asset id="bucketHead">fs_thin_metal_01.mp3, fs_thin_metal_02.mp3, fs_thin_metal_03.mp3, fs_thin_metal_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="cloth">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="baseGround">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+	</sound>
+</sounds></file></merged>

@@ -1,0 +1,288 @@
+<merged>
+
+<file path="/items.xml"><items>
+	<item>
+		<id>nightVision</id>
+		<asset>nightVision.zip</asset>
+		<x>2720</x>
+		<y>765</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+	<item>
+		<id>voiceRecording</id>
+		<asset>sound_recording.zip</asset>
+		<x>2100</x>
+		<y>925</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="loudFloor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xA49B94" id="softFloor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x94998F" id="alligatorHit" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x999593" id="hyenaHit" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xEFDBAE" id="statueHit" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00FF33" id="statueBrokeHit" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-1100</y>
+			</velocity>
+		</component>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	<hit id="climb">
+		<component type="climb"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="van buren">
+		<statement id="trophies" triggerEventArgs="trophy_lit_1" link="rhino" triggerEvent="triggerEvent">Here are the trophies of my greatest hunts.</statement>
+		
+		<statement id="rhino" triggerEventArgs="trophy_lit_2" link="gorilla" triggerEvent="triggerEvent">This African rhino nearly gored me!</statement>
+		
+		<statement id="gorilla" link="of course">The silverback gorilla is a wily foe indeed, but I got the best of him!</statement>
+		
+		<statement linkEntityId="player" id="of course" triggerEventArgs="trophy_lit_3" link="no you didnt" triggerEvent="triggerEvent">Of course, that was nothing compared to my greatest triumph of all.</statement>
+		
+		<statement id="oh yes" triggerEventArgs="meet_winston" triggerEvent="triggerEvent">Oh yes -- there's no challenge like finding good help!</statement>
+    	
+    	<statement linkEntityId="winston" id="meet winston" link="charmed">Please meet my man, Winston. A more faithful servant you will never find.</statement>
+    	
+		<statement id="forgive me" triggerEventArgs="tour_complete_2, true" triggerEvent="triggerEvent">Forgive me a bit of vainglory. This bust of me contains a perfect replica of my voice saying the Van Buren family rallying cry!</statement>
+    	<statement id="taxidermist" link="ready supper">More shoddy work by my taxidermist. I should have *his* head, ha ha!</statement>
+    	
+    	<statement linkEntityId="winston" id="ready supper" link="at once">Winston, please inform the chef that we are ready for supper, and then prepare our guest's quarters for the night.</statement>
+    	
+    	<statement id="meet me">As for you, dear friend, join me for dinner in the banquet room, and don't tarry!</statement>
+    	
+    	<statement id="you shall not pass">Let's not rush the tour!</statement>
+    	
+    	<statement id="dont tarry">I said, DON'T tarry!</statement>
+    	
+    	<statement id="no tomfoolery">No tomfoolery in the trophy room!</statement>
+    </character>
+    
+    <character id="winston">
+    	<statement linkEntityId="van buren" id="droll" link="meet winston">Quite droll, sir.</statement>
+		<statement id="charmed" triggerEventArgs="tour_complete_1,true" triggerEvent="triggerEvent">Charmed.</statement>
+		<statement id="charmed2">Charmed.</statement>
+		<statement id="at once" triggerEventArgs="tour_complete_3,true" triggerEvent="triggerEvent">At once, m'lord.</statement>
+    </character>
+    
+    <character id="player">
+		<statement id="not now">I'd better leave it for now.</statement>
+		<statement linkEntityId="van buren" id="no you didnt" link="oh yes">You don't mean...!</statement>
+    </character>
+    
+    <character id="statue">
+		<statement>Tally-ho!</statement>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<!-- 1,1, 0xfAECC8, 0xffffff, 2, 403, 1, "survival_winston", "survival_winston", 1, "badagent", 1, 1, 1, "survival_winston" -->
+	<npc id="winston">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfAECC8</skinColor>
+			<hairColor>0xffffff</hairColor>
+			<mouth>VCvillager1</mouth>
+			<facial>survival_winston</facial>
+			<hair>survival_winston</hair>
+			<shirt>1</shirt>
+			<pants>adams</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants>survival_winston</overpants>
+			<lineColor></lineColor>
+			<eyeState></eyeState>
+			<lineWidth></lineWidth>
+		</skin>
+		<position>
+			<x>1875</x>
+			<y>900</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<!-- 1,1, 0xcf936a, 0x999999, 2, 15, "survival_vanburen", "survival_vanburen", "survival_vanburen", "survival_vanburen", "camopants", 1, 1, "survival_vanburen", 1 -->
+	<npc id="van buren">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xCEA384</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_vanburen</marks>
+			<facial>survival_vanburen</facial>
+			<hair>survival_vanburen</hair>
+			<shirt>egyptarch</shirt>
+			<pants>astromanure</pants>
+			<overshirt>survival_vanburen</overshirt>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>900</x>
+			<y>950</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<!-- 1, 1, 0xfbdfcb, 0xf08b2c, 1, 1, 1, "survival_hunting_girl", 1, "skullink", "directord", 1, "survival_hunting", "survival_hunting", 1-->
+	<npc type="portrait" id="costume" variant="mannequin">
+		<skin>
+			<hairColor>0xf08b2c</hairColor>
+			<facial>survival_hunting_girl</facial>
+			<pants>directord</pants>
+			<item>survival_hunting</item>
+			<overshirt>survival_hunting</overshirt>
+		</skin>
+		<position>
+			<x>2725</x>
+			<y>910</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+	<!-- 1, 1, 0xfbdfcb, 0xf08b2c, 1, 1, 1, "survival_hunting_boy", 1, "skullink", "directord", 1, "survival_hunting", "survival_hunting", 1 -->
+	<npc event="boy" type="portrait" id="costume" variant="mannequin">
+		<skin>
+			<hairColor>0xf08b2c</hairColor>
+			<facial>survival_hunting_boy</facial>
+			<pants>directord</pants>
+			<item>survival_hunting</item>
+			<overshirt>survival_hunting</overshirt>
+		</skin>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">Survival_4_Main_Theme.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>unlocked_01.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="loudFloor">ls_old_wood_plank_01.mp3, ls_old_wood_plank_02.mp3</asset>
+		<asset id="softFloor">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="alligatorHit">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="hyenaHit">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="statueHit">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="statueBrokeHit">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="bounce">ls_spring_01.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="loudFloor">fs_old_wood_plank_01.mp3, fs_old_wood_plank_02.mp3, fs_old_wood_plank_03.mp3, fs_old_wood_plank_04.mp3</asset>
+		<asset id="softFloor">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="alligatorHit">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="hyenaHit">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="statueHit">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="statueBrokeHit">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>3000</right>
+		<bottom>1000</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>35</left>
+		<top>35</top>
+		<right>2990</right>
+		<bottom>970</bottom>
+	</bounds>
+	<data>dialog.xml,items.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<absoluteFilePaths>scenes/survival4/shared/dialog.xml, scenes/survival4/shared/sounds.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>1000</x>
+			<y>920</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors><!-- trophy room -->
+	<door id="door1">
+		<scene>game.scenes.survival4.adMixed1.AdMixed1</scene>
+		<x>1736</x>
+		<y>1010</y>
+		<direction>left</direction>
+		<label>
+			<text>EXIT</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>2580</x>
+				<y>980</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.survival4.trophyRoom.TrophyRoom</scene>
+				<x>300</x>
+				<y>950</y>		
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file>
+
+</merged>

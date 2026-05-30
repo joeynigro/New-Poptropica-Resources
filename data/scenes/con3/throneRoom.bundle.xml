@@ -1,0 +1,529 @@
+<merged>
+	
+<file path="/dialog.xml"><dialogs>
+	<character id="worldGuy">
+		<statement>Just do one con appearance, they said. We'll give you a 10k per diem, they said.</statement>
+		<statement id="one_appearance">Just do one con appearance, they said. We'll give you a 10k per diem, they said.</statement>
+		<statement id="back_to_broadway">I'm going back to Broadway!</statement>
+	</character>
+
+    <character id="player">
+    	<statement id="lost_shield">My shield melted! I guess things weren't better in the old days.</statement>
+    	
+    	<statement id="strike_back">That crystal looks ready to shatter.</statement>
+    	<statement id="pre_soda">What a weird, alien machine. Maybe there are more of these power containers around.</statement>
+    	<statement id="try_soda">Well, they say these things give you enough energy to lift a horse.</statement>
+    	
+    	<statement id="needs_more_soda">Looks like there's room for more cans.</statement>
+    	
+    	<statement id="soda1">Wow, I can't believe that worked.</statement>
+    	<statement id="soda2">Honestly, what do they put in this stuff?</statement>
+    	
+    	<statement id="needs_more_damage" forceOnScreen="true">That crystal doesn't look ready to crumble just yet.</statement>
+    	<statement id="banished_omegon">I did it! I banished Omegon!</statement>
+    </character>
+    
+    <character id="omegon">
+    	<statement id="chit_chat1">The hour is at hand, my faithful hench-bots.</statement>
+    	<statement id="chit_chat2">Soon, the powers of the Mighty Action Force will be mine!</statement>
+    	<statement id="chit_chat3">We shall discard their withered husks on the trash heap of history.</statement>
+    	<statement id="chit_chat4">This world, like so many wretched spheres before it, will be reborn in the light of Omegon!</statement>
+    	<statement id="chit_chat5">No one can face us. Not the Mighty Action Force, not some random kid in a hot dog suit.</statement>
+    	<statement id="chit_chat6">Make ready, my servants. Your glory awaits.</statement>
+    	
+    	<statement id="wonder1">Mmmm, I love this chair's massage feature.</statement>
+    	<statement id="wonder2">Is it getting brighter in here, maybe louder, or is it just me?</statement>
+    	<statement id="wonder3">What was that noise?!</statement>
+    	
+    	<statement id="what_was_that">What was that noise?!</statement>
+    	<statement id="foolish_child">You didn't think it would be that easy, did you?</statement>
+    	<statement id="my_power">Now I will show you real power!</statement>
+    </character>
+    
+    <character id="henchbot1">
+    	<statement id="no_idea">My Lord Omegon, be careful!</statement>
+    </character>
+</dialogs></file>
+	
+<file path="/doors.xml"><doors>
+	<door id="doorHQ">
+		<scene>game.scenes.con3.adMixed2.AdMixed2</scene>
+		<x>1700</x>
+		<y>1000</y>
+		<direction>left</direction>
+		<label>
+			<text>Exit</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.con3.hq.Hq</scene>
+				<x>1700</x>
+				<y>360</y>
+				<direction>left</direction>
+			</door>
+			<door id="exitRight">		
+				<scene>game.scenes.con3.throneRoom.ThroneRoom</scene>
+					<x>2100</x>
+					<y>950</y>
+				<direction>left</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file>
+	
+<file path="/hits.xml"><hits>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	<hit color="0xffff00" id="climb">
+		<component type="climb"/>
+	</hit>
+	
+	<hit color="0x131412" id="metal" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x003333" id="plaster" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x002864" id="carpet" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x2CF5FF" id="triggerPlat" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x99ff66" id="arrowSlit">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xff0000" id="force_shield">
+		<component type="wall"/>
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>200</x>
+				<y>-200</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="tab_blocker1" platform="true">
+		<component type="wall"/>
+		<component type="movingPlatform">
+			<!-- <visible>tab1</visible> -->
+			<pause>true</pause>
+			<velocity>30</velocity>
+			<points>
+				<point>
+					<x>470.9</x>
+					<y>518</y>
+				</point>
+				<point>
+					<x>470.9</x>
+					<y>720</y>
+				</point>
+			</points>
+		</component>
+	</hit>
+	<hit id="tab_blocker2">
+		<component type="wall"/>
+		<component type="movingPlatform">
+			<!-- <visible>tab2</visible>  -->
+			<pause>true</pause>
+			<velocity>30</velocity>
+			<points>
+				<point>
+					<x>583.95</x>
+					<y>518</y>
+				</point>	
+				<point>
+					<x>583.95</x>
+					<y>720</y>
+				</point>		
+			</points>
+		</component>
+	</hit>
+	<hit id="tab_blocker3">
+		<component type="wall"/>
+		<component type="movingPlatform">
+			<pause>true</pause>
+			<velocity>30</velocity>
+			<points>
+				<point>
+					<x>696.95</x>
+					<y>518</y>
+				</point>
+				<point>
+					<x>696.95</x>
+					<y>720</y>
+				</point>
+			</points>
+		</component>
+	</hit>
+	
+	<hit id="lift1" platform="true">
+		<component type="movingPlatform">
+			<pause>true</pause>
+			<velocity>100</velocity>
+			<points>
+				<point>
+					<x>1482</x>
+					<y>887</y>
+				</point>
+				<point>
+					<x>1482</x>
+					<y>315</y>
+				</point>
+			</points>
+		</component>
+	</hit>
+	
+	<hit id="lift2" platform="true">
+		<component type="movingPlatform">
+			<pause>true</pause>
+			<velocity>100</velocity>
+			<points>
+				<point>
+					<x>2776.8</x>
+					<y>887</y>
+				</point>
+				<point>
+					<x>2776.8</x>
+					<y>315</y>
+				</point>
+			</points>
+		</component>
+	</hit> 
+	
+	
+	<!--  LASERS  -->
+	<hit id="laserhit_5_1">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_5_2">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_6_1">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_6_2">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<!--  BARRIERS  -->
+	<hit id="target3">
+		<component type="wall"/>
+	</hit>
+	
+	<hit id="target4">
+		<component type="wall"/>
+	</hit>
+	
+	<!--  CRYSTAL CORE  -->
+	<hit id="target_core">
+		<component type="wall"/>
+	</hit>
+</hits></file>
+	
+<file path="/npcs.xml"><npcs>	
+	<npc id="worldGuy">
+	 	<animations loop="true">
+			<animation duration="50">game.data.animation.entity.character.Grief</animation>
+			<animation duration="150">game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x936043</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>skimask</mouth>
+			<facial>poptropicon_worldguy</facial>
+			<hair>1</hair>
+			<shirt>poptropicon_worldguy</shirt>
+			<pants>steamcaptain</pants>
+			<item>poptropicon_worldguy</item>
+			<overpants>barpatron1</overpants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>2190</x>
+			<y>260</y>
+		</position>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="omegon">
+		<animations random="true" loop="true">
+			<animation>game.data.animation.entity.character.Sit</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xffc215</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<marks>poptropicon_omegon</marks>
+			<facial>poptropicon_omegon</facial>
+			<hair>poptropicon_omegon</hair>
+			<shirt>1</shirt>
+			<pants>pballerina2</pants>
+			<pack>poptropicon_omegon</pack>
+			<overshirt>poptropicon_omegon</overshirt>
+			<eyeState>squint</eyeState>
+			<eyes>eyes_omegon</eyes>
+		</skin>
+		<position>
+			<x>420</x>
+			<y>350</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<costumizable>false</costumizable>
+		<direction>left</direction>
+	</npc>
+	<npc id="henchbot1">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x2b1e1e</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<facial>poptropicon_henchbot</facial>
+			<shirt>poptropicon_henchbot</shirt>
+			<pants>1</pants>
+			<overshirt>poptropicon_henchbot</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>205</x>
+			<y>425</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<costumizable>false</costumizable>
+		<direction>right</direction>
+	</npc>
+	<npc id="henchbot2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x2b1e1e</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<facial>poptropicon_henchbot</facial>
+			<shirt>poptropicon_henchbot</shirt>
+			<pants>1</pants>
+			<overshirt>poptropicon_henchbot</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>110</x>
+			<y>425</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<costumizable>false</costumizable>
+		<direction>right</direction>
+	</npc>
+	<npc id="meowbot" variant="creature">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0x9fb391</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<facial>poptropicon_meowbot</facial>
+			<hair>1</hair>
+			<shirt>1</shirt>
+			<pants>1</pants>
+			<pack>poptropicon_meowbot</pack>
+			<overshirt>poptropicon_meowbot</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>331</x>
+			<y>115</y>
+		</position>
+		<range>
+			<x>40</x>
+			<y>0</y>
+		</range>
+		<costumizable>false</costumizable>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+	
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>10</left>
+		<top>10</top>
+		<right>2890</right>
+		<bottom>1000</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>2900</right>
+		<bottom>950</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<absoluteFilePaths>scenes/con3/shared/dialog.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer>
+			<asset>after.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2018</x>
+			<y>950</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+</scene></file>
+	
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">reign_of_omegon.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>door_squeaky_metal_swing_01.mp3</asset>
+	</sound>
+	
+	<sound action="idle" type="effects">
+		<asset modifiers="position" id="laserhit_5_1" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_5_2" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_6_1" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_6_2" loop="true">electric_hum_01_loop.mp3</asset>
+		
+		<asset modifiers="position" id="cageBeam0" loop="true">electric_buzz_01_loop.mp3</asset>
+		<asset modifiers="position" id="cageBeam1" loop="true">electric_buzz_01_loop.mp3</asset>
+		<asset modifiers="position" id="cageBeam2" loop="true">electric_buzz_01_loop.mp3</asset>
+		<asset modifiers="position" id="cageBeam3" loop="true">electric_buzz_01_loop.mp3</asset>
+		
+		<asset modifiers="position" id="barrier3" loop="true">alien_module.mp3</asset>
+		<asset modifiers="position" id="barrier4" loop="true">alien_module.mp3</asset>
+	</sound>
+	
+	<sound action="trigger1" type="effects">
+		<asset modifiers="position" id="throne" loop="true">machinery_light_shaking_01_loop.mp3</asset>
+	</sound>
+	<sound action="trigger2" type="effects">
+		<asset modifiers="position" id="throne" loop="true">machinery_medium_shaking_01_loop.mp3</asset>
+	</sound>
+	<sound action="trigger3" type="effects">
+		<asset modifiers="position" id="throne" loop="true">machinery_heavy_shaking_01_loop.mp3</asset>
+	</sound>
+	<sound action="trigger4" type="effects">
+		<asset modifiers="position" id="throne" loop="true">crystal_crumbling_01_loop.mp3</asset>
+	</sound>
+	
+	<sound action="trigger" type="effects">
+		<asset id="core_wires_front">flowing_water_01_loop.mp3</asset>
+		<asset id="core_wires_back">flowing_water_01_loop.mp3</asset>
+		<asset exclusiveType="true" id="core">glass_crack_02.mp3</asset>
+		
+		<asset modifiers="position" fade="true" baseVolume=".25" id="core_laser0" loop="true">laser_beam_01_loop.mp3</asset>
+		<asset modifiers="position" fade="true" baseVolume=".25" id="core_laser1" loop="true">laser_beam_01_loop.mp3</asset>
+		<asset modifiers="position" fade="true" baseVolume=".25" id="core_laser2" loop="true">laser_beam_01_loop.mp3</asset>
+		<asset modifiers="position" fade="true" baseVolume=".25" id="core_laser3" loop="true">laser_beam_01_loop.mp3</asset>
+		
+		<asset modifiers="position" id="lift_panel1" loop="true">alien_gen_uw.mp3</asset>
+		<asset modifiers="position" id="lift_panel2" loop="true">alien_gen_uw.mp3</asset>
+		<asset modifiers="position" id="lift1" loop="true">engine_high_01_loop.mp3</asset>
+		<asset modifiers="position" id="lift2" loop="true">engine_high_01_loop.mp3</asset>
+		
+		<asset modifiers="position" id="panel1" loop="true">alien_gen_uw.mp3</asset>
+		<asset modifiers="position" id="panel2" loop="true">alien_gen_uw.mp3</asset>
+		<asset modifiers="position" id="panel3" loop="true">alien_gen_uw.mp3</asset>
+		<asset modifiers="position" id="tab_blocker1" loop="true">conveyor_belt_01_loop.mp3</asset>
+		<asset modifiers="position" id="tab_blocker2" loop="true">conveyor_belt_01_loop.mp3</asset>
+		<asset modifiers="position" id="tab_blocker3" loop="true">conveyor_belt_01_loop.mp3</asset>
+		
+		<asset modifiers="position" id="battery1">soda_can_open_01.mp3</asset>
+		<asset modifiers="position" id="battery2">soda_can_open_01.mp3</asset>
+		<asset modifiers="position" id="battery3">soda_can_open_01.mp3</asset>
+		
+		<asset modifiers="position" id="core_laser1" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="core_laser2" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="core_laser3" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="core_laser0" loop="true">electric_hum_01_loop.mp3</asset>
+		
+		<asset modifiers="position" exclusiveType="true" id="cageBeam0">lights_flicker_01.mp3</asset>
+		<asset modifiers="position" exclusiveType="true" id="cageBeam1">lights_flicker_01.mp3</asset>
+		<asset modifiers="position" exclusiveType="true" id="cageBeam2">lights_flicker_01.mp3</asset>
+		<asset modifiers="position" exclusiveType="true" id="cageBeam3">lights_flicker_01.mp3</asset>
+		
+		<asset id="fuse3">glass_break_03.mp3</asset>
+		<asset id="fuse4">glass_break_03.mp3</asset>
+		
+		<asset modifiers="position" exclusiveType="true" id="barrier3">power_down_05.mp3</asset>
+		<asset modifiers="position" exclusiveType="true" id="barrier4">power_down_05.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="laserhit_5_1">electric_zap_03.mp3</asset>
+		<asset id="laserhit_5_2">electric_zap_03.mp3</asset>
+		<asset id="laserhit_6_1">electric_zap_03.mp3</asset>
+		<asset id="laserhit_6_2">electric_zap_03.mp3</asset>
+		<asset id="force_shield">electrical_impact_01.mp3, electrical_impact_02.mp3</asset>
+		<asset id="carpet">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="metal">ls_metal_01.mp3, ls_metal_02.mp3</asset>
+		<asset id="triggerPlat">ls_metal_01.mp3, ls_metal_02.mp3</asset>
+		<asset id="plaster">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="lift1">ls_machinery_01.mp3, ls_machinery_02.mp3</asset>
+		<asset id="lift2">ls_machinery_01.mp3, ls_machinery_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="carpet">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="metal">fs_metal_01.mp3, fs_metal_02.mp3, fs_metal_03.mp3, fs_metal_04.mp3</asset>
+		<asset id="triggerPlat">fs_metal_01.mp3, fs_metal_02.mp3, fs_metal_03.mp3, fs_metal_04.mp3</asset>
+		<asset id="plaster">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="lift1">fs_machinery_01.mp3, fs_machinery_02.mp3, fs_machinery_03.mp3, fs_machinery_04.mp3</asset>
+		<asset id="lift2">fs_machinery_01.mp3, fs_machinery_02.mp3, fs_machinery_03.mp3, fs_machinery_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+</merged>

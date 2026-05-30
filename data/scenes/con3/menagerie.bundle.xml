@@ -1,0 +1,253 @@
+<merged>
+	
+<file path="/dialog.xml"><dialogs>
+	<character id="elf_archer">
+		<statement>I used to think getting panned in the Times was a brutal punishment!</statement>
+		<statement id="help">Help me get out of here!</statement>
+		<statement id="punishment" link="hq">You're the star of the show! Thanks!</statement>
+		<statement id="hq">Meet me in HQ!</statement>
+    </character>
+    
+    <character id="player">
+    	<statement id="machine">It has no power.</statement>
+    </character>
+</dialogs></file>
+	
+<file path="/doors.xml"><doors>
+	<door id="doorHq">
+	<scene>game.scenes.con3.adStreet.AdStreet</scene>
+		<x>200</x>
+		<y>1000</y>
+		<direction>right</direction>
+		<label>
+			<text>Exit</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.con3.menagerie.Menagerie</scene> 
+				<x>300</x>
+				<y>1200</y>
+				<direction>right</direction>
+			</door>
+			<door id="exitRight">		
+				<scene>game.scenes.con3.hq.Hq</scene>
+				<x>300</x>
+				<y>50</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file>
+	
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="concrete" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x996666" id="metal" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	
+	<hit id="laserhit_1_1">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>-200</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_1_2">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_1_3">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_2_1">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_2_2">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>0</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laserhit_3_1">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+</hits></file>
+	
+<file path="/items.xml"><items>
+	<item>
+		<id>old_shield</id>
+		<asset>old_shield.zip</asset>
+		<x>2689</x>
+		<y>879</y>
+		<label>
+			<text>Examine</text>
+			<type>exitDown</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="elf_archer">
+		<animations loop="true">
+			<animation duration="50">game.data.animation.entity.character.Grief</animation>
+			<animation duration="150">game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xBD9774</skinColor>
+			<hairColor>0x3D311F</hairColor>
+			<mouth>448</mouth>
+			<marks>poptropicon_elfarcher</marks>
+			<hair>poptropicon_elfarcher</hair>
+			<shirt>poptropicon_elfarcher</shirt>
+			<pants>poptropicon_elfarcher</pants>
+			<pack>poptroicon_elfarcher</pack>
+			<item>poptropicon_elfarcher</item>
+			<overpants>poptropicon_elfarcher</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>302</x>
+			<y>422</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+</npcs></file>
+	
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2990</right>
+		<bottom>1012</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>36</left>
+		<top>0</top>
+		<right>2945</right>
+		<bottom>992</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,items.xml</data>
+	<absoluteFilePaths>scenes/con3/shared/dialog.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>265</x>
+			<y>938</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+	
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">reign_of_omegon.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset loop="true">tech_lab.mp3</asset>
+	</sound>
+	
+	<sound action="idle" type="effects">
+		<asset modifiers="position" id="laserhit_1_1" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_1_2" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_1_3" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_2_1" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_2_2" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laserhit_3_1" loop="true">electric_hum_01_loop.mp3</asset>
+		
+		<asset modifiers="position" id="cageBeam0" loop="true">electric_buzz_01_loop.mp3</asset>
+		<asset modifiers="position" id="cageBeam1" loop="true">electric_buzz_01_loop.mp3</asset>
+		<asset modifiers="position" id="cageBeam2" loop="true">electric_buzz_01_loop.mp3</asset>
+		<asset modifiers="position" id="cageBeam3" loop="true">electric_buzz_01_loop.mp3</asset>
+	</sound>
+	
+	<sound action="trigger" type="effects">	
+		<asset modifiers="position" exclusiveType="true" id="cageBeam0">lights_flicker_01.mp3</asset>
+		<asset modifiers="position" exclusiveType="true" id="cageBeam1">lights_flicker_01.mp3</asset>
+		<asset modifiers="position" exclusiveType="true" id="cageBeam2">lights_flicker_01.mp3</asset>
+		<asset modifiers="position" exclusiveType="true" id="cageBeam3">lights_flicker_01.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>door_squeaky_metal_swing_01.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="laserhit_1_1">electric_zap_03.mp3</asset>
+		<asset id="laserhit_1_2">electric_zap_03.mp3</asset>
+		<asset id="laserhit_1_3">electric_zap_03.mp3</asset>
+		<asset id="laserhit_2_1">electric_zap_03.mp3</asset>
+		<asset id="laserhit_2_2">electric_zap_03.mp3</asset>
+		<asset id="laserhit_3_1">electric_zap_03.mp3</asset>
+		
+		<asset id="concrete">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="metal">ls_car_hood_01.mp3, ls_car_hood_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="concrete">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="metal">fs_car_hood_01.mp3, fs_car_hood_02.mp3, fs_car_hood_03.mp3, fs_car_hood_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+</merged>

@@ -1,0 +1,171 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="tree" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x996600" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x006633" id="grass" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCC9900" id="dirt" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xFF6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="buren">
+		<statement id="eager" triggerEventArgs="huntee" triggerEvent="triggerEvent">Eager to get started, eh? Have it your way. When my man here blows the horn, the hunt is on.</statement>
+		<statement triggerEventArgs="play_horn" triggeredByEvent="what_hunt" triggerEvent="triggerEvent">You have misunderstood my intentions. You, dear friend, are the quarry!</statement>
+	</character>
+	
+	<character id="player">
+		<statement id="dark">It's too dark out here. I can't see a thing!</statement>
+		<statement id="free">I'm free!</statement>
+		<statement triggerEventArgs="what_hunt" triggeredByEvent="huntee" triggerEvent="triggerEvent">What are we hunting?</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="buren">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xCEA384</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_vanburen</marks>
+			<facial>survival_vanburen</facial>
+			<hair>survival_vanburen</hair>
+			<shirt>egyptarch</shirt>
+			<pants>astromanure</pants>
+			<item>vccrossbow</item>
+			<overshirt>survival_vanburen</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>0</x>
+			<y>0</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="butler">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfaecc8</skinColor>
+			<hairColor>0xffffff</hairColor>
+			<mouth>vcvillager1</mouth>
+			<facial>survival_winston</facial>
+			<hair>survival_winston</hair>
+			<shirt>1</shirt>
+			<item>survival_hunting_horn</item>
+			<pants>adams</pants>
+			<overpants>survival_winston</overpants>
+			<eyeState>casual</eyeState>			
+		</skin>
+		<position>
+			<x>0</x>
+			<y>0</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">Cabin_Fever.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>openDoor_pushBar.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<asset baseVolume="3" triggeredByEvent="play_horn">horn_call_01.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="tree">ls_tree_01.mp3, ls_tree_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="grass">ls_grass_01.mp3, ls_grass_02.mp3</asset>
+		<asset id="dirt">ls_dirt_01.mp3, ls_dirt_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="tree">fs_tree_01.mp3, fs_tree_02.mp3, fs_tree_03.mp3, fs_tree_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="grass">fs_grass_01.mp3, fs_grass_02.mp3, fs_grass_03.mp3, fs_grass_04.mp3</asset>
+		<asset id="dirt">fs_dirt_01.mp3, fs_dirt_02.mp3, fs_dirt_03.mp3, fs_dirt_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2440</right>
+		<bottom>935</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>50</left>
+		<top>0</top>
+		<right>2300</right>
+		<bottom>925</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths>scenes/survival4/shared/dialog.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2200</x>
+			<y>870</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+	<suppressFollower>true</suppressFollower>
+	<suppressAbility>true</suppressAbility>
+</scene></file>
+
+<file path="/doors.xml"><doors><!-- grounds -->
+	<door id="door1">
+		<scene>game.scenes.survival4.mainHall.MainHall</scene>
+		<x>100</x>
+		<y>980</y>
+		<direction>right</direction>
+		<label>
+			<text>Exit</text>
+			<type>exitRight</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+
+		</connectingSceneDoors>
+	</door>
+</doors></file>
+
+</merged>

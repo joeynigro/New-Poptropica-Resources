@@ -1,0 +1,206 @@
+<merged>
+
+<file path="/items.xml"><items>
+	<item>
+		<id>silverMedal</id>
+		<asset>silverMedal.zip</asset>
+		<x>2276</x>
+		<y>1770</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00ff00" id="grass" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x003300" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>		
+	<hit color="0x0099CC" id="rock" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit id="pulleyHit1">
+<!-- flat -->
+		<component type="movingPlatform">
+			<visible>pulley1</visible>
+	 		<velocity>0</velocity>
+			<loop>false</loop>
+			<offsetX>-64.5</offsetX>
+			<offsetY>-96</offsetY>
+		</component>
+	</hit>
+	<hit id="pulleyHit2">
+<!-- right -->
+		<component type="movingPlatform">
+			<visible>pulley2</visible>
+			<velocity>0</velocity>
+			<loop>false</loop>
+			<offsetX>-64.5</offsetX>
+			<offsetY>-96</offsetY>
+		</component>
+	</hit>
+	<hit id="pulleyHit3">
+<!-- left -->
+		<component type="movingPlatform">
+			<visible>pulley3</visible>
+			<velocity>0</velocity>
+			<loop>false</loop>
+			<offsetX>-64.5</offsetX>
+			<offsetY>-96</offsetY>
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="char1">
+		<statement>Welcome to the Clos Luce mansion.</statement>
+    </character>
+	<character id="char2">
+		<statement event="gotItem_silverMedal">That was an impressive jump!</statement>
+		<statement>There's a strange object hanging from the bottom of the deck!</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="char1">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFE88A</skinColor>
+			<hairColor>0x333333</hairColor>
+			<mouth>1</mouth>
+			<hair>leoassist</hair>
+			<shirt>leoassist</shirt>
+			<pants>leoassist</pants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>1826</x>
+			<y>2750</y>
+		</position>
+		<range>
+			<x>200</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<ignoreDepth>true</ignoreDepth>
+	</npc>
+	<npc id="char2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xFFE88A</skinColor>
+			<hairColor>0x5A4329</hairColor>
+			<mouth>fisherman</mouth>
+			<marks>beardshort1</marks>
+			<hair>leoassist</hair>
+			<shirt>leoassist</shirt>
+			<pants>leoassist</pants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>2464</x>
+			<y>1724</y>
+		</position>
+		<range>
+			<x>100</x>
+			<y>0</y>
+		</range>
+		<ignoreDepth>true</ignoreDepth>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">DaVinci_Theme.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">sunny_clear_day.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>door_light_open_creak_02.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="baseGround">ls_grass_01.mp3,ls_grass_02.mp3</asset>
+		<asset id="grass">ls_grass_01.mp3,ls_grass_02.mp3</asset>
+		<asset id="rock">ls_concrete_01.mp3, ls_concrete_02.mp3 </asset>
+		<asset id="wood">ls_wood_plank_01.mp3,ls_wood_plank_02.mp3</asset>
+		<asset id="pulleyHit1">ls_wood_plank_01.mp3,ls_wood_plank_02.mp3</asset>
+		<asset id="pulleyHit2">ls_wood_plank_01.mp3,ls_wood_plank_02.mp3</asset>
+		<asset id="pulleyHit3">ls_wood_plank_01.mp3,ls_wood_plank_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_grass_01.mp3,fs_grass_02.mp3,fs_grass_03.mp3,fs_grass_04.mp3</asset>
+		<asset id="grass">fs_grass_01.mp3,fs_grass_02.mp3,fs_grass_03.mp3,fs_grass_04.mp3</asset>
+		<asset id="rock">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3 </asset>
+		<asset id="wood">fs_wood_plank_01.mp3,fs_wood_plank_02.mp3,fs_wood_plank_03.mp3,fs_wood_plank_04.mp3</asset>
+	</sound>
+	<sound type="effects">
+		<asset allowOverlap="false" triggeredByEvent="pulley_move_sound">pulley_01_L.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>50</left>
+		<top>0</top>
+		<right>2700</right>
+		<bottom>2800</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>5</left>
+		<top>0</top>
+		<right>2800</right>
+		<bottom>2750</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,items.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths prependTypePath="true">scenes/time/shared/sounds.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2500</x>
+			<y>2800</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.time.renaissance2.Renaissance2</scene>
+		<x>1556</x>
+		<y>1105</y>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

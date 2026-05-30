@@ -1,0 +1,343 @@
+<merged>
+
+<file path="/vendor_cart/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<layers>
+	<layer hit="true">
+      <asset>vendorCart.zip</asset>
+		<offsetX>1400</offsetX>
+	    <offsetY>1360</offsetY>
+    </layer>
+  </layers>
+</scene></file>
+
+<file path="/custom.xml"><ad>
+	<offset>
+		<x>4290</x>
+		<y>1921</y>
+	</offset>
+</ad></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0xCCCC00" id="sand" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x333333" id="road" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00ff00" id="windows" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x003300" id="roof" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x009999" id="metal" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x99ff00" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	<!-- <hit id="blimpRope"><component type="climb"/></hit>-->
+	<hit color="0x0000ff" id="water">
+		<component type="water">
+			<splashColor1>0x6BC3D9</splashColor1>
+			<splashColor2>0xE1E8FF</splashColor2>
+		</component>
+	</hit>
+	
+	<hit id="birds1">
+		<component type="wireBounce">
+			<hitChild>hit</hitChild>
+			<radius>297</radius>
+			<lineSize>3</lineSize>
+			<lineColor>0x000000</lineColor>
+		</component>
+	</hit>
+	<hit id="birds2">
+		<component type="wireBounce">
+			<hitChild>hit</hitChild>
+			<radius>253</radius>
+			<lineSize>3</lineSize>
+			<lineColor>0x000000</lineColor>
+		</component>
+	</hit>
+	<hit id="birds3">
+		<component type="wireBounce">
+			<hitChild>hit</hitChild>
+			<radius>175</radius>
+			<lineSize>3</lineSize>
+			<lineColor>0x000000</lineColor>
+		</component>
+	</hit>
+	<hit id="birds4">
+		<component type="wireBounce">
+			<hitChild>hit</hitChild>
+			<radius>218</radius>
+			<lineSize>3</lineSize>
+			<lineColor>0x000000</lineColor>
+		</component>
+	</hit>
+	
+</hits></file>
+
+<file path="/vendor_cart.xml"><vendor_cart>
+</vendor_cart></file>
+
+<file path="/blimp.xml"><scene>
+	<layers>
+		<layer id="blimp">
+			<offsetX>871.1</offsetX>
+			<offsetY>1497.95</offsetY> <!-- 10 pixels lower than in-scene blimp -->
+		</layer>
+	</layers>
+</scene></file>
+
+<file path="/dialog.xml"><dialogs>
+    <character id="char1">
+		<statement>Something's wrong over at Pendulum's Lab!</statement>
+		<statement event="time_repaired">Looks like things have calmed down at Pendulum's lab.</statement>
+    </character>
+	<character id="labGirl">
+		<statement link="docTalk2">Help! Something terrible has happened, and now the future is in peril!</statement>
+		<statement id="docTalk2" triggerEventArgs="enter_lab" triggerEvent="completeEvent">Please come in!</statement>
+    </character>
+</dialogs></file>
+
+<file path="/popups/npcs.xml"><npcs>
+</npcs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="char1">
+		<skin random="true">
+			 <gender></gender>
+			 <eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>1388</x> 
+			<y>1930</y> 
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc event="not_entered_lab" id="labGirl">
+		<animations random="true" loop="true">
+			<animation duration="150">game.data.animation.entity.character.Cry</animation>
+			<animation duration="100">game.data.animation.entity.character.Grief</animation>
+			<animation duration="200">game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			 <gender>female</gender> 
+			 <skinColor>0xFFE271</skinColor> 
+			 <hairColor>0xD26231</hairColor>
+			 <mouth>10</mouth> 
+			 <facial>4</facial> 
+			 <hair>42</hair> 
+			 <shirt>rat</shirt> 
+			 <pants>bartholdi</pants>
+			 <overshirt>apron</overshirt>
+			 <eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>3212</x> 
+			<y>1930</y> 
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+  <npc id="npc_friend">
+    <skin>
+      <gender>male</gender>
+      <skinColor>0x000000</skinColor>
+      <hairColor>0x000000</hairColor>
+    </skin>
+    <position>
+      <x>1588</x>
+      <y>2685</y>
+    </position>
+    <range>
+		<x>0</x>
+		<y>0</y>
+	</range>
+  </npc>
+  <npc id="npc_friend_bitmap">
+	<bitmap>Blank.zip</bitmap>
+    <position>
+      <x>1588</x>
+      <y>2685</y>
+    </position>
+    <range>
+		<x>0</x>
+		<y>0</y>
+	</range>
+	<ignoreDepth>true</ignoreDepth>
+  </npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">Time_Tangled_Main_Theme.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">sunny_clear_day.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset id="door1">door_knob_turn_open_01.mp3</asset>
+		<asset id="door2">door_metal_lab_01.mp3</asset>
+	</sound>
+	
+	<sound action="wireBounce" type="effects">
+		<asset id="birds1">wire_strain_01.mp3</asset>
+		<asset id="birds2">wire_strain_01.mp3</asset>
+		<asset id="birds3">wire_strain_01.mp3</asset>
+		<asset id="birds4">wire_strain_01.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="sand">ls_sand_01.mp3, ls_sand_02.mp3</asset>
+		<asset id="road">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="windows">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="roof">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="metal">ls_general_metal_01.mp3, ls_general_metal_02.mp3</asset>
+		<asset id="birds1">ls_bounce_01.mp3,ls_bounce_02.mp3,ls_bounce_03.mp3</asset>
+		<asset id="birds2">ls_bounce_01.mp3,ls_bounce_02.mp3,ls_bounce_03.mp3</asset>
+		<asset id="birds3">ls_bounce_01.mp3,ls_bounce_02.mp3,ls_bounce_03.mp3</asset>
+		<asset id="birds4">ls_bounce_01.mp3,ls_bounce_02.mp3,ls_bounce_03.mp3</asset>
+		<asset id="wood"> ls_wood_plank_01.mp3, ls_wood_plank_01.mp3</asset>
+		<asset id="water">ls_water_splash_01.mp3, ls_water_splash_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="sand">fs_sand_01.mp3, fs_sand_02.mp3, fs_sand_03.mp3, fs_sand_04.mp3</asset>
+		<asset id="road">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="windows">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="roof">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="metal">fs_general_metal_01.mp3, fs_general_metal_02.mp3, fs_general_metal_03.mp3, fs_general_metal_04.mp3</asset>
+		<asset id="water">fs_water_01.mp3, fs_water_02.mp3, fs_water_03.mp3, fs_water_04.mp3, fs_swim_water_01.mp3, fs_swim_water_02.mp3, fs_swim_water_03.mp3</asset>
+	</sound>
+	<sound type="effects">
+		<asset triggeredByEvent="openPaper">newsbox_open_01.mp3</asset>
+		<asset triggeredByEvent="closePaper">newsbox_close_01.mp3</asset>
+		<asset triggeredByEvent="clickCrab">click_crab_01.mp3</asset>
+		<asset triggeredByEvent="crabExplode">crab_explode_01.mp3</asset>
+	</sound>
+	
+	<sound action="climbDown" type="effects">
+		<asset allowOverlap="false" id="climb1">slide_down_rope_01.mp3</asset>
+	</sound>
+	
+	<sound action="climb" type="effects">
+		<asset allowOverlap="false" id="climb1">grab_rope_03.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>mainstreet</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>5500</right>
+		<bottom>2000</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>-150</top>
+		<right>5600</right>
+		<bottom>2150</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,custom.xml,blimp.xml,vendor_cart.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths prependTypePath="true">scenes/time/shared/sounds.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2699</x>
+			<y>1933</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+	<suppressFollower>true</suppressFollower>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="exitToMap">
+		<scene>game.scenes.map.map.Map</scene>
+		<x>0</x>
+		<y>0</y>
+		<label>
+			<text>TRAVEL</text>
+			<type>exitUp</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door dest="commonRoom" id="door1">
+		<scene>game.scenes.time.common.Common</scene>
+		<x>499</x>
+		<y>954</y>
+		<label>
+			<text>COMMON ROOM</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="door2">
+		<scene>game.scenes.time.lab.Lab</scene>
+		<x>398</x> 
+	  	<y>720</y>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+		<door id="doorDeadEnd">
+		<scene>game.scenes.time.adDeadEnd.AdDeadEnd</scene>
+		<x>850</x>
+		<y>600</y>
+		<label>
+			<text>GO LEFT</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>50</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>	
+</doors></file>
+
+</merged>

@@ -1,0 +1,275 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x00FF00" id="concrete" platform="true">
+		<component type="platform"/>
+	</hit>	
+	<hit color="0x6633CC" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="trapped">I'm trapped!</statement>
+		<statement id="thank_bird">Thank you little pal!</statement>
+	</character>
+	
+	<character id="nightingale">
+		<statement id="footsteps">I'm telling you, Warden, I heard footsteps out here!</statement>
+		<statement id="nothing">I guess it was nothing.</statement>
+	</character>
+	
+	<character id="ratchet">
+		<statement id="end">I've always wanted to catch an escapee in the act.</statement>
+		<statement id="gone">Some footsteps. Hmph!</statement>
+	</character>
+	
+	<character id="warden">
+		<statement id="no_escape">No one escapes Pelican Rock on my watch! We'll search every square inch of this roof.</statement>
+		<statement id="escaped">Hmm...</statement>
+	</character>
+</dialogs></file>
+
+<file path="/male/npcs.xml"><npcs>
+	<npc id="warden">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>shadycop</mouth>
+			<facial>pr_warden</facial>
+			<hair>pr_warden</hair>
+			<shirt>pr_warden</shirt>
+			<pants>astrofarmer</pants>
+			<item>clipboard</item>
+			<eyeState>open_still</eyeState>
+		</skin>
+		<position>
+			<x>-100</x>
+			<y>0</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc id="nightingale">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x513b2b</hairColor>
+			<mouth>prisoner1</mouth>
+			<facial>pr_nightingale</facial>
+			<hair>1</hair>
+			<shirt>pr_guard</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint_still</eyeState>
+		</skin>
+		<position>
+			<x>-100</x>
+			<y>0</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="ratchet">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0x875927</hairColor>
+			<mouth>14</mouth>
+			<hair>pr_ratchet</hair>
+			<shirt>pr_guard2</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint_still</eyeState>
+		</skin>
+		<position>
+			<x>-100</x>
+			<y>0</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+</npcs></file>
+
+<file path="/male/scene.xml"><scene>
+	<sceneType>default</sceneType>&gt;
+	<data>npcs.xml</data>
+</scene></file>
+
+<file path="/npcs.xml"><npcs>
+
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">Pelican_Rock.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" loop="true">nightime_crickets_01_loop.mp3</asset>
+	</sound>
+
+	<sound action="impact" type="effects">
+		<asset id="concrete">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="wood">ls_wood_plank_decay_01.mp3, ls_wood_plank_decay_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="concrete">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="wood">fs_wood_plank_decay_01.mp3, fs_wood_plank_decay_02.mp3, fs_wood_plank_decay_03.mp3, fs_wood_plank_decay_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/female/npcs.xml"><npcs>	
+	<npc id="warden">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>sponsoredith</mouth>
+			<facial>pr_warden</facial>
+			<hair>pr_wardenf</hair>
+			<shirt>pr_warden</shirt>
+			<pants>astromonk</pants>
+			<item>clipboard</item>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>-100</x>
+			<y>0</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="nightingale">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x513b2b</hairColor>
+			<mouth>athena</mouth>
+			<facial>pr_nightingalef</facial>
+			<hair>1</hair>
+			<shirt>pr_guard</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>-100</x>
+			<y>0</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="ratchet">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0x875927</hairColor>
+			<mouth>14</mouth>
+			<hair>pr_ratchetf</hair>
+			<shirt>pr_guard2</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>-100</x>
+			<y>0</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/female/scene.xml"><scene>
+	<sceneType>default</sceneType>&gt;
+	<data>npcs.xml</data>
+</scene></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>42</top>
+		<right>3800</right>
+		<bottom>1000</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>-50</left>
+		<top>45</top>
+		<right>3800</right>
+		<bottom>1000</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<absoluteFilePaths>scenes/prison/shared/dialog.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>200</x>
+			<y>700</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.prison.roof2.Roof2</scene>
+		<x>3454</x>
+		<y>715</y>
+		<direction>left</direction>
+		<label>
+			<text>GO LEFT</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>50</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

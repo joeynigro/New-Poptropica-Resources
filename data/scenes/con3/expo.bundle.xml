@@ -1,0 +1,208 @@
+
+<merged>
+	
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="gotIt">Got it!</statement>
+	</character>
+	<character id="wizard">
+		<statement id="best">Best con ever!</statement>
+		<statement>Best con ever!</statement>
+	</character>
+	<character id="fan">
+		<statement id="top">No way they top that next year.</statement>
+		<statement>No way they top that next year.</statement>
+	</character>
+	<character id="leader">
+		<statement id="sorry">So, can we just forget about that whole thing where I sold out humankind? Maybe if I give you this?</statement>
+		<statement>So, can we just forget about that whole thing where I sold out humankind?</statement>
+    </character>
+    <character id="stan">
+    	<statement>What an exciting storyline that was. They ought to make a movie!</statement>
+    </character>
+</dialogs></file>
+	
+<file path="/doors.xml"><doors>
+</doors></file>
+	
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x99ccff" id="carpet" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+</hits></file>
+	
+<file path="/npcs.xml"><npcs>
+	<npc id="leader">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa71</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>pangelf</mouth>
+			<marks>beautymark</marks>
+			<facial>lc_mic</facial>
+			<hair>poptropicon_check</hair>
+			<shirt>poptropicon_check</shirt>
+			<pants>aeolus</pants>
+			<overshirt>poptropicon_costumecheck</overshirt>
+			<overpants>poptropicon_consec</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>850</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="fan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xecc59f</skinColor>
+			<hairColor>0x402312</hairColor>
+			<mouth>15</mouth>
+			<marks>poptropicon_jerk</marks>
+			<facial>poptropicon_jerk</facial>
+			<hair>1</hair>
+			<shirt>poptropicon_jerk</shirt>
+			<pants>frenchman</pants>
+			<item>bl_latte</item>
+			<overpants>poptropicon_jerk</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1050</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="wizard">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>prisoner4</mouth>
+			<marks>vcdraculaold</marks>
+			<facial>poptropicon_wizard</facial>
+			<hair>vcchris</hair>
+			<shirt>mthninjablue</shirt>
+			<pants>mtsusanb</pants>
+			<pack>skullmoroguy3</pack>
+			<item>pointer</item>
+			<overshirt>mthfishmonger</overshirt>
+			<overpants>mthreferee</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>950</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="stan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xebd5ad</skinColor>
+			<hairColor>0xdbd6cd</hairColor>
+			<mouth>wkgrmpa</mouth>
+			<marks>poptropicon_stan</marks>
+			<facial>poptropicon_stan</facial>
+			<hair>poptropicon_stan</hair>
+			<shirt>bare</shirt>
+			<pants>wwponyexpress</pants>
+			<overshirt>poptropicon_stan</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1200</x>
+			<y>935</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+	
+<file path="/scene.xml"><scene>
+	<sceneType>shortmain</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>4025</right>
+		<bottom>1030</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>4025</right>
+		<bottom>1030</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<absoluteFilePaths>scenes/con3/shared/dialog.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>720</x>
+			<y>835</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+	
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">poptropicon2_main_theme.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>openDoor_pushBar.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="plastic">ls_plastic_01.mp3, ls_plastic_02.mp3</asset>
+		<asset id="baseGround">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="carpet">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="floor">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="plastic">fs_plastic_01.mp3, fs_plastic_02.mp3,fs_plastic_03.mp3, fs_plastic_04.mp3</asset>
+		<asset id="baseGround">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="carpet">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+</merged>

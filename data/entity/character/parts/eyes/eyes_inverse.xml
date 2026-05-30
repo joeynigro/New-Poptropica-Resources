@@ -1,0 +1,35 @@
+
+<part ignoreTimelines="true" >
+  <id>eyes_inverse</id>
+  <type>eyes</type>
+  <asset>eyes</asset>
+  <retrieveColors>
+	<part id="skinColor"/>
+  </retrieveColors>
+  <colors>
+	  <color id="skinColor"/>
+	  <color id="eyeBallColor">0x000000</color>
+	  <color id="pupilColor">0xFFFFFF</color>
+  </colors>
+  <colorables>
+	  <colorable id="skinColor">
+		  <clip instanceName="lids.lid1"/>
+		  <clip instanceName="lids.lid2"/>
+	  </colorable>
+	  <colorable id="skinColor" darken=".5">
+		  <clip instanceName="outlines"/>
+		  <clip instanceName="lidLineStatic"/>
+	  </colorable>
+	  <colorable id="eyeBallColor">
+		  <clip instanceName="eye1.eyeball"/>
+		  <clip instanceName="eye2.eyeball"/>
+	  </colorable>
+	  <colorable id="pupilColor">
+		  <clip instanceName="eye1.pupil"/>
+		  <clip instanceName="eye2.pupil"/>
+	  </colorable>
+  </colorables>
+  <components>
+	<component class="game.components.entity.character.part.eye.Eyes"></component>
+  </components>
+</part>

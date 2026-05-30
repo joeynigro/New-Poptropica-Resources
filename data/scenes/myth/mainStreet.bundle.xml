@@ -1,0 +1,805 @@
+<merged>
+	<file path="/custom.xml">
+		<ad>
+			<offset>
+				<x>6537</x>
+				<y>1374</y>
+			</offset>
+		</ad>
+	</file>
+
+	<file path="/vendor_cart/scene.xml"><scene>
+		<sceneType>default</sceneType>
+		<layers>
+			<layer hit="true">
+				<asset>vendorCart.zip</asset>
+				<offsetX>3930</offsetX>
+				<offsetY>907</offsetY>
+			</layer>
+		</layers>
+	</scene></file>
+<file path="/hits.xml">
+		<hits>
+			<hit id="baseGround" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x00ff00" id="stone" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x996600" id="clay" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x006600" id="brick" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x99cc00" id="tree" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x99cccc" id="helmet" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0xcccc00" id="tile" platform="true">
+				<component type="platform"/>
+			</hit>
+
+			<hit id="climb1">
+				<component type="climb"/>
+			</hit>
+			<hit color="0x003300" id="wood" platform="true">
+				<component type="platform"/>
+			</hit>
+		</hits>
+	</file>
+
+<file path="/blimp.xml">
+		<scene>
+			<layers>
+				<layer id="blimp">
+					<offsetX>1431</offsetX>
+					<offsetY>579.85</offsetY>					<!-- 10 pixels lower than in-scene blimp -->
+				</layer>
+			</layers>
+		</scene>
+	</file>
+
+<file path="/dialog.xml">
+		<dialogs>
+			<character id="player">
+				<statement id="gate_locked">It's locked, and that's one hefty padlock!</statement>
+				<statement event="unlock_gate" linkEntityId="herc" link="gate_locked">The gate is locked!</statement>
+				<statement id="myth_intro_response">Cool. I'll go find it.</statement>
+				<statement linkEntityId="athena" id="what" link="look">What do you mean?</statement>
+				<statement id="ask_mirror" linkEntityId="aphrodite" link="give_mirror">No but do you have anything for my quest?</statement>
+				<statement id="gorgeous" linkEntityId="aphrodite" link="agree"> Okay...Sure.</statement>
+				<statement linkEntityId="athena" id="nowWhat" link="getHerc">What do I do?</statement>
+				<statement linkEntityId="char1" id="helpQuest">Thanks!</statement>
+				<statement id="have_teleporter" triggerEventArgs="use_mirror" triggerEvent="triggerEvent">No problem. I've got a magic mirror to get us there.</statement>
+				<statement triggerEvent="triggerEvent" triggeredByEvent="item_puzzle_complete" triggerEventArgs="zeus_appears_steal,true">It says, “Whoever wields the five, sacred objects will rule all of Poptropica.”</statement>
+				<statement id="rulePoptropica" linkEntityId="zeus" link="myImmortality">What about my immortality?</statement>
+				<statement id="foolish" linkEntityId="zeus" link="giveBack">Give them back!</statement>
+				<statement id="stopMyFather" linkEntityId="athena" link="howTo">What do I do?</statement>
+				<statement id="askHercules" triggerEventArgs="hercules_mainStreet,true" triggerEvent="triggerEvent">I'll go get Hercules.</statement>
+			</character>
+			<!-- FRUIT HAT LADY  -->
+			<character id="char1">
+				<statement>May the gods watch over you, stranger.</statement>
+				<statement id="myth_intro">Climb the steps to get the apple of immortality.</statement>
+				<statement event="gotItem_goldenApple" linkEntityId="player" link="helpQuest" triggerEventArgs="talked_with_fruitHatLady" triggerEvent="completeEvent">You look as if you have been sent on a special errand. The Temple Grove will help you on your quest.</statement>
+				<statement event="zeus_appears_steal">May the gods be with you.</statement>
+				<statement event="hasItem_medalMythology">I knew you were destined for greatness.</statement>
+			</character>
+			<!-- SATYR -->
+			<character id="satyr">
+				<statement>I wouldn't cross this bridge right now. The Sphinx is in a foul mood!</statement>
+				<statement triggeredByEvent="satyr_LockedZone">I wouldn't cross this bridge right now. The Sphinx is in a foul mood!</statement>
+			</character>
+
+			<!-- HERCULES -->
+			<character id="herc">
+				<conversation>
+					<exchange>
+						<question>I need your help! Your dad wants to rule Poptropica. Come with me and see Hades and Poseidon.</question>
+						<answer triggerEventArgs="check_for_mirror" triggerEvent="triggerEvent">Sorry, kid. I ate way too much for lunch. I can barely move.</answer>
+					</exchange>
+				</conversation>
+				<statement id="after_you">After you...</statement>
+				<statement event="zeus_gate_open">After you...</statement>
+				<statement id="gate_locked" link="gate_locked_2">Locked to puny mortals like you, maybe. But not to the mighty Hercules!</statement>
+				<statement id="gate_locked_2" triggerEventArgs="zeus_gate_open,true" triggerEvent="triggerEvent">Watch and learn, grasshopper.</statement>
+				<statement id="need_teleporter">Unless you've got something to transport us there I'm staying here.</statement>
+				<statement id="notReady_for_ZEUS">I don't think you're ready to face Zeus yet, kid.</statement>
+				<statement id="dontVisitAPHRODITE">I'd rather not visit APHRODITE right now.</statement>
+			</character>
+			<!-- GOAT HERDER -->
+			<character id="char6">
+				<statement id="feed_to_goat"> If I had that apple I'd feed it to my goat.</statement>
+				<!-- <statement>Wow! I can see Mount Olympus from here!</statement> -->
+				<statement event="hasItem_medalMythology">At least I've got my goat.</statement>
+				<statement event="gotItem_goldenApple">I'd like to feed him to my goat.</statement>
+				<statement event="hercules_chilling">I don't remember why I'm standing in line.</statement>
+			</character>
+			<!-- WOMAN WITH THE GREEN TOGA -->
+			<character id="teen2">
+				<statement id="golden_apple">Did you hear about the golden apple at the Tree of Immortality?</statement>
+				<statement event="gotItem_goldenApple">I can't believe you talked to Zeus.</statement>
+				<statement event="hasItem_medalMythology">Where is he now?</statement>
+				<statement event="hercules_chilling">My feet are killing me but the wait was worth it.</statement>
+			</character>
+			<!-- WOMAN IN PURPLE TOGA -->
+			<character id="teen1">
+				<statement id="immortality_great">I sure did. I wish I could get one. Immortality sounds so great.</statement>
+				<statement event="gotItem_goldenApple">The Thunder God scares me.</statement>
+				<statement event="hasItem_medalMythology">I don't know but I heard there is a statue of him now.</statement>
+				<statement event="hercules_chilling">Someone should build a statue of him.</statement>
+			</character>
+			<!-- APHRODITE -->
+			<character id="aphrodite">
+				<statement linkEntityId="player" link="ask_mirror"  triggerEventArgs="talked_with_aphrodite" triggerEvent="completeEvent">Did you come to gaze upon a lovely goddess?</statement>
+				<statement id="give_mirror" triggerEvent="giveItem" triggerEventArgs="aphroditeMirror">Sigh...fine. I'll help you. Take this mirror. I've already memorized every detail of my perfect face anyway.  After you visit all of the areas in the mirror once, you can teleport where you need to go.</statement>
+				<statement event="gotItem_aphroditeMirror" linkEntityId="player" link="gorgeous">You have to admit I'm gorgeous.</statement>
+				<statement id="agree" linkEntityId="player">The Grove of temples is on your right!</statement>
+				<statement event="hasItem_medalMythology">You saved the day! Three cheers for you.</statement>
+			</character>
+			<!-- ELDERLY WOMAN -->
+			<character id="crone">
+				<statement triggerEventArgs="talked_with_elderlyWoman" triggerEvent="completeEvent">In search of the golden apple, eh? Good luck to you, child. Things aren't always what they seem.</statement>
+			</character>
+			<character id="athena">
+
+				<statement id="zeus_escaped" link="noGood">This is not good.</statement>
+				<statement linkEntityId="player" id="noGood" link="nowWhat">Only the power of Poseidon and Hades can stop my father.</statement>
+				<statement linkEntityId="player" id="getHerc" link="askHercules">Hercules can help you reach them.</statement>
+				<statement event="hasItem_medalMythology">You are a true hero.</statement>
+				<conversation>
+					<exchange>
+						<question>Who are you?</question>
+						<answer>I am Athena. Be careful dealing with my father. He isn't honest.</answer>
+					</exchange>
+					<exchange>
+						<question>Can you help me?</question>
+						<answer triggerEventArgs="athena_olives" triggerEvent="triggerEvent">Look to the olive trees if you need my help.</answer>
+					</exchange>
+					<exchange>
+						<question>Thanks. Anything else I should know?</question>
+						<answer>My brother Hercules might help you once he gets back from lunch.</answer>
+					</exchange>
+				</conversation>
+
+				<statement event="athena_all_items" link="danger">I see you have the five objects.</statement>
+				<statement linkEntityId="player" id="danger" link="what">I have learned something about them. They are dangerous!</statement>
+				<statement id="look" triggerEventArgs="item_puzzle_start" triggerEvent="triggerEvent">Take a closer look at those clues...</statement>
+				<statement id="notGood" linkEntityId="player" link="stopMyFather">Only the power of Poseidon and Hades can stop my father.</statement>
+				<statement id="howTo" linkEntityId="player" link="noHelp">Hercules can help you reach them.</statement>
+			</character>
+			<character id="customDialog1">
+				<statement>I dare you to pick an apple!</statement>
+				<statement event="gotItem_zeusScroll">Uh oh, you shouldn't have picked that apple!</statement>
+				<statement event="got_all_items">Did you complete your quest yet?</statement>
+			</character>
+
+			<character id="customDialog2">
+				<statement>I double dare you to pick an apple!</statement>
+				<statement event="gotItem_zeusScroll">We're just statues. Why would you listen to us?</statement>
+				<statement event="got_all_items">Welcome back.</statement>
+			</character>
+			<character id="zeus">
+				<statement linkEntityId="player" triggeredByEvent="zeus_steal_finished" link="rulePoptropica">Thank you! Now I can control all of Poptropica.</statement>
+				<statement id="myImmortality" linkEntityId="player" link="foolish">Foolish mortal. I was just using you.</statement>
+				<statement id="giveBack" triggerEventArgs="zeus_escaped, true" triggerEvent="triggerEvent">Not a chance! Soon all of Poptropica will be under my control.</statement>
+			</character>
+		</dialogs>
+	</file>
+
+<file path="/npcs.xml">
+		<npcs>
+
+			<npc id="char1" questMarker="talked_with_pan,talked_with_fruithatlady">
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xfee0d8</skinColor>
+					<hairColor>0xf5c454</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>mythpes1</mouth>
+					<marks>mythpes6</marks>
+					<hair>mythpes6</hair>
+					<shirt>mythpes6</shirt>
+					<pants>mythpes6</pants>
+					<overpants>mythpes6</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>1080.3</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>right</direction>
+			</npc>
+
+			<npc event="hercules_chilling" id="herc" questMarker="start,talked_with_hercMainStreet">
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0x443828</hairColor>
+					<mouth>hercules</mouth>
+					<marks>hercules</marks>
+					<hair>hercules</hair>
+					<shirt>bare</shirt>
+					<pants>1</pants>
+					<overshirt>hercules</overshirt>
+					<overpants>hercules</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>3728</x>
+					<y>1348</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<scale>.5</scale>
+			</npc>
+			
+			<npc event="ready_to_face_zeus" id="herc">
+				<position>
+					<x>4560</x>
+					<y>1110</y>
+				</position>
+			</npc>
+
+			<npc id="char6">
+				<faceSpeaker>false</faceSpeaker>
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xfee0d8</skinColor>
+					<hairColor>0xf08b2b</hairColor>
+					<eyes>eyes</eyes>
+					<marks>freckles</marks>
+					<hair>mythpes2</hair>
+					<shirt>mythpes2</shirt>
+					<pants>mythpes7</pants>
+					<overpants>mythpes2</overpants>
+					<eyeState>open</eyeState>
+				</skin>
+				<position>
+					<x>4142</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+			</npc>
+
+			<npc id="npc_friend">
+				<skin>
+					<gender>male</gender>
+					<skinColor>0x000000</skinColor>
+					<hairColor>0x000000</hairColor>
+				</skin>
+				<position>
+					<x>1685</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+			</npc>
+
+			<npc id="npc_friend_bitmap">
+				<bitmap>Blank.zip</bitmap>
+				<position>
+					<x>1685</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<ignoreDepth>true</ignoreDepth>
+			</npc>
+
+			<npc id="teen1">
+				<faceSpeaker>false</faceSpeaker>
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0x443828</hairColor>
+					<mouth>mythTeen1</mouth>
+					<marks>mythTeen1</marks>
+					<hair>mythTeen1</hair>
+					<shirt>mythTeen1</shirt>
+					<pants>mythTeen1</pants>
+					<pack>mythTeen1</pack>
+					<overpants>mythTeen1</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>3942</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+			</npc>
+
+			<npc id="teen2">
+				<faceSpeaker>false</faceSpeaker>
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xfae0c9</skinColor>
+					<hairColor>0xf08b2b</hairColor>
+					<mouth>mythTeen2</mouth>
+					<marks>mythTeen2</marks>
+					<hair>mythTeen2</hair>
+					<shirt>mythTeen2</shirt>
+					<pants>mythTeen2</pants>
+					<pack>mythTeen2</pack>
+					<overpants>mythTeen2</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>3842</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+			</npc>
+
+			<npc id="aphrodite" questMarker="start,talked_with_aphrodite">
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xfee0d8</skinColor>
+					<hairColor>0xFDD124</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>aphrodite</mouth>
+					<marks>aphrodite</marks>
+					<hair>aphrodite</hair>
+					<shirt>aphrodite</shirt>
+					<pants>aphrodite</pants>
+					<pack>aphrodite</pack>
+					<item>aphroMirror</item>
+					<overshirt>aphrodite</overshirt>
+					<overpants>aphrodite</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>5626</x>
+					<y>1298</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+				<scale>.5</scale>
+			</npc>
+
+			<npc id="aphrodite" event="gotItem_aphroditeMirror">
+				<skin>
+					<pack>aphrodite</pack>
+					<item>empty</item>
+					<overshirt>aphrodite</overshirt>
+					<overpants>aphrodite</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+			</npc>
+
+			<npc id="crone" questMarker="talked_with_aphrodite,talked_with_elderlyWoman">
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0xCCCCCC</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>athena</mouth>
+					<marks>wrinkles</marks>
+					<facial>athenaOld</facial>
+					<shirt>athenaOld</shirt>
+					<pants>athena</pants>
+					<pack>athenaOld</pack>
+					<overshirt>athenaOld</overshirt>
+					<overpants>athenaOld</overpants>
+					<lineColor></lineColor>
+					<eyeState>squint</eyeState>
+					<lineWidth></lineWidth>
+				</skin>
+				<position>
+					<x>1500</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>100</x>
+					<y>0</y>
+				</range>
+				<direction>right</direction>
+			</npc>
+
+			<npc event="gotItem_zeusScroll" id="crone">
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0xCCCCCC</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>athena</mouth>
+					<marks>wrinkles</marks>
+					<facial>athenaOld</facial>
+					<shirt>athenaOld</shirt>
+					<pants>athena</pants>
+					<pack>athenaOld</pack>
+					<overshirt>athenaOld</overshirt>
+					<overpants>athenaOld</overpants>
+					<lineColor></lineColor>
+					<eyeState>squint</eyeState>
+					<lineWidth></lineWidth>
+				</skin>
+				<position>
+					<x>1500</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>right</direction>
+			</npc>
+
+			<npc event="athena_appear" id="athena">
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0x0</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>athena</mouth>
+					<marks>athena</marks>
+					<hair>athena</hair>
+					<shirt>athena</shirt>
+					<pants>athena</pants>
+					<pack>athena</pack>
+					<item>athena</item>
+					<overpants>athena</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>1500</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+				<faceSpeaker>false</faceSpeaker>
+				<scale>0.5</scale>
+			</npc>
+
+			<npc event="got_all_items" id="athena">
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0x0</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>athena</mouth>
+					<marks>athena</marks>
+					<hair>athena</hair>
+					<shirt>athena</shirt>
+					<pants>athena</pants>
+					<pack>athena</pack>
+					<item>athena</item>
+					<overpants>athena</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>1500</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+				<faceSpeaker>false</faceSpeaker>
+				<scale>0.5</scale>
+			</npc>
+
+			<!--<npc id="satyr"><skin><gender>male</gender><skinColor>0xF7CD6F</skinColor><hairColor>0x338FAE</hairColor><eyes>eyes</eyes><mouth>astroGuard1</mouth><marks>satyr</marks><hair>satyr</hair><shirt>bare</shirt><pants>satyr</pants><pack>satyr</pack><item>satyr</item><eyeState>open</eyeState></skin><position><x>185</x><y>1159</y></position><range><x>0</x><y>0</y></range><direction>right</direction><faceSpeaker>false</faceSpeaker></npc>-->
+
+			<npc event="got_all_items" id="zeus">
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xfde6b6</skinColor>
+					<hairColor>0xffffff</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>shadycop</mouth>
+					<marks>zeus</marks>
+					<hair>zeus</hair>
+					<shirt>zeus</shirt>
+					<pants>zeus</pants>
+					<pack>zeus</pack>
+					<item>zeus</item>
+					<overshirt>zeus</overshirt>
+					<overpants>zeus</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>978</x>
+					<y>1400</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>right</direction>
+				<scale>0.6</scale>
+			</npc>
+			<npc id="satyr">
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xF7CD6F</skinColor>
+					<hairColor>0x338FAE</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>astroGuard1</mouth>
+					<marks>satyr</marks>
+					<hair>satyr</hair>
+					<shirt>bare</shirt>
+					<pants>satyr</pants>
+					<pack>satyr</pack>
+					<item>satyr</item>
+					<eyeState>open</eyeState>
+				</skin>
+				<position>
+					<x>185</x>
+					<y>1259</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>right</direction>
+				<faceSpeaker>false</faceSpeaker>
+			</npc>
+		</npcs>
+	</file>
+
+<file path="/sounds.xml">
+		<sounds>
+			<sound type="music">
+				<asset fade="true" exclusiveType="true" loop="true">mythology_main_theme.mp3</asset>
+			</sound>
+
+			<sound type="ambient">
+				<asset fade="true" exclusiveType="true" loop="true">sunny_clear_day_2.mp3</asset>
+			</sound>
+
+			<sound action="doorOpened" type="effects">
+				<asset id="doorMountOlympus1">metal_slide_01.mp3</asset>
+				<asset id="doorOlympusMuseum">enter_temple_01.mp3</asset>
+				<asset id="doorHercsHut">door_squeaky_metal_swing_01.mp3</asset>
+			</sound>
+
+			<sound action="climb" type="effects">
+				<asset allowOverlap="false" id="climb1">rope_strain_01.mp3</asset>
+			</sound>
+
+			<sound type="effects">
+				<asset triggeredByEvent="zeus_appears_sound">myth_enter_zues_01.mp3</asset>
+				<asset triggeredByEvent="zeus_steal_sound">myth_zues_steals_items_01.mp3</asset>
+				<asset baseVolume="3" triggeredByEvent="athena_olives">myth_sparkle_loop_01.mp3</asset>
+				<asset triggeredByEvent="herc_break_lock">myth_herc_punch_lock_01.mp3</asset>
+			</sound>
+
+			<sound action="transform" type="effects">
+				<asset modifiers="position" id="athena">myth_transform_01.mp3</asset>
+			</sound>
+
+			<sound action="impact" type="effects">
+				<asset id="baseGround">ls_concrete_01.mp3,ls_concrete_02.mp3</asset>
+				<asset id="stone">ls_concrete_01.mp3,ls_concrete_02.mp3</asset>
+				<asset id="clay">ls_clay_tile_01.mp3,ls_clay_tile_02.mp3</asset>
+				<asset id="brick">ls_brick_01.mp3,ls_brick_02.mp3</asset>
+				<asset id="metal">ls_general_metal_01.mp3,ls_general_metal_02.mp3</asset>
+				<asset id="helmet">ls_heavy_metal_01.mp3,ls_heavy_metal_02.mp3</asset>
+				<asset id="tile">ls_tile_01.mp3,ls_tile_02.mp3</asset>
+				<asset id="climb">ls_rope_01.mp3,ls_rope_01.mp3</asset>
+				<asset id="wood">ls_wood_plank_01.mp3,ls_wood_plank_02.mp3</asset>
+				<asset id="tree">ls_tree_01.mp3,ls_tree_02.mp3</asset>
+			</sound>
+
+			<sound action="step" type="effects">
+				<asset id="baseGround">fs_concrete_01.mp3,fs_concrete_02.mp3,fs_concrete_03.mp3,fs_concrete_04.mp3</asset>
+				<asset id="stone">fs_concrete_01.mp3,fs_concrete_02.mp3,fs_concrete_03.mp3,fs_concrete_04.mp3</asset>
+				<asset id="clay">fs_clay_tile_01.mp3,fs_clay_tile_02.mp3,fs_clay_tile_03.mp3,fs_clay_tile_04.mp3</asset>
+				<asset id="brick">fs_brick_01.mp3,fs_brick_02.mp3,fs_brick_03.mp3,fs_brick_04.mp3</asset>
+				<asset id="metal">fs_general_metal_01.mp3,fs_general_metal_02.mp3,fs_general_metal_03.mp3,fs_general_metal_04.mp3</asset>
+				<asset id="helmet">fs_heavy_metal_01.mp3,fs_heavy_metal_02.mp3,fs_heavy_metal_03.mp3,fs_heavy_metal_04.mp3</asset>
+				<asset id="tile">fs_tile_01.mp3,fs_tile_02.mp3,fs_tile_03.mp3,fs_tile_04.mp3</asset>
+				<asset id="climb">slide_down_rope_01.mp3</asset>
+				<asset id="wood">ls_wood_plank_01.mp3,ls_wood_plank_02.mp3</asset>
+				<asset id="tree">ls_tree_01.mp3,ls_tree_02.mp3</asset>
+			</sound>
+		</sounds>
+	</file>
+
+<file path="/scene.xml">
+		<scene>
+			<sceneType>mainstreet</sceneType>
+			<cameraLimits>
+				<left>0</left>
+				<top>0</top>
+				<right>7206</right>
+				<bottom>1431</bottom>
+			</cameraLimits>
+			<bounds>
+				<left>-100</left>
+				<top>0</top>
+				<right>7186</right>
+				<bottom>1400</bottom>
+			</bounds>
+			<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,custom.xml,blimp.xml,vendor_cart.xml</data>
+			<assets>bundle.zip,backdrop.zip</assets>
+			<absoluteFilePaths prependTypePath="true">scenes/myth/shared/sounds.xml, scenes/myth/shared/dialog.xml, scenes/myth/shared/npcs.xml</absoluteFilePaths>
+			<layers>
+
+				<layer>
+					<asset>backdrop.zip</asset>
+				</layer>
+				<layer>
+					<asset>clouds.zip</asset>
+				</layer>
+				<layer>
+					<asset>background.zip</asset>
+				</layer>
+				<layer>
+					<asset>bitmap_hits.zip</asset>
+				</layer>
+				<layer hit="true">
+					<asset>interactive.zip</asset>
+				</layer>
+				<layer>
+					<asset>foreground.zip</asset>
+				</layer>
+			</layers>
+			<player>
+				<defaultPosition>
+					<x>2260</x>
+					<y>1400</y>
+				</defaultPosition>
+				<defaultDirection>left</defaultDirection>
+			</player>
+		</scene>
+	</file>
+
+<file path="/doors.xml">
+		<doors>
+			<door id="doorSphinx">
+				<scene>game.scenes.myth.adStreet.AdStreet</scene>
+				<x>920</x>
+				<y>805</y>
+				<direction>left</direction>
+				<label>
+					<text>GO LEFT</text>
+					<type>exitLeft</type>
+					<offset>
+						<x>150</x>
+						<y>0</y>
+					</offset>
+				</label>
+				<connectingSceneDoors>
+					<door id="doorLeft">
+						<scene>game.scenes.myth.sphinx.Sphinx</scene>
+						<x>2550</x>
+						<y>2249</y>
+						<direction>left</direction>
+					</door>
+					<door id="doorRight">
+						<scene>ggame.scenes.myth.mainStreet.MainStreet</scene>
+						<x>55</x>
+						<y>1148</y>
+						<direction>right</direction>
+					</door>
+				</connectingSceneDoors>
+			</door>
+			<door id="doorOlympusMuseum">
+				<scene>game.scenes.myth.olympusMuseum.OlympusMuseum</scene>
+				<x>152</x>
+				<y>1070</y>
+				<label>
+					<text>Enter</text>
+					<type>exit3D</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+			<door id="exitToMap">
+				<scene>game.scenes.map.map.Map</scene>
+				<x>0</x>
+				<y>0</y>
+				<label>
+					<text>TRAVEL</text>
+					<type>exitUp</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+			<door id="doorHercsHut">
+				<scene>game.scenes.myth.hercsHut.HercsHut</scene>
+				<x>1270</x>
+				<y>480</y>
+				<label>
+					<text>Enter</text>
+					<type>exit3D</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+			<door id="doorMountOlympus1">
+				<scene>game.scenes.myth.mountOlympus.MountOlympus</scene>
+				<x>30</x>
+				<y>2285.6</y>
+				<label>
+					<text>Enter</text>
+					<type>exit3D</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+
+			<door id="doorMidasGym">
+				<scene>game.scenes.myth.midasGym.MidasGym</scene>
+				<x>618</x>
+				<y>815</y>
+				<label>
+					<text>Common Room</text>
+					<type>exit3D</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+			<door id="doorTreeTop">
+				<scene>game.scenes.myth.treeTop.TreeTop</scene>
+				<x>837</x>
+				<y>2789</y>
+				<label>
+					<text>Go Up</text>
+					<type>exitUp</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+			<door id="doorAdGroundH9">
+				<scene>game.scenes.myth.grove.Grove</scene>
+				<x>70</x>
+				<y>869</y>
+				<direction>right</direction>
+				<label>
+					<text>Go Right</text>
+					<type>exitRight</type>
+					<offset>
+						<x>-150</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+		</doors>
+	</file>
+</merged>

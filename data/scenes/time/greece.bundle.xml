@@ -1,0 +1,289 @@
+<merged>
+
+<file path="/items.xml"><items>
+	<item>
+		<id>phonograph</id>
+		<asset>phonograph.zip</asset>
+		<x>677</x>
+		<y>828</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00FF99" id="dirt" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00ff00" id="marble" platform="true">
+		<component type="platform">
+				<stickToPlatforms>true</stickToPlatforms>
+		</component>
+	</hit>
+	<hit color="0x009999" id="brick" platform="true">
+		<component type="platform">
+				<stickToPlatforms>true</stickToPlatforms>
+		</component>
+	</hit>
+	<hit color="0x003300" id="pottery" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x009c9a" id="roof" platform="true">
+		<component type="platform">
+				<stickToPlatforms>true</stickToPlatforms>
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="char1">
+		<statement>Stay back! We can't trust anyone near the treasury any more!</statement>
+		<statement event="returned_goldenVase">Thank you! As a reward, you may speak to the oracle on the hill.</statement>
+    </character>
+	<character id="char2">
+		<conversation>
+			<exchange>
+				<question>What are you doing?</question>
+				<answer>We're guarding the treasury. We don't want anything else stolen.</answer>
+			</exchange>
+			<exchange>
+				<question>Something was stolen?</question>
+				<answer>The prized golden vase is gone!</answer>
+			</exchange>
+			<exchange>
+				<question>Can I help?</question>
+				<answer>If you return the golden vase, you may talk to the oracle.</answer>
+			</exchange>
+		</conversation>
+		<conversation event="hasItem_goldenVase">
+			<exchange>
+				<question>What are you doing?</question>
+				<answer>We're guarding the treasury. We don't want anything else stolen.</answer>
+			</exchange>
+			<exchange>
+				<question>Something was stolen?</question>
+				<answer>The prized golden vase is gone!</answer>
+			</exchange>
+			<exchange>
+				<question style="haveitem">I have the golden vase!</question>
+				<answer triggerEventArgs="goldenVase, char2" triggerEvent="takeItem">Thank you! As a reward, you may speak to the oracle on the hill.</answer>
+			</exchange>
+		</conversation>
+		<statement event="returned_goldenVase">Thank you! As a reward, you may speak to the oracle on the hill.</statement>
+    </character>
+    <character id="char3">
+		<statement>Courage is the first of human qualities because it is the quality which guarantees the others.</statement>
+    </character>
+    <character id="char4">
+		<statement>The oracle will only talk to those who donate to the treasury.</statement>
+    </character>
+    <character id="char5">
+		<statement>Greetings, stranger. Welcome to Delphi.</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="char1">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xF1BE5F</skinColor>
+			<hairColor>0x784321</hairColor>
+			<mouth>greekwarrior</mouth>
+			<facial>greekwarrior</facial>
+			<shirt>greekwarrior</shirt>
+			<pants>greekwarrior</pants>
+			<pack>greekwarrior</pack>
+			<item>greekspear</item>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>570</x>
+			<y>1629</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<ignoreDepth>true</ignoreDepth>
+	</npc>
+	<npc id="char2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xF1BE5F</skinColor>
+			<hairColor>0x55402d</hairColor>
+			<mouth>greekwarrior</mouth>
+			<marks>beardshort2</marks>
+			<facial>greekwarrior</facial>
+			<shirt>greekwarrior</shirt>
+			<pants>greekwarrior</pants>
+			<pack>greekwarrior</pack>
+			<item>greekspear</item>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>781</x>
+			<y>1629</y>
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc id="char3">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xF1BE5F</skinColor>
+			<hairColor>0xCCCCCC</hairColor>
+			<mouth>greekwiseguy</mouth>
+			<marks>beardgreek</marks>
+			<hair>35</hair>
+			<shirt>greekwiseguy</shirt>
+			<pants>1</pants>
+			<item>staff</item>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1386</x>
+			<y>1630</y>
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>200</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc id="char4">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xF1BE5F</skinColor>
+			<hairColor>0x333333</hairColor>
+			<mouth>1</mouth>
+			<marks>laurels</marks>
+			<hair>35</hair>
+			<shirt>greekguy</shirt>
+			<pants>1</pants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>3358</x>
+			<y>1193</y>
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>100</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc id="char5">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xF1BE5F</skinColor>
+			<hairColor>0x333333</hairColor>
+			<mouth>11</mouth>
+			<hair>greeklady</hair>
+			<shirt>greeklady</shirt>
+			<pants>greeklady</pants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>1906</x>
+			<y>1630</y>
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>200</x>
+			<y>0</y>
+		</range>
+	</npc>	
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">Ancient_Greece.mp3</asset>
+	</sound>
+
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">sunny_clear_day.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>enter_temple_01.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_dirt_01.mp3, fs_dirt_02.mp3, fs_dirt_03.mp3, fs_dirt_04.mp3 </asset>
+		<asset id="dirt">fs_dirt_01.mp3, fs_dirt_02.mp3, fs_dirt_03.mp3, fs_dirt_04.mp3 </asset>
+		<asset id="marble">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3 </asset>
+		<asset id="brick">fs_brick_01.mp3, fs_brick_02.mp3, fs_brick_03.mp3, fs_brick_04.mp3 </asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="dirt">ls_dirt_01.mp3, ls_dirt_02.mp3 </asset>
+		<asset id="baseGround">ls_dirt_01.mp3, ls_dirt_02.mp3 </asset>
+		<asset id="marble">ls_concrete_01.mp3, ls_concrete_02.mp3 </asset>
+		<asset id="brick">ls_brick_01.mp3, ls_brick_02.mp3</asset>
+		<asset id="pottery">ls_claypot_01.mp3, ls_claypot_02.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>4300</right>
+		<bottom>1670</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>100</left>
+		<top>0</top>
+		<right>4230</right>
+		<bottom>1685</bottom>		
+	</bounds>
+	<data>dialog.xml,npcs.xml,sounds.xml,hits.xml,doors.xml,items.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths prependTypePath="true">scenes/time/shared/sounds.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>157</x>
+			<y>1620</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.time.greece2.Greece2</scene>
+		<x>2255</x>
+		<y>627</y>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

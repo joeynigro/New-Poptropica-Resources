@@ -1,0 +1,342 @@
+<merged><file path="/items.xml"><items>
+	<item>
+		<id>backpack_straps</id>
+		<asset>backpack.zip</asset>
+		<x>1220</x>
+		<y>1640</y>
+		<label>
+			<text>Examine</text>
+			<type>exitDown</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	
+	<hit color="0x00eeff" id="air">
+		<component type="mover">
+			<acceleration>
+				<x>0</x>
+				<y>-1600</y>
+			</acceleration>
+			<friction>
+				<x>6</x>
+				<y>0</y>
+			</friction>
+			<stickToPlatforms>false</stickToPlatforms>
+		</component>
+	</hit>
+	
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-1200</y>
+			</velocity>
+		</component>
+	</hit>
+	
+	<hit color="0x69A3D1" id="conventionSign" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCBA50C" id="cardboard" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x7ABBC0" id="thinMetal" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x7CBA86" id="heavyMetal" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCCD2D0" id="thinPlastic" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x7C8B87" id="heavyPlastic" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xC9CADC" id="styrofoam" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xD94600" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x000033" id="piping" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x46934A" id="leaves" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xADA49C" id="stones" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x4AAAD9" id="vent" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xACFF75" id="powerBox" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xEFC5B2" id="truck" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xB9AB75" id="tires" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="guard1">
+		<statement id="vips">VIPS only.</statement>
+    </character>
+    
+    <character id="guard2">
+		<statement id="scram">Scram.</statement>
+    </character>
+    
+    <character id="bouncer">
+    	<statement id="getOff">Get down from there!</statement>
+	
+		<statement id="catapult" triggerEventArgs="inquire_further" triggerEvent="triggerEvent">Yeah, it sure is cool. Wait, did you say dangerous? Yes. Dangerous.</statement>
+		<statement forceOnScreen="true" linkEntityId="player" id="theNorse" link="nostalgia">Those people dressed as Norsemen out there. They lovingly crafted it. It looks like it would really work!</statement>
+		<statement id="goPlay" triggerEventArgs="regain_control" triggerEvent="triggerEvent">I'd like to go to the con, but… nah. This is all silly stuff. Kids' stuff.</statement>
+		
+		<statement event="showMjolnir" linkEntityId="player" link="bribeHammer">Wow! That's an amazing Mjolnir replica!</statement>
+		<statement id="theOneTrue" triggerEventArgs="regain_control" triggerEvent="triggerEvent">Sorry, only Thor himself could move me from this spot. </statement>
+		
+		<statement linkEntityId="player" id="cantBe" link="datHammer">The Norse God Thor! Is it really you?</statement>
+		<statement linkEntityId="player" id="repost" link="beGone">Looks like a replica I saw earlier, but never mind. How may I serve you, o powerful Thor?</statement>
+		<statement id="toatsMcGoats" triggerEventArgs="bouncer_out, true" triggerEvent="triggerEvent">Yes! Yes! It's all I ever wanted!</statement>
+    </character>
+    
+    <character id="player">
+    	<statement linkEntityId="guard1" id="guard1" link="vips">May I go in this way?</statement>
+		<statement linkEntityId="guard2" id="guard2" link="scram">May I go in this way?</statement>
+		<statement id="bouncer" triggerEventArgs="dat_catapult" triggerEvent="triggerEvent">That catapult looks pretty dangerous.</statement>
+		
+		<statement linkEntityId="bouncer" id="inquireFurther" link="theNorse">Where did it come from?</statement>
+		<statement linkEntityId="bouncer" id="nostalgia" link="goPlay">You sound wistful.</statement>
+		
+		<statement linkEntityId="bouncer" id="bribeHammer" link="theOneTrue">Perhaps I could give this to you in exchange for letting me use the catapult.</statement>
+
+		<statement id="iAmWhoAm" triggerEventArgs="thor_almighty" triggerEvent="triggerEvent">I have come bearing an important message.</statement>
+		<statement id="datHammer" triggerEventArgs="flash_hammer" triggerEvent="triggerEvent">Of course it's me. Just look at my hammer.</statement>
+		<statement linkEntityId="bouncer" id="beGone" link="toatsMcGoats">You should totally leave your post and hang out at the con.</statement>
+		
+		<statement id="bucky" triggerEventArgs="viking2_quest_complete, true" triggerEvent="triggerEvent">Bucky Lucas as the Norse god of thunder? Sounds like a hit!</statement>
+		<statement id="forGlory">FOR GLORY!</statement>
+    </character>
+    
+    <!-- <character id="hero">    <statement triggerEvent="triggerEvent" triggerEventArgs="panic">Without my super powers, I'm too scared to climb down!</statement>    </character> -->
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="guard1">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xffd2c6</skinColor>
+			<hairColor>0x8a5d3b</hairColor>
+			<mouth>fisherman</mouth>
+			<marks>poptropicon_guard1</marks>
+			<facial>poptropicon_guard1</facial>
+			<hair>poptropicon_guard2</hair>
+			<shirt>poptropicon_consec</shirt>
+			<pants>mteiffel</pants>
+			<overpants>poptropicon_consec</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1200</x>
+			<y>1830</y>
+		</position>
+		<range>
+			<x>100</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="guard2">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xe6c082</skinColor>
+			<hairColor>0xffabe7</hairColor>
+			<mouth>19</mouth>
+			<facial>lc_tech1</facial>
+			<hair>poptropicon_guard1</hair>
+			<shirt>poptropicon_consec</shirt>
+			<pants>mteiffel</pants>
+			<overpants>poptropicon_consec</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2400</x>
+			<y>1830</y>
+		</position>
+		<range>
+			<x>200</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc event="bouncer_on" id="bouncer">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xffe9e6</skinColor>
+			<hairColor>0xfaaf40</hairColor>
+			<mouth>huntergiveup</mouth>
+			<marks>poptropicon_bouncer</marks>
+			<facial>lc_mic</facial>
+			<hair>poptropicon_bouncer</hair>
+			<shirt>poptropicon_consec</shirt>
+			<pants>wwgambler</pants>
+			<overshirt>mtcoalman</overshirt>
+			<overpants>poptropicon_consec</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>3220</x>
+			<y>1830</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<!-- <npc id="hero" event="gotItem_powerGem"><animations loop="true" random="true"><animation duration="60">game.data.animation.entity.character.Think</animation><animation>game.data.animation.entity.character.Grief</animation><animation duration="60">game.data.animation.entity.character.Stand</animation></animations><skin><gender>female</gender><skinColor>0xd2aa72</skinColor><hairColor>0x0</hairColor><mouth>teethGrin2</mouth><facial>poptropicon_hero2</facial><hair>poptropicon_hero2</hair><shirt>poptropicon_hero2</shirt><pants>gsrprof</pants><pack>poptropicon_hero2</pack><overshirt>poptropicon_hero2</overshirt><overpants>poptropicon_hero2</overpants><eyeState>squint</eyeState></skin><position><x>900</x><y>566</y></position><range><x>0</x><y>0</y></range><direction>left</direction></npc> -->
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">poptropicon1_main_theme.mp3</asset>
+		<asset fade="true" exclusiveType="true" loop="true" triggeredByEvent="for_glory">for_glory.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset loop="true">sunny_clear_day_02_loop.mp3</asset>
+	</sound>
+	
+	<sound action="random" type="effects">
+		<asset id="tossBar">gears_heavy_01_loop.mp3</asset>
+		<asset id="lever">metal_impact_07.mp3</asset>
+		<asset id="window">glass_break_03.mp3</asset>
+		<asset id="catapult">myth_zues_shoot_wind_01.mp3</asset>	
+		<asset modifiers="position" fade="true" id="vent0" absoluteUrl="true" loop="true">ambient/air_ducts_3.mp3</asset>
+		<asset modifiers="position" fade="true" id="vent1" absoluteUrl="true" loop="true">ambient/air_ducts_3.mp3</asset>
+	</sound>
+	
+	<sound action="click" type="effects">
+		<asset id="lever">gears_12.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="conventionSign">ls_hollow_plastic_01.mp3, ls_hollow_plastic_02.mp3</asset>
+		<asset id="cardboard">ls_cardboard_01.mp3, ls_cardboard_02.mp3</asset>
+		<asset id="thinMetal">ls_thin_metal_01.mp3, ls_thin_metal_02.mp3</asset>
+		<asset id="heavyMetal">ls_metal_shelf_verb_01.mp3, ls_metal_shelf_verb_02.mp3</asset>
+		<asset id="thinPlastic">ls_plastic_01.mp3, ls_plastic_02.mp3</asset>
+		<asset id="heavyPlastic">ls_hard_plastic_01.mp3, ls_hard_plastic_02.mp3</asset>
+		<asset id="styrofoam">ls_snow_01.mp3, ls_snow_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="piping">ls_thin_metal_01.mp3, ls_thin_metal_02.mp3</asset>
+		<asset id="leaves">ls_leaves_01.mp3, ls_leaves_02.mp3</asset>
+		<asset id="stones">ls_cobble_01.mp3, ls_cobble_02.mp3</asset>
+		<asset id="vent">ls_heavy_metal_verb_01.mp3, ls_heavy_metal_verb_02.mp3</asset>
+		<asset id="powerBox">ls_heavy_metal_01.mp3, ls_heavy_metal_02.mp3</asset>
+		<asset id="truck">ls_porcelain_01.mp3, ls_porcelain_02.mp3</asset>
+		<asset id="tires">ls_general_metal_01.mp3, ls_general_metal_02.mp3</asset>
+		<asset id="baseGround">ls_concrete_2_01.mp3, ls_concrete_2_02.mp3</asset>
+		<asset id="catapultNest">gears_17.mp3</asset>
+		<asset id="bounce">ls_spring_01.mp3,ls_spring_02.mp3,ls_spring_03.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="conventionSign">fs_hollow_plastic_01.mp3, fs_hollow_plastic_02.mp3, fs_hollow_plastic_03.mp3, fs_hollow_plastic_04.mp3</asset>
+		<asset id="cardboard">fs_cardboard_01.mp3, fs_cardboard_02.mp3, fs_cardboard_03.mp3, fs_cardboard_04.mp3</asset>
+		<asset id="thinMetal">fs_thin_metal_01.mp3, fs_thin_metal_02.mp3, fs_thin_metal_03.mp3, fs_thin_metal_04.mp3</asset>
+		<asset id="heavyMetal">fs_metal_shelf_verb_01.mp3, fs_metal_shelf_verb_02.mp3, fs_metal_shelf_verb_03.mp3, fs_metal_shelf_verb_04.mp3</asset>
+		<asset id="thinPlastic">fs_plastic_01.mp3, fs_plastic_02.mp3, fs_plastic_03.mp3, fs_plastic_04.mp3</asset>
+		<asset id="heavyPlastic">fs_hard_plastic_01.mp3, fs_hard_plastic_02.mp3, fs_hard_plastic_03.mp3, fs_hard_plastic_04.mp3</asset>
+		<asset id="styrofoam">fs_snow_01.mp3, fs_snow_02.mp3, fs_snow_03.mp3, fs_snow_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="piping">fs_thin_metal_01.mp3, fs_thin_metal_02.mp3, fs_thin_metal_03.mp3, fs_thin_metal_04.mp3</asset>
+		<asset id="leaves">fs_leaves_01.mp3, fs_leaves_02.mp3, fs_leaves_03.mp3, fs_leaves_04.mp3</asset>
+		<asset id="stones">fs_cobble_01.mp3, fs_cobble_02.mp3, fs_cobble_03.mp3, fs_cobble_04.mp3</asset>
+		<asset id="vent">fs_heavy_metal_verb_01.mp3, fs_heavy_metal_verb_02.mp3, fs_heavy_metal_verb_03.mp3, fs_heavy_metal_verb_04.mp3</asset>
+		<asset id="powerBox">fs_heavy_metal_01.mp3, fs_heavy_metal_02.mp3, fs_heavy_metal_03.mp3, fs_heavy_metal_04.mp3</asset>
+		<asset id="truck">fs_porcelain_tap_01.mp3, fs_porcelain_tap_02.mp3, fs_porcelain_tap_03.mp3, fs_porcelain_tap_04.mp3</asset>
+		<asset id="tires">fs_general_metal_01.mp3, fs_general_metal_02.mp3, fs_general_metal_03.mp3, fs_general_metal_04.mp3</asset>
+		<asset id="baseGround">fs_concrete_2_01.mp3, fs_concrete_2_02.mp3, fs_concrete_2_03.mp3, fs_concrete_2_04.mp3</asset>	
+		<asset id="catapultNest">fs_wicker_01.mp3, fs_wicker_02.mp3, fs_wicker_03.mp3, fs_wicker_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>400</left>
+		<top>320</top>
+		<right>3994</right>
+		<bottom>1880</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>400</left>
+		<top>320</top>
+		<right>3900</right>
+		<bottom>1830</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,hits.xml,items.xml,npcs.xml,sounds.xml</data>
+	<absoluteFilePaths>scenes/con1/shared/dialog.xml</absoluteFilePaths>
+    <assets>bundle.zip,backdrop.zip</assets>
+	<layers>
+		<layer>
+			<asset>backdrop.zip</asset>
+		</layer>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>490</x>
+			<y>1830</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="doorCenter">
+		<scene>game.scenes.con1.center.Center</scene>
+		<x>5500</x>
+		<y>1900</y>
+		<label>
+			<text>EXIT</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file></merged>

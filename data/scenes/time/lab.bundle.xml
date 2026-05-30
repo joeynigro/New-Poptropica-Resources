@@ -1,0 +1,297 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0x9900CC" id="pushWall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x003300" id="metal" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x336633" id="platform" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00CC99" id="machinery" platform="true">
+		<component type="platform"/>
+	</hit>
+		<hit id="plugPlat">
+		<component type="movingPlatform">
+<!--<visible>plugSlider</visible> <velocity>50</velocity><points><point><x>1485</x><y>1082</y></point><point><x>1746</x><y>1082</y></point></points><loop>false</loop> -->
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	
+	<character id="char1">
+		<statement event="gotItem_printout">That printout will explain everything. We're counting on you!</statement>
+		<statement link="intro">Please help us! A malfunction has mixed up the past and now the future is in peril!</statement>
+		<statement id="intro" triggerEventArgs="printout" triggerEvent="giveItem">This printout will explain everything. We're counting on you!</statement>
+		<statement event="time_repaired" triggerEventArgs="pose" triggerEvent="triggerEvent">It appears that you've repaired the past! Now travel to the future to make sure!</statement>
+		<statement event="hasItem_medalTime">Thank you! The future is looking bright!</statement>
+    </character>
+    <character id="char2">
+    	<statement id="need_power">You will need to power up the Time Machine before you can use it.</statement>
+    	<statement event="hasItem_medalTime">You did it! Time has been restored!</statement>
+    	<conversation>
+			<exchange>
+				<question>What is this thing?</question>
+				<answer>This machine will transport you 50 years into the future.</answer>
+			</exchange>
+			<exchange>
+				<question>Why would I need to visit the future?</question>
+				<answer>So you can see the outcome of changes made in the past.</answer>
+			</exchange>
+			<exchange>
+				<question>How do I operate the machine?</question>
+				<answer>Power it up, then step inside.</answer>
+			</exchange>
+		</conversation>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="char1">
+		<animations random="true" loop="true">
+			<animation duration="150">game.data.animation.entity.character.Cry</animation>
+			<animation duration="100">game.data.animation.entity.character.Grief</animation>
+			<animation duration="200">game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			 <gender>female</gender> 
+			 <skinColor>0xFFE271</skinColor> 
+			 <hairColor>0xD26231</hairColor>
+			 <mouth>10</mouth> 
+			 <facial>4</facial> 
+			 <hair>42</hair> 
+			 <shirt>rat</shirt> 
+			 <pants>bartholdi</pants> 
+			 <overshirt>apron</overshirt> 
+			 <eyeState>open</eyeState> 
+		</skin>
+		<position>
+			<x>1353</x> 
+			<y>937</y> 
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc event="time_repaired" id="char1">
+		<animations random="true" loop="true">
+			<animation>game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			 <gender>female</gender> 
+			 <skinColor>0xFFE271</skinColor> 
+			 <hairColor>0xD26231</hairColor>
+			 <mouth>9</mouth> 
+			 <facial>4</facial> 
+			 <hair>42</hair> 
+			 <shirt>rat</shirt> 
+			 <pants>bartholdi</pants> 
+			 <overshirt>apron</overshirt> 
+			 <eyeState>open</eyeState> 
+		</skin>
+		<position>
+			<x>1353</x> 
+			<y>937</y> 
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+		<npc event="hasItem_medalTime" id="char1">
+		<animations random="true" loop="true">
+			<animation>game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			 <gender>female</gender> 
+			 <skinColor>0xFFE271</skinColor> 
+			 <hairColor>0xD26231</hairColor>
+			 <mouth>9</mouth> 
+			 <facial>4</facial> 
+			 <hair>42</hair> 
+			 <shirt>rat</shirt> 
+			 <pants>bartholdi</pants> 
+			 <overshirt>apron</overshirt> 
+			 <eyeState>open</eyeState> 
+		</skin>
+		<position>
+			<x>1353</x> 
+			<y>937</y> 
+		</position>
+		<ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc id="char2">
+		 <skin>
+			 <gender>male</gender> 
+			 <skinColor>0xB77E48</skinColor> 
+			 <hairColor>0x4A2C17</hairColor>
+			 <mouth>fisherman</mouth> 
+			 <facial>explorer</facial> 
+			 <hair>44</hair> 
+			 <shirt>van</shirt> 
+			 <pants>bartholdi</pants> 
+			 <overshirt>apron</overshirt> 
+			 <eyeState>open</eyeState>
+		 </skin>
+		 <position>
+			 <x>1756</x> 
+			 <y>937</y> 
+		 </position>
+		 <ignoreDepth>true</ignoreDepth>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	 </npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">tech_lab.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>door_metal_lab_01.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_linoleum_verb_01.mp3, fs_linoleum_verb_02.mp3, fs_linoleum_verb_03.mp3, fs_linoleum_verb_04.mp3</asset>
+		<asset id="floor">fs_linoleum_verb_01.mp3, fs_linoleum_verb_02.mp3, fs_linoleum_verb_03.mp3, fs_linoleum_verb_04.mp3</asset>
+		<asset id="metal">fs_general_metal_01.mp3, fs_general_metal_02.mp3, fs_general_metal_03.mp3, fs_general_metal_04.mp3</asset>
+		<asset id="machinery">fs_heavy_metal_01.mp3,fs_heavy_metal_02.mp3,fs_heavy_metal_03.mp3,fs_heavy_metal_04.mp3</asset>
+		<asset id="plugPlat">fs_heavy_metal_01.mp3,fs_heavy_metal_02.mp3,fs_heavy_metal_03.mp3,fs_heavy_metal_04.mp3</asset>
+		<asset id="platform">fs_metal_01.mp3, fs_metal_02.mp3, fs_metal_03.mp3, fs_metal_04.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="baseGround">ls_linoleum_verb_01.mp3, ls_linoleum_verb_02.mp3</asset>
+		<asset id="floor">ls_linoleum_verb_01.mp3, ls_linoleum_verb_02.mp3</asset>
+		<asset id="metal">ls_general_metal_01.mp3, ls_general_metal_02.mp3</asset>
+		<asset id="machinery">ls_heavy_metal_01.mp3,ls_heavy_metal_02.mp3</asset>
+		<asset id="plugPlat">ls_heavy_metal_01.mp3,ls_heavy_metal_02.mp3</asset>
+		<asset id="platform">ls_metal_01.mp3, ls_metal_02.mp3</asset>
+	</sound>
+	<sound type="effects">
+		<asset exclusiveType="true" triggeredByEvent="powerPlugDrag">metal_drag_01_L.mp3</asset>
+		<asset triggeredByEvent="timeMachine_poweredUp">power_on_02.mp3</asset>
+		<asset loop="true" triggeredByEvent="timeMachine_beeps">machine_status_01_L.mp3</asset>
+		<asset absoluteUrl="true" loop="true" triggeredByEvent="timeMachine_beeps">ambient/futuristic_drone_01_loop.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2000</right>
+		<bottom>1300</bottom> 
+	</cameraLimits>
+	<bounds>
+		<left>35</left>
+		<top>0</top>
+		<right>1965</right>
+		<bottom>1275</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths prependTypePath="true">scenes/time/shared/sounds.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+			<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>400</x>
+			<y>720</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+ <door id="door1">
+  	<scene>game.scenes.time.mainStreet.MainStreet</scene> 
+		<x>3361</x>
+		<y>1930</y> 
+ 	<label>
+	  	<text>EXIT</text> 
+	  	<type>exit3D</type> 
+		<offset>
+	  		<x>0</x> 
+	  		<y>0</y> 
+	  	</offset>
+  	</label>
+	</door>
+	<door id="door2">
+		  <scene>game.scenes.time.adStreet.AdStreet</scene> 
+			<x>920</x>
+			<y>590</y>
+		  <label>
+			  <text>ENTER</text> 
+			  <type>exit3D</type> 
+			  <offset>
+				  <x>0</x>
+				  <y>0</y> 
+			  </offset>
+		  </label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.time.desolation.Desolation</scene>
+				<x>1898</x>
+				<y>639</y>
+				<direction>left</direction>
+			</door>
+			<door id="exitRight">
+				<scene>game.scenes.time.lab.Lab</scene>
+				<x>1655</x> 
+	  			<y>937</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+  	</door>
+  	<door id="door3">
+		  <scene>game.scenes.time.future.Future</scene> 
+			<x>700</x>
+			<y>3355</y>
+		  <label>
+			  <text>ENTER</text> 
+			  <type>exitRight</type> 
+			  <offset>
+				  <x>0</x> 
+				  <y>0</y> 
+			  </offset>
+		  </label>
+  	</door>
+</doors></file>
+
+</merged>

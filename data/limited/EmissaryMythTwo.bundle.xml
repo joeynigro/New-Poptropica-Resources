@@ -1,0 +1,38 @@
+<merged>
+	
+<file path="/campaign.xml"><campaign>
+  	<campaignId>EmissaryMythTwo</campaignId> <!-- *** Must match campaign folder name -->
+	<lockVideo>true</lockVideo> <!-- overrides locked video flag in hotspots.xml -->
+	 <version>2</version> <!-- version number that doesn't use steet paths -->
+</campaign></file>
+
+<file path="/custom.xml"><ad>
+	<offset>
+		<x>-349</x>
+		<y>-739</y>
+	</offset>
+</ad></file>
+
+<file path="/dialog.xml"><dialogs>
+</dialogs></file>
+
+<file path="/doors.xml"><doors>
+</doors></file>
+
+<file path="/hits.xml"><hits>
+</hits></file>
+
+<file path="/hotspots.xml"><hotspots>
+</hotspots></file>
+
+<file path="/npcs.xml"><npcs>
+</npcs></file>
+
+<file path="/scene.xml"><scene>
+	<data>custom.xml,dialog.xml,doors.xml,hits.xml,hotspots.xml,npcs.xml,tracking.xml</data>
+</scene></file>
+
+<file path="/tracking.xml"><tracking>
+</tracking></file>
+
+</merged>

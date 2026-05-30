@@ -1,0 +1,249 @@
+<merged>
+
+<file path="/items.xml"><items>
+	<item>
+		<id>emptyPitcher</id>
+		<asset>pitcher.zip</asset>
+		<x>1502</x>
+		<y>539</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+	<item>
+		<id>taintedMeat</id>
+		<asset>meat.zip</asset>
+		<x>215</x>
+		<y>575</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0xCC9900" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFFCCFF" id="tile" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFF6600" id="wood" platform="true">
+		<component type="platform">
+			<depth>1</depth>
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="vanburen">
+		<statement id="eat_up">Eat up! You'll need your strength for the hunt tomorrow.</statement>
+    </character>
+    
+    <character id="player">
+    	<statement id="taste">This steak tastes funny. What's in it?</statement>
+    	<statement id="bad_meat">I don't feel so good...</statement>
+    	<statement triggerEventArgs="back_to_bed" triggeredByEvent="player_scared" triggerEvent="triggerEvent">AHHH!</statement>
+    	<statement triggerEventArgs="phrased_better" triggeredByEvent="bloody_scared" triggerEvent="triggerEvent">AHHH!</statement>
+    	<statement triggeredByEvent="jumpy">Guess I'm a little jumpy.</statement>
+    </character>
+    
+    <character id="cook">
+    	<statement id="woken">What was that?</statement>
+    	<statement id="nothing">I guess it was nothing.</statement>
+    	<statement id="meat" triggerEventArgs="taintedMeat, cook" triggerEvent="takeItem">Give that back!</statement>
+    	<statement event="open_kitchen" triggerEventArgs="bloody_scared" triggerEvent="triggerEvent">How do you want it? Bloody?</statement>
+    	<statement triggerEventArgs="jumpy" triggeredByEvent="phrased_better" triggerEvent="triggerEvent">I could have phrased that better. Dinner won't start for a bit. We're having steaks.</statement>
+    	<statement id="goodnight" triggerEventArgs="player_scared" triggerEvent="triggerEvent">Time to say good night!</statement>
+    	<statement triggerEventArgs="butler_popup" triggeredByEvent="back_to_bed" triggerEvent="triggerEvent">I'll have Winston take you back to bed.</statement>
+    </character>    
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc event="ate_meat" id="cook">
+		<animations>
+			<animation>game.data.animation.entity.character.SitSleepLoop</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfcdfd6</skinColor>
+			<hairColor>0x6b8694</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_isabella</marks>
+			<facial>nateg</facial>
+			<hair>survival_isabella</hair>
+			<shirt>survival_isabella</shirt>
+			<pants>chef2</pants>
+			<item>survival_isabella</item>
+			<overshirt>survival_isabella</overshirt>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>395</x>
+			<y>627</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc event="open_kitchen" id="cook">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfcdfd6</skinColor>
+			<hairColor>0x6b8694</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_isabella</marks>
+			<facial>nateg</facial>
+			<hair>survival_isabella</hair>
+			<shirt>survival_isabella</shirt>
+			<pants>chef2</pants>
+			<item>survival_isabella</item>
+			<overshirt>survival_isabella</overshirt>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>120</x>
+			<y>660</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc event="dinner_sequence" id="vanburen">
+		<animations>
+			<animation>game.data.animation.entity.character.Sit</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xCEA384</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_vanburen</marks>
+			<facial>survival_vanburen</facial>
+			<hair>survival_vanburen</hair>
+			<shirt>egyptarch</shirt>
+			<pants>astromanure</pants>
+			<overshirt>survival_vanburen</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1945</x>
+			<y>627</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">Survival_4_Main_Theme.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset loop="true">room_tone.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>unlocked_01.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_old_wood_plank_01.mp3, ls_old_wood_plank_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="tile">ls_tile_01.mp3, ls_tile_02.mp3</asset>
+		<asset id="counter">ls_concrete_2_01.mp3, ls_concrete_2_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="floor">fs_old_wood_plank_01.mp3, fs_old_wood_plank_02.mp3, fs_old_wood_plank_03.mp3, fs_old_wood_plank_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="tile">fs_tile_01.mp3, fs_tile_02.mp3, fs_tile_03.mp3, fs_tile_04.mp3</asset>
+		<asset id="counter">fs_concrete_2_01.mp3, fs_concrete_2_02.mp3, fs_concrete_2_03.mp3, fs_concrete_2_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2700</right>
+		<bottom>740</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>50</left>
+		<top>0</top>
+		<right>2640</right>
+		<bottom>660</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,items.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths>scenes/survival4/shared/dialog.xml,scenes/survival4/shared/sounds.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2400</x>
+			<y>660</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors><!-- banquet room -->
+	<door id="door1">
+		<scene>game.scenes.survival4.adStreet2.AdStreet2</scene>
+		<x>129</x>
+		<y>1010</y>
+		<direction>right</direction>
+		<label>
+			<text>EXIT</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorRight">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>580</x>
+				<y>980</y>
+				<direction>right</direction>
+			</door>
+			<door id="doorLeft">
+				<scene>game.scenes.survival4.banquetRoom.BanquetRoom</scene>
+				<x>2500</x>
+				<y>800</y>
+				<direction>left</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file>
+
+</merged>

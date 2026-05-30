@@ -1,0 +1,172 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="hardFloor1Alert" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x009900" id="hardFloor2Alert" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x003300" id="hardFloor1Safe" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x006600" id="hardFloor2Safe" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00FFFF" id="softPlatform" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-800</y>
+			</velocity>
+		</component>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xff3300" id="doorWall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="cant_reach">There must be a way to reach the key.</statement>
+	</character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="van buren">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xCEA384</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_vanburen</marks>
+			<facial>survival_vanburen</facial>
+			<hair>survival_vanburen_pjs</hair>
+			<shirt>survival_vanburen_pjs</shirt>
+			<pants>astromanure</pants>
+			<item>survival_vanburen_pjs</item>
+			<overshirt>survival_vanburen_pjs</overshirt>
+			<eyeState>casual</eyeState>
+		</skin>
+		<animations>
+			<animation>game.data.animation.entity.character.SleepingOnBack</animation>
+		</animations>
+		<position>
+			<x>2700</x>
+			<y>585</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">Survival_4_Main_Theme.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>unlocked_01.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="hardFloor1Alert">wood_creak_03.mp3</asset>
+		<asset id="hardFloor2Alert">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="hardFloor1Safe">ls_old_wood_plank_01.mp3, ls_old_wood_plank_02.mp3</asset>
+		<asset id="hardFloor2Safe">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="softPlatform">ls_carpet_wood_01.mp3, ls_carpet_wood_02.mp3</asset>
+		<asset id="bounce">ls_spring_01.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="hardFloor1Alert">fs_old_wood_plank_01.mp3, fs_old_wood_plank_02.mp3, fs_old_wood_plank_03.mp3, fs_old_wood_plank_04.mp3</asset>
+		<asset id="hardFloor2Alert">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="hardFloor1Safe">fs_old_wood_plank_01.mp3, fs_old_wood_plank_02.mp3, fs_old_wood_plank_03.mp3, fs_old_wood_plank_04.mp3</asset>
+		<asset id="hardFloor2Safe">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="softPlatform">fs_carpet_wood_01.mp3, fs_carpet_wood_02.mp3, fs_carpet_wood_03.mp3, fs_carpet_wood_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2900</right>
+		<bottom>740</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>100</left>
+		<top>0</top>
+		<right>2800</right>
+		<bottom>700</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>	
+	<absoluteFilePaths>scenes/survival4/shared/dialog.xml, scenes/survival4/shared/sounds.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>150</x>
+			<y>600</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+	<suppressFollower>true</suppressFollower>
+	<suppressAbility>true</suppressAbility>
+</scene></file>
+
+<file path="/doors.xml"><doors><!-- vanBuren room -->
+	<door id="door1">
+		<scene>game.scenes.survival4.adMixed2.AdMixed2</scene>
+		<x>1736</x>
+		<y>1030</y>
+		<direction>left</direction>
+		<label>
+			<text>EXIT</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>2590</x>
+				<y>495</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.survival4.vanBurenRoom.VanBurenRoom</scene>
+				<x>180</x>
+				<y>800</y>		
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file>
+
+</merged>

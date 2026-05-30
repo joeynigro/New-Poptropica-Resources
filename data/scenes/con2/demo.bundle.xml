@@ -1,0 +1,246 @@
+<merged><file path="/dialog.xml"><dialogs>
+	<character id="dealer">
+		<statement id="new_player" link="try_game">Want to try your hand at the Mighty Action Force trading card game?</statement>
+    
+    	<conversation id="try_game">
+    		<exchange>
+    			<question triggerEventArgs="check_if_played" triggerEvent="triggerEvent">Sure!</question>
+    		</exchange>
+    		<exchange>
+    			<question>Not now.</question>
+    		</exchange>
+    	</conversation>
+    	
+    	<statement id="give_starter" triggerEventArgs="give_deck" triggerEvent="triggerEvent">Here's a starter pack.</statement>
+    	<statement id="dealer_teach" triggerEventArgs="play_dealer" triggerEvent="triggerEvent">I'll teach you how to play.</statement>
+    	<!-- <statement event="starter_deck" link="play_again">You may be able to find more cards around the con.</statement> -->
+    	
+    	<statement event="starter_deck" link="replay">Want to play again?</statement>
+    	<conversation id="replay">
+    		<exchange>
+    			<question>Sure, why not.</question>
+    			<answer triggerEventArgs="play_dealer" triggerEvent="triggerEvent">Great, let's get started.</answer>
+    		</exchange>
+    		<exchange>
+    			<question>Not now.</question>
+    		</exchange>
+    	</conversation>
+    	
+    	<statement id="won_card" link="explain_deck">Great game! That card should help strengthen your deck.</statement>
+    	<statement id="explain_deck" triggerEventArgs="open_deck" triggerEvent="triggerEvent">You can reorganize cards with your Card Deck item. Try swapping in the card you just won.</statement>
+    	<statement id="deck_closed" link="lookout">Remember to update your deck when you get new cards</statement>
+    	<statement id="lookout">and keep a look out, you never know where cards might be hiding.</statement>
+    
+    </character>
+    
+    <character id="player">
+    	<statement id="lost_to_expert">She's right, maybe I can find more cards around the con.</statement>
+    </character>
+    
+    <character id="expert">
+    	<statement>My deck is so good I don't even need to use my new Omegon card.</statement>
+		<statement event="starter_deck" link="question">Beat my epic deck and I'll give you an unreleased Omegon card.</statement>
+		<statement event="omegon_body_photo" link="question">I can't believe I lost. Best out of 3?</statement>
+		<conversation id="question">
+			<exchange>
+				<question>You're on.</question>
+				<answer triggerEventArgs="play_expert" triggerEvent="triggerEvent">Prepare for a world of hurt.</answer>
+			</exchange>
+			<exchange>
+				<question>I'll pass for now.</question>
+			</exchange>
+		</conversation>
+    	<statement id="lost">How did you beat me! This is impossible!</statement>
+    	<statement id="won">You'll never beat me with cards like that in your deck.</statement>
+    </character>
+    
+    <character id="marksman">
+    	<statement>I love the Mighty Action Force! I want to get all of their cards!</statement>
+    </character>
+</dialogs></file><file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.con2.adMixed2.AdMixed2</scene>
+		<x>200</x>
+		<y>1000</y>
+		<direction>left</direction>
+		<label>
+			<text>EXIT</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitRight">
+				<scene>game.scenes.con2.expo.Expo</scene>
+				<x>750</x>
+				<y>950</y>
+				<direction>right</direction>
+			</door>
+			<door id="exitLeft">		
+				<scene>game.scenes.con2.demo.Demo</scene>
+				<x>419</x>
+				<y>932</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file><file path="/hits.xml"><hits>
+	<hit color="0x00FF00" id="carpet" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x666666" id="table" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x00FFFF" id="sign" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file><file path="/npcs.xml"><npcs>
+	<npc id="dealer">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfde7b6</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>pcowgirl1</mouth>
+			<hair>poptropicon_dealer</hair>
+			<shirt>poptropicon_dealer</shirt>
+			<pants>pantscounter</pants>
+			<item>poptropicon_dealer</item>
+			<overpants>poptropicon_dealer</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>880</x>
+			<y>915</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="expert">
+		<animations>
+			<animation>game.data.animation.entity.character.Sit</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>gardener</mouth>
+			<marks>sponsor_lilly</marks>
+			<facial>lc_touristfemale</facial>
+			<hair>bl_barf</hair>
+			<shirt>soccer</shirt>
+			<pants>wwgambler</pants>
+			<pack>z_vidgme</pack>
+			<overshirt>z_vidgme</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1790</x>
+			<y>440</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc id="marksman">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0xf9aa18</hairColor>
+			<mouth>1</mouth>
+			<facial>poptropicon_eahero04</facial>
+			<hair>28</hair>
+			<shirt>poptropicon_eahero04</shirt>
+			<pants>pfool</pants>
+			<pack>poptropicon_elfarcher2</pack>
+			<overshirt>pknight1</overshirt>
+			<overpants>poptropicon_eahero04</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1875</x>
+			<y>925</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+</npcs></file><file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2020</right>
+		<bottom>1010</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>10</left>
+		<top>0</top>
+		<right>2000</right>
+		<bottom>940</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>420</x>
+			<y>940</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file><file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">poptropicon2_main_theme.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<asset triggeredByEvent="soda_fizzle">soda_can_open_01.mp3</asset>
+		<asset triggeredByEvent="grab_balloon">balloon_bounce_02.mp3</asset>
+		<asset triggeredByEvent="shake_board">shake_wood_02.mp3</asset>
+		<asset triggeredByEvent="paper_fall">falling_paper_01.mp3</asset>
+		<asset triggeredByEvent="marker_fell">plastic_impact_01.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>openDoor_pushBar.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="carpet">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="baseGround">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+		<asset id="table">ls_plastic_01.mp3, ls_plastic_02.mp3</asset>
+		<asset id="sign">ls_thin_metal_01.mp3, ls_thin_metal_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="carpet">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="baseGround">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+		<asset id="table">fs_plastic_01.mp3, fs_plastic_02.mp3, fs_plastic_03.mp3, fs_plastic_04.mp3</asset>
+		<asset id="sign">fs_thin_metal_01.mp3, fs_thin_metal_02.mp3, fs_thin_metal_03.mp3, fs_thin_metal_04.mp3</asset>
+	</sound>
+</sounds></file></merged>

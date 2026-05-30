@@ -1,0 +1,182 @@
+<merged>
+	
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+    	<statement linkEntityId="omegon" id="end" link="true_form">This is your end, Omegon!</statement>
+    </character>
+    
+    <character id="omegon">
+    	<statement linkEntityId="player" id="alphaon" link="end">Alphaon, we meet at last!</statement>
+    	<statement id="true_form">I think not. Behold my true form!</statement>
+    </character>
+</dialogs></file>
+	
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	
+	<hit id="hand_platform_left">
+		<component type="movingPlatform">
+		</component>
+	</hit>
+	
+	<hit id="hand_platform_right">
+		<component type="movingPlatform">
+		</component>
+	</hit>
+	
+	<hit id="laser_hazard_left">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>200</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="laser_hazard_right">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>200</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="hand_hazard_left">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="hand_hazard_right">
+		<component type="hazard">
+			<knockBackVelocity>
+				<x>-1500</x>
+				<y>500</y>
+			</knockBackVelocity>
+		</component>
+	</hit>
+	
+	<hit id="target1">
+		<component type="wall"/>
+	</hit>
+	
+	<hit id="target2">
+		<component type="wall"/>
+	</hit>
+	
+	<hit id="target3">
+		<component type="wall"/>
+	</hit>
+	
+	<hit id="target4">
+		<component type="wall"/>
+	</hit>
+	
+	<hit id="target5">
+		<component type="wall"/>
+	</hit>
+	
+	<hit id="target6">
+		<component type="wall"/>
+	</hit>
+</hits></file>
+	
+<file path="/npcs.xml"><npcs>
+	<npc id="omegon">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Float</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xffc215</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<marks>poptropicon_omegon</marks>
+			<facial>poptropicon_omegon</facial>
+			<hair>poptropicon_omegon</hair>
+			<shirt>1</shirt>
+			<pants>pballerina2</pants>
+			<pack>poptropicon_omegon</pack>
+			<overshirt>poptropicon_omegon</overshirt>
+			<eyeState>squint</eyeState>
+			<eyes>eyes_omegon</eyes>
+		</skin>
+		<position>
+			<x>630</x>
+			<y>946</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+	
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>1000</right>
+		<bottom>1160</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>1000</right>
+		<bottom>1146</bottom>
+	</bounds>
+	<data>sounds.xml,hits.xml,npcs.xml,dialog.xml</data>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>330</x>
+			<y>1146</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+	
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">omegon_battle.mp3</asset>
+	</sound>
+	
+	<sound action="idle" type="effects">
+		<asset modifiers="position" id="laser_hazard_left" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset modifiers="position" id="laser_hazard_right" loop="true">electric_hum_01_loop.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="laser_hazard_left">electric_zap_03.mp3</asset>
+		<asset id="laser_hazard_right">electric_zap_03.mp3</asset>
+		<asset id="floor">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="floor">fs_concrete_01.mp3, fs_concrete_02.mp3</asset>
+	</sound>
+</sounds></file>
+
+</merged>

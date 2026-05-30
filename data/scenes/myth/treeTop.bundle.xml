@@ -1,0 +1,262 @@
+<merged>
+
+<file path="/items.xml"><items>
+	<item>
+		<id>goldenApple</id>
+		<asset>goldenApple.zip</asset>
+		<x>1737</x>
+		<y>480</y>
+		<label>
+			<text>Use</text>
+			<type>click</type>
+		</label>
+	</item>
+	<item>
+		<id>zeusScroll</id>
+		<asset>zeusScroll.zip</asset>
+		<x>1638</x>
+		<y>634</y>
+		<label>
+			<text>Use</text>
+			<type>click</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x00ffff" id="secretPath" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00ff00" id="tree" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x006600" id="squish" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-1400</y>
+			</velocity>
+		</component>
+	</hit>
+		<hit color="0xFF0066" id="weakbounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-600</y>
+			</velocity>
+		</component>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit id="climb1">
+		<component type="climb"/>
+	</hit>
+	<hit id="climb2">
+		<component type="climb"/>
+	</hit>
+	<hit id="climb3">
+		<component type="climb"/>
+	</hit>
+	<hit id="climb4">
+		<component type="climb"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+    <character id="player">
+		<statement linkEntityId="char2" id="sorry" link="makeImortal">Um, sorry. Do you want it back?</statement>
+		<statement linkEntityId="char2" id="refuse" link="wrath">What if I refuse?</statement>
+		<statement id="okay" triggerEventArgs="quest_started" triggerEvent="triggerEvent">Okay, then. What do I have to do?</statement>
+		<statement triggeredByEvent="honey_chase_failed">Oops. Time's up!</statement>
+		<statement id="collectionComplete">I did it!</statement>
+    </character>
+	<!-- BROWN SATYR -->
+	<character id="char1">
+		<conversation>
+			<exchange>
+				<question>Can you help me get the golden apple?</question>
+				<answer triggerEventArgs="honey_chase_started" triggerEvent="triggerEvent">The nymphs hid all my honey! Collect 10 jars before time runs out and I'll help you.</answer>
+			</exchange>
+		</conversation>
+		<conversation event="honey_chase_failed">
+			<exchange>
+				<question>Can you help me get the golden apple?</question>
+				<answer triggerEventArgs="honey_chase_started" triggerEvent="triggerEvent">The nymphs hid all my honey! Collect 10 jars before time runs out and I'll help you.</answer>
+			</exchange>
+		</conversation>
+		<statement event="gotItem_goldenApple">Well I think I'll be leaving now...</statement>
+		<statement event="honey_chase_passed" triggerEventArgs="show_path" triggerEvent="triggerEvent">Thanks for the honey. Use this secret path to reach the apple.</statement>
+		<statement event="honey_chase_started">Hurry and get my honey!</statement>
+    </character>
+	<!-- ZEUS -->
+    <character id="char2">    	
+		<statement linkEntityId="player" triggeredByEvent="zeus_appears_tree" link="sorry">Who has picked an apple of immortality?</statement>
+		<statement linkEntityId="player" id="makeImortal" link="refuse">I will grant you immortality. But first, you must perform a task.</statement>
+		<statement linkEntityId="player" id="wrath" link="okay">Then all of Poptropica will feel my wrath!</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="char1" questMarker="start,talked_with_brownSatyr">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xF5CA89</skinColor>
+			<hairColor>0xAE5C0D</hairColor>
+			<eyes>eyes</eyes>
+			<mouth>astroGuard1</mouth>
+			<marks>satyr</marks>
+			<hair>satyr</hair>
+			<shirt>bare</shirt>
+			<pants>satyr</pants>
+			<pack>satyr</pack>
+			<item>satyr</item>
+			<eyeState>open</eyeState>
+		</skin>
+		<faceSpeaker>false</faceSpeaker>
+		<position>
+			<x>1826</x>
+			<y>813</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="char2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfde6b6</skinColor>
+			<hairColor>0xffffff</hairColor>
+			<eyes>eyes</eyes>
+			<mouth>shadyCop</mouth>
+			<marks>zeus</marks>
+			<hair>zeus</hair>
+			<shirt>zeus</shirt>
+			<pants>zeus</pants>
+			<pack>zeus</pack>
+			<item>zeus</item>
+			<overshirt>zeus</overshirt>
+			<overpants>zeus</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1826</x>
+			<y>180</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<scale>.7</scale>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">sunny_clear_day_2.mp3</asset>
+	</sound>
+
+	<sound action="impact" type="effects">
+		<asset id="tree">ls_tree_01.mp3,ls_tree_02.mp3</asset>
+		<asset id="secretPath">ls_tree_01.mp3,ls_tree_02.mp3</asset>
+		<asset id="weakbounce">ls_bounce_01.mp3,ls_bounce_02.mp3,ls_bounce_03.mp3</asset>
+		<asset id="bounce">ls_spring_01.mp3,ls_spring_02.mp3,ls_spring_03.mp3</asset>
+		<asset id="squish">ls_squishy_muck_01.mp3,ls_squishy_muck_02.mp3</asset>
+		<asset id="climb1">ls_rope_01.mp3,ls_rope_02.mp3</asset>	
+		<asset id="climb2">ls_rope_01.mp3,ls_rope_02.mp3</asset>	
+		<asset id="climb3">ls_rope_01.mp3,ls_rope_02.mp3</asset>	
+		<asset id="climb4">ls_rope_01.mp3,ls_rope_02.mp3</asset>	
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="tree">fs_tree_01.mp3,fs_tree_02.mp3,fs_tree_03.mp3,fs_tree_04.mp3</asset>
+		<asset id="secretPath">fs_tree_01.mp3,fs_tree_02.mp3,fs_tree_03.mp3,fs_tree_04.mp3</asset>
+		<asset id="squish">fs_squishy_muck_01.mp3,fs_squishy_muck_02.mp3,fs_squishy_muck_03.mp3,fs_squishy_muck_04.mp3</asset>
+	</sound>
+	<sound type="effects">
+		<asset allowOverlap="true" triggeredByEvent="thunder_clap">thunder_clap_01.mp3, thunder_clap_02.mp3, thunder_clap_03.mp3</asset>
+		<asset baseVolume="4.0" triggeredByEvent="honey_chase_collect_sound">myth_collect_honey_jar_01.mp3</asset>
+		<asset baseVolume="4.0" triggeredByEvent="honey_chase_passed">myth_mg_correct_01.mp3</asset>
+		<asset baseVolume="4.0" triggeredByEvent="honey_chase_failed">myth_mg_wrong_01.mp3</asset>
+		<asset allowOverlap="false" triggeredByEvent="show_path">myth_path_revealed_01.mp3</asset>
+		<asset allowOverlap="false" triggeredByEvent="stomp_sound">myth_trunk_stomp_01.mp3</asset>
+		<asset allowOverlap="false" triggeredByEvent="bigThunder_sound">thunder_big_clap_01.mp3</asset>
+		<asset allowOverlap="false" triggeredByEvent="poof_sound">poof_01.mp3, poof_02.mp3</asset>
+	</sound>
+	<sound action="climb" type="effects">
+		<asset allowOverlap="false" id="climb1">slide_down_rope_01.mp3</asset>
+		<asset allowOverlap="false" id="climb2">slide_down_rope_01.mp3</asset>
+		<asset allowOverlap="false" id="climb3">slide_down_rope_01.mp3</asset>
+		<asset allowOverlap="false" id="climb4">slide_down_rope_01.mp3</asset>		
+	</sound>
+	<sound action="go" type="effects">
+		<asset allowOverlap="false" id="zeusScroll" loop="true">myth_sparkle_loop_01.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2404</right>
+		<bottom>2924</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>0</left>
+		<top>0</top>
+		<right>2404</right>
+		<bottom>2924</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,items.xml</data>
+	<assets>layers.zip,interactive.zip</assets>
+	<absoluteFilePaths prependTypePath="true">scenes/myth/shared/sounds.xml, scenes/myth/shared/dialog.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset><elementsToBitmap>light1,light2,light3</elementsToBitmap>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>1489</x>
+			<y>804</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="doorTreeBottom">
+		<scene>game.scenes.myth.mainStreet.MainStreet</scene>
+		<x>1214</x>
+		<y>100</y>
+		<label>
+			<text>Exit</text>
+			<type>exitDown</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

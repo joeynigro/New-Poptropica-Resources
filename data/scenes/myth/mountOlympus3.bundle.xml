@@ -1,0 +1,223 @@
+<merged>
+
+<file path="/hits.xml">
+		<hits>
+			<hit color="0x00ff00" id="floor" platform="true">
+				<component type="platform"/>
+			</hit>
+		</hits>
+	</file>
+
+<file path="/dialog.xml">
+		<dialogs>
+			<character id="player">
+				<statement id="moreClouds">Time to get clouds before i lose my ride!</statement>
+			</character>
+			<!-- ZEUS -->
+			<character id="zeus">
+				<statement id="zeus_defeat" triggerEventArgs="return_items" triggerEvent="triggerEvent" link="giveUp">I give up! I give up</statement>
+				<statement id="giveUp">I promise I'll be good!</statement>
+			</character>
+		</dialogs>
+	</file>
+
+<file path="/npcs.xml">
+		<npcs>
+			<npc id="zeus">
+				<scale>0.6</scale>
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xfde6b6</skinColor>
+					<hairColor>0xffffff</hairColor>
+					<mouth>shadyCop</mouth>
+					<marks>zeus</marks>
+					<hair>zeus</hair>
+					<shirt>zeus</shirt>
+					<pants>zeus</pants>
+					<pack>zeus</pack>
+					<item>zeus</item>
+					<overshirt>zeus</overshirt>
+					<overpants>zeus</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>1278</x>
+					<y>976</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+			</npc>
+		</npcs>
+	</file>
+
+<file path="/sounds.xml">
+		<sounds>
+			<sound type="music">
+				<asset fade="true" exclusiveType="true" loop="true">epic_boss_battle.mp3</asset>
+			</sound>
+
+			<sound type="effects">
+				<asset triggeredByEvent="boss_win_get_items">myth_get_items_back_01.mp3</asset>
+			</sound>
+
+			<sound action="hit" type="effects">
+				<asset exclusiveType="true" id="boss_bolt_0">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_1">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_2">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_3">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_4">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_5">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_6">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_7">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_8">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_9">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_10">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="boss_bolt_11">electric_zap_04.mp3</asset>
+
+				<asset exclusiveType="true" baseVolume=".5" id="gust">myth_zues_shoot_wind_01.mp3</asset>
+
+				<asset exclusiveType="true" id="orb_0">myth_orbs_hit_player_01.mp3</asset>
+				<asset exclusiveType="true" id="orb_1">myth_orbs_hit_player_01.mp3</asset>
+				<asset exclusiveType="true" id="orb_2">myth_orbs_hit_player_01.mp3</asset>
+				<asset exclusiveType="true" id="orb_3">myth_orbs_hit_player_01.mp3</asset>
+				<asset exclusiveType="true" id="orb_4">myth_orbs_hit_player_01.mp3</asset>
+				<asset exclusiveType="true" id="orb_5">myth_orbs_hit_player_01.mp3</asset>
+
+				<asset exclusiveType="true" id="player_bolt_0">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_1">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_2">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_3">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_4">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_5">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_6">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_7">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_8">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_9">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_10">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_11">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_12">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_13">electric_zap_04.mp3</asset>
+				<asset exclusiveType="true" id="player_bolt_14">electric_zap_04.mp3</asset>
+
+				<asset id="zeus">electrical_impact_02.mp3</asset>
+			</sound>
+
+			<sound action="glow" type="effects">
+				<asset fade="true" baseVolume="2" id="zeus" loop="true">electric_buzz_03_loop.mp3</asset>
+			</sound>
+
+			<sound action="reflect" type="effects">
+				<asset id="player_bolt_0">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_1">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_2">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_3">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_4">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_5">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_6">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_7">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_8">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_9">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_10">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_11">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_12">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_13">myth_zues_reflect_01.mp3</asset>
+				<asset id="player_bolt_14">myth_zues_reflect_01.mp3</asset>
+			</sound>
+
+			<sound action="shoot" type="effects">
+				<asset id="orb_0">myth_zues_shoot_orbs_01.mp3</asset>
+				<asset id="orb_1">myth_zues_shoot_orbs_01.mp3</asset>
+				<asset id="orb_2">myth_zues_shoot_orbs_01.mp3</asset>
+				<asset id="orb_3">myth_zues_shoot_orbs_01.mp3</asset>
+				<asset id="orb_4">myth_zues_shoot_orbs_01.mp3</asset>
+				<asset id="orb_5">myth_zues_shoot_orbs_01.mp3</asset>
+			</sound>
+
+			<sound action="spawn" type="effects">
+				<asset id="boss_bolt_0">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_1">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_2">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_3">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_4">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_5">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_6">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_7">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_8">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_9">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_10">electric_zap_05.mp3</asset>
+				<asset id="boss_bolt_11">electric_zap_05.mp3</asset>
+
+				<asset id="gust">myth_zues_shoot_wind_01.mp3</asset>
+
+				<asset id="orb_0">myth_zues_creatre_orbs_01.mp3</asset>
+				<asset id="orb_1">myth_zues_creatre_orbs_01.mp3</asset>
+				<asset id="orb_2">myth_zues_creatre_orbs_01.mp3</asset>
+				<asset id="orb_3">myth_zues_creatre_orbs_01.mp3</asset>
+				<asset id="orb_4">myth_zues_creatre_orbs_01.mp3</asset>
+				<asset id="orb_5">myth_zues_creatre_orbs_01.mp3</asset>
+
+				<asset id="player_bolt_0">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_1">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_2">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_3">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_4">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_5">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_6">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_7">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_8">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_9">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_10">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_11">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_12">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_13">electric_zap_05.mp3</asset>
+				<asset id="player_bolt_14">electric_zap_05.mp3</asset>
+
+				<asset id="items">myth_get_items_back_01.mp3</asset>
+			</sound>
+		</sounds>
+	</file>
+
+<file path="/scene.xml">
+		<scene>
+			<sceneType>default</sceneType>
+			<cameraLimits>
+				<left>0</left>
+				<top>0</top>
+				<right>2500</right>
+				<bottom>1320</bottom>
+			</cameraLimits>
+			<bounds>
+				<left>30</left>
+				<top>0</top>
+				<right>2455</right>
+				<bottom>1340</bottom>
+			</bounds>
+			<data>dialog.xml,npcs.xml,sounds.xml</data>
+			<assets>bundle.zip</assets>
+			<absoluteFilePaths prependTypePath="true">scenes/myth/shared/sounds.xml, scenes/myth/shared/dialog.xml</absoluteFilePaths>
+			<layers>
+				<layer>
+					<asset>background.zip</asset>
+				</layer>
+				<layer hit="true">
+					<asset>bitmap_hits.zip</asset>
+				</layer>
+				<layer hit="true">
+					<asset>interactive.zip</asset>
+				</layer>
+			</layers>
+			<player>
+				<defaultPosition>
+					<x>931</x>
+					<y>1066</y>
+				</defaultPosition>
+				<scale>0.6</scale>
+				<defaultDirection>right</defaultDirection>
+			</player>
+		</scene>
+	</file>
+
+</merged>

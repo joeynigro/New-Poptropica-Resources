@@ -1,0 +1,253 @@
+<merged>
+
+<file path="/hits.xml">
+		<hits>
+			<hit id="baseGround" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x00ff00" id="dirt" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x009900" id="grass" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x999900" id="stone" platform="true">
+				<component type="platform"/>
+			</hit>
+		</hits>
+	</file>
+
+<file path="/dialog.xml">
+		<dialogs>
+			<character id="player">
+				<statement linkEntityId="herc" triggeredByEvent="snake_appear" link="justASnake">Yikes! Is that what I think it is!?</statement>
+				<statement id="takeWind" triggerEventArgs="bagOfWind" triggerEvent="giveItem">Thanks! This will give me a boost to the top of Mount Olympus.</statement>
+			</character>
+			<!-- HERCULES -->
+			<character id="herc">
+				<statement id="justASnake" triggerEventArgs="herc_walk_to_snake" triggerEvent="triggerEvent">It's just a pesky snake. I'll take care of it.</statement>
+				<statement id="uhoh" triggerEventArgs="turn_herc_to_stone" triggerEvent="triggerEvent">Medusa!? Uh oh, this is not good.</statement>
+				<statement>Don't feel sorry for me. I got what I always wanted... a statue on Mount Olympus!</statement>
+			</character>
+			<!-- MEDUSA -->
+			<character id="medusa">
+				<statement linkEntityId="herc" id="medusa_appear" link="uhoh">You picked the wrong snake to mess with, buddy.</statement>
+			</character>
+			<!-- WIND BAG VENDOR -->
+			<character id="aeolus">
+				<statement linkEntityId="player"  link="takeWind" triggerEventArgs="talked_with_windBagVendor" triggerEvent="completeEvent">I'm impressed you made it this far.  You deserve a free wind bag from an old wind bag like me.</statement>
+				<statement id="get_my_bag" linkEntityId="player"  link="takeWind">I'm impressed you made it this far.  You deserve a free wind bag from an old wind bag like me.</statement>
+				<statement event="gotItem_bagOfWind" triggerEventArgs="use_bag_of_wind" triggerEvent="triggerEvent">One refill, coming up!</statement>
+			</character>
+		</dialogs>
+	</file>
+
+<file path="/npcs.xml">
+		<npcs>
+			<npc id="aeolus" questMarker="start,talked_with_windBagVendor">
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xDFECFD</skinColor>
+					<hairColor>0x175EA4</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>sponsorEC2</mouth>
+					<marks>aeolus</marks>
+					<hair>aeolus</hair>
+					<shirt>aeolus</shirt>
+					<pants>aeolus</pants>
+					<overshirt>bag_of_wind</overshirt>
+					<overpants>aeolus</overpants>
+					<eyeState>open</eyeState>
+				</skin>
+				<position>
+					<x>2318</x>
+					<y>2450</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<scale>.5</scale>
+				<direction>left</direction>
+				<faceSpeaker>false</faceSpeaker>
+			</npc>
+
+			<npc event="pre_medusa_strike" id="medusa">
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xffffff</skinColor>
+					<hairColor>0x0</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>medusa</mouth>
+					<marks>medusa1</marks>
+					<hair>bald</hair>
+					<shirt>medusa</shirt>
+					<pants>medusa</pants>
+					<pack>medusa</pack>
+					<overpants>medusa</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>586</x>
+					<y>2285</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<scale>.5</scale>
+				<direction>left</direction>
+			</npc>
+
+			<npc event="pre_medusa_strike" id="herc">
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0x443828</hairColor>
+					<mouth>hercules</mouth>
+					<marks>hercules</marks>
+					<hair>hercules</hair>
+					<shirt>bare</shirt>
+					<pants>1</pants>
+					<overshirt>hercules</overshirt>
+					<overpants>hercules</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>240</x>
+					<y>2285</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<scale>.5</scale>
+				<direction>right</direction>
+			</npc>
+
+			<npc event="returned_items" id="herc" variant="movieclip">
+				<movieClip>scenes/myth/mountOlympus/statue.zip</movieClip>
+				<talkMouth>mouth</talkMouth>
+				<position>
+					<x>410</x>
+					<y>2285</y>
+				</position>
+				<direction>right</direction>
+				<faceSpeaker>false</faceSpeaker>
+			</npc>
+		</npcs>
+	</file>
+
+<file path="/sounds.xml">
+		<sounds>
+			<sound type="music">
+				<asset fade="true" exclusiveType="true" loop="true">mythology_main_theme.mp3</asset>
+			</sound>
+
+			<sound action="trigger" type="effects">
+				<asset id="medusa">medusa_head_pop_01.mp3</asset>
+				<asset id="herc">myth_herc_turn_stone_01.mp3</asset>
+			</sound>
+
+			<sound type="ambient">
+				<asset fade="true" exclusiveType="true" loop="true">city_night_time.mp3</asset>
+			</sound>
+			<sound action="impact" type="effects">
+				<asset id="baseGround">ls_dirt_01.mp3, ls_dirt_02.mp3</asset>
+				<asset id="dirt">ls_dirt_01.mp3, ls_dirt_02.mp3</asset>
+				<asset id="grass">ls_grass_01.mp3,ls_grass_02.mp3</asset>
+				<asset id="stone">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+			</sound>
+			<sound action="step" type="effects">
+				<asset id="baseGround">fs_dirt_01.mp3, fs_dirt_02.mp3, fs_dirt_03.mp3, fs_dirt_04.mp3</asset>
+				<asset id="dirt">fs_dirt_01.mp3, fs_dirt_02.mp3, fs_dirt_03.mp3, fs_dirt_04.mp3</asset>
+				<asset id="grass">fs_grass_01.mp3,fs_grass_02.mp3,fs_grass_03.mp3,fs_grass_04.mp3</asset>
+				<asset id="stone">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+			</sound>
+
+			<sound action="random" type="effects">
+				<asset fade="true" id="exhaust" loop="true">myth_bag_of_winds_01_loop.mp3</asset>
+				<asset fade="true" id="medusaSnake" loop="false">myth_snake_hiss_loop_01.mp3</asset>
+				<asset id="medusa">myth_snake_hissing_01.mp3</asset>
+			</sound>
+		</sounds>
+	</file>
+
+<file path="/scene.xml">
+		<scene>
+			<sceneType>default</sceneType>
+			<cameraLimits>
+				<left>0</left>
+				<top>0</top>
+				<right>3220</right>
+				<bottom>2503</bottom>
+			</cameraLimits>
+			<bounds>
+				<left>-100</left>
+				<top>-100</top>
+				<right>3271</right>
+				<bottom>2453</bottom>
+			</bounds>
+			<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+			<assets>interactive.zip,backdrop.zip,layers.zip</assets>
+			<absoluteFilePaths prependTypePath="true">scenes/myth/shared/sounds.xml, scenes/myth/shared/dialog.xml, scenes/myth/shared/npcs.xml</absoluteFilePaths>
+			<layers>
+				<layer>
+					<asset>backdrop.zip</asset>
+				</layer>
+				<layer>
+					<asset>background.zip</asset>
+				</layer>
+				<layer>
+					<asset>bitmap_hits.zip</asset>
+				</layer>
+				<layer hit="true">
+					<asset>interactive.zip</asset>
+				</layer>
+				<layer>
+					<asset>foreground.zip</asset>
+				</layer>
+			</layers>
+			<player>
+				<defaultPosition>
+					<x>50</x>
+					<y>2254</y>
+				</defaultPosition>
+				<defaultDirection>right</defaultDirection>
+			</player>
+		</scene>
+	</file>
+
+<file path="/doors.xml">
+		<doors>
+			<door id="doorMainStreet">
+				<scene>game.scenes.myth.mainStreet.MainStreet</scene>
+				<x>4545</x>
+				<y>1318</y>
+				<label>
+					<text>Go Left</text>
+					<type>exitLeft</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+			<door id="doorOlympus">
+				<scene>game.scenes.myth.mountOlympus2.MountOlympus2</scene>
+				<x>336</x>
+				<y>1183.3</y>
+				<direction>right</direction>
+				<label>
+					<text>Go Up</text>
+					<type>exitUp</type>
+					<offset>
+						<x>0</x>
+						<y>20</y>
+					</offset>
+				</label>
+			</door>
+		</doors>
+	</file>
+
+</merged>

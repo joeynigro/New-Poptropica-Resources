@@ -1,0 +1,65 @@
+<merged>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="van buren">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xCEA384</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_vanburen</marks>
+			<facial>survival_vanburen</facial>
+			<hair>survival_vanburen</hair>
+			<shirt>egyptarch</shirt>
+			<pants>astromanure</pants>
+			<overshirt>survival_vanburen</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>900</x>
+			<y>950</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset loop="true">dark_atmosphere.mp3</asset>
+	</sound>
+	
+	<sound type="ambient">
+		<asset fade="true" baseVolume=".1" loop="true">cricket_chirp_loop_01.mp3</asset>
+	</sound>
+	
+	<sound type="effects">
+		<asset triggeredByEvent="triggerDoor">door_car_open_verb_01.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>cutscene</sceneType>
+	<bounds>
+		<left>-100</left>
+		<top>-100</top>
+		<right>2100</right>
+		<bottom>485</bottom>
+	</bounds>
+	<data>npcs.xml,sounds.xml</data>
+	<assets>touchDown.zip</assets>
+	<absoluteFilePaths>scenes/survival4/shared/sounds.xml</absoluteFilePaths>
+	<player>
+		<defaultPosition>
+			<x>1000</x>
+			<y>920</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+	<saveLocation>false</saveLocation>
+</scene></file>
+
+</merged>

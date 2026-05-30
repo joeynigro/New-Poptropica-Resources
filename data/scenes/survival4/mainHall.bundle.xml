@@ -1,0 +1,378 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x996633" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFF9652" id="creaky0" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCCFF00" id="creaky1" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x33FF00" id="creaky2" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFF5F77" id="creaky3" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xff9900" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0x999900" id="deepWood" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x66FFFF" id="hiddenWalls">
+		<component type="wall"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="vanBuren">
+		<statement linkEntityId="player" id="lucky" link="go_home" forceOnScreen="true">You're lucky we found you! And just in time for tomorrow's big hunt.</statement>
+		<statement id="nonsense" link="trophy_room" forceOnScreen="true">Nonsense. You shan't pass up an opportunity to hunt with the greatest big game hunter in the world!</statement>
+		<statement id="trophy_room" triggerEventArgs="to_the_trophies" triggerEvent="triggerEvent">Come to my trophy room if you're not convinced.</statement>
+    </character>
+    
+    <character id="winston">
+    	<statement id="startled">Who's there?</statement>
+    	<statement id="dinner">The master will receive you in the Banquet Room.</statement>
+    	<statement id="caught">You must be lost. Back to the room you go.</statement>
+    </character>
+    
+    <character id="player">
+    	<statement id="go_home" triggerEventArgs="nonsense_boy" triggerEvent="triggerEvent">I'd really rather go home.</statement>
+    	<statement id="need_trophy_room_key">There must be a key to this door somewhere...</statement>
+    	<statement id="fragile">That seems fragile. I should leave it alone for now.</statement>
+    	<statement id="too_hot">Wow, it's hot!</statement>
+    	<statement id="get_on_with_it">I should go to the Trophy Room so I can get out of here.</statement>
+    	<statement id="must_escape">This door won't budge.  There must be a way to disable the security lock.</statement>
+    	<statement id="nom_noms">Van Buren wants me in the Banquet Room... I guess a quick bite couldn't hurt.</statement>
+    	<statement id="no_recording">Drat, it must be keyed to Van Buren's voice!</statement>
+    	<statement id="tally_ho">I should try that voice recording I found.</statement>
+    </character>
+    
+    <character id="securityInteraction">
+    	<statement id="keycode">Please enter keycode.</statement>
+    	<statement id="authorization" triggerEventArgs="voice_authorization" triggerEvent="triggerEvent">Please enter voice authorization.</statement>
+		<statement id="acceptedKey">Security code accepted.</statement>
+		<statement id="acceptedVoice">Voice password accepted.</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="vanBuren">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xCEA384</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>15</mouth>
+			<marks>survival_vanburen</marks>
+			<facial>survival_vanburen</facial>
+			<hair>survival_vanburen</hair>
+			<shirt>egyptarch</shirt>
+			<pants>astromanure</pants>
+			<overshirt>survival_vanburen</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>250</x>
+			<y>980</y>
+		</position>
+		<direction>right</direction>
+	</npc>	
+	
+	<npc event="winston_in_hall" id="winston">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfAECC8</skinColor>
+			<hairColor>0xffffff</hairColor>
+			<mouth>VCvillager1</mouth>
+			<facial>survival_winston</facial>
+			<hair>survival_winston</hair>
+			<shirt>1</shirt>
+			<pants>adams</pants>
+			<pack></pack>
+			<item></item>
+			<overshirt></overshirt>
+			<overpants>survival_winston</overpants>
+			<lineColor></lineColor>
+			<eyeState></eyeState>
+			<lineWidth></lineWidth>
+		</skin>
+		<position>
+			<x>2520</x>
+			<y>486</y>
+		</position>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>	
+	<sound type="music">
+		<asset loop="true">Survival_4_Main_Theme.mp3</asset>
+	</sound>
+
+	<sound type="ambient">
+		<asset fade="true" baseVolume=".5" loop="true">room_tone.mp3</asset>
+	</sound>
+	
+	<sound action="doorOpened" type="effects">
+		<asset>unlocked_01.mp3</asset>
+		<asset id="doorGrounds">openDoor_pushBar.mp3</asset>
+		<asset id="doorTrophy">unlocked_01.mp3</asset>
+	</sound>
+	
+	<sound action="random" type="effects">
+		<asset baseVolume="4" id="pathBlock" loop="true">heavy_gritty_drag_01_L.mp3</asset>
+		<asset baseVolume="3" id="hornInteraction">horn_call_01.mp3</asset>
+		<asset id="candleInteraction">gears_16.mp3</asset>
+		<asset modifiers="proximity" id="flame0" loop="true">fire_01_L.mp3</asset>
+		<asset id="painting">gears_05.mp3</asset>
+		<asset id="doorGrounds">lock_jiggle_01.mp3</asset>
+		<asset id="doorTrophy">lock_click_01.mp3</asset>
+		<asset id="voiceLockScene">ping_03.mp3</asset>
+		<asset id="masterLockScene">ping_03.mp3</asset>
+		<asset id="keyLock">ping_03.mp3</asset>
+		<asset id="masterLock">ping_03.mp3</asset>
+		<asset fade="true" id="voiceLock" loop="true">electric_hum_01_loop.mp3</asset>
+		<asset id="bullmoose">wood_heavy_impact_01.mp3</asset>
+	</sound>
+	
+	<sound action="fail" type="effects">
+		<asset id="keyLock">alarm_04.mp3</asset>
+	</sound>
+	
+	<sound action="sizzle" type="effects">
+		<asset modifiers="proximity" id="flame0">sizzle_01.mp3</asset>
+	</sound>
+	
+	<sound action="roll" type="effects">
+		<asset id="bullmoose">heavy_gritty_roll_04_loop.mp3</asset>
+	</sound>
+	
+	<sound action="keypress1" type="effects">
+		<asset id="content">keyboard_type_01.mp3</asset>
+	</sound>
+	<sound action="keypress2" type="effects">
+		<asset id="content">keyboard_type_02.mp3</asset>
+	</sound>
+	<sound action="keypress3" type="effects">
+		<asset id="content">keyboard_type_03.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="wood">ls_wood_plank_01.mp3, ls_wood_plank_02.mp3</asset>
+		<asset id="creaky0">wood_plank_creak_01.mp3</asset>
+		<asset id="creaky1">wood_creak_01.mp3</asset>
+		<asset id="creaky2">wood_creak_01.mp3</asset>
+		<asset id="creaky3">wood_break_02.mp3</asset>
+		<asset id="baseGround">ls_old_wood_plank_01.mp3, ls_old_wood_plank_02.mp3</asset>
+		<asset id="deepWood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="wood">fs_wood_plank_01.mp3, fs_wood_plank_02.mp3, fs_wood_plank_03.mp3, fs_wood_plank_04.mp3</asset>
+		<asset id="creaky0">wood_plank_creak_01.mp3</asset>
+		<asset id="creaky1">wood_creak_01.mp3</asset>
+		<asset id="creaky2">wood_creak_01.mp3</asset>
+		<asset id="creaky3">wood_break_02.mp3</asset>
+		<asset id="baseGround">fs_old_wood_plank_01.mp3, fs_old_wood_plank_02.mp3, fs_old_wood_plank_03.mp3, fs_old_wood_plank_04.mp3</asset>
+		<asset id="deepWood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>shortmain</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2740</right>
+		<bottom>1040</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>20</left>
+		<top>0</top>
+		<right>2740</right>
+		<bottom>980</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,sounds.xml,hits.xml,npcs.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths>scenes/survival4/shared/dialog.xml,scenes/survival4/shared/sounds.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<condition type="blockMerge">true</condition>
+			<asset>backdrop.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive2.zip</asset>
+		</layer>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>100</x>
+			<y>979</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="doorGuest">
+		<scene>game.scenes.survival4.adStreet1.AdStreet1</scene>
+		<x>1736</x>
+		<y>1030</y>
+		<direction>left</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitRight">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>150</x>
+				<y>495</y>
+				<direction>right</direction>
+			</door>
+			<door id="exitLeft">
+				<scene>game.scenes.survival4.guestRoom.GuestRoom</scene>
+				<x>2680</x>
+				<y>800</y>	
+				<direction>left</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	
+	<door id="doorGrounds">
+		<scene>game.scenes.survival4.grounds.Grounds</scene>
+			<x>2200</x>
+			<y>910</y>
+			<direction>left</direction>
+		<label>
+			<text>EXIT</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitRight">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>100</x>
+				<y>980</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	
+	<door id="doorBanquet">
+		<scene>game.scenes.survival4.adStreet2.AdStreet2</scene>
+		<x>1736</x>
+		<y>1010</y>
+		<direction>left</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitRight">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>580</x>
+				<y>980</y>
+				<direction>right</direction>
+			</door>
+			<door id="exitLeft">
+				<scene>game.scenes.survival4.banquetRoom.BanquetRoom</scene>
+				<x>2500</x>
+				<y>800</y>
+				<direction>left</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	
+	<door id="doorTrophy">
+		<scene>game.scenes.survival4.adMixed1.AdMixed1</scene>
+		<x>129</x>
+		<y>1010</y>
+		<direction>right</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>2580</x>
+				<y>980</y>
+				<direction>left</direction>
+			</door>
+			<door id="exitRight">
+				<scene>game.scenes.survival4.trophyRoom.TrophyRoom</scene>
+				<x>300</x>
+				<y>950</y>		
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	
+	<door id="doorVanBuren">
+		<scene>game.scenes.survival4.adMixed2.AdMixed2</scene>
+		<x>129</x>
+		<y>1030</y>
+		<direction>right</direction>
+		<label>
+			<text>ENTER</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="exitLeft">
+				<scene>game.scenes.survival4.mainHall.MainHall</scene>
+				<x>2590</x>
+				<y>495</y>
+				<direction>left</direction>
+			</door>
+			<door id="exitRight">
+				<scene>game.scenes.survival4.vanBurenRoom.VanBurenRoom</scene>
+				<x>180</x>
+				<y>800</y>		
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file>
+
+</merged>

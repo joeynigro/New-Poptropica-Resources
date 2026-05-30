@@ -1,0 +1,195 @@
+
+<merged>
+
+<file path="/hits.xml">
+		<hits>
+			<hit color="0x00ff00" id="stone" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit id="baseGround" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0x990000" id="cloth" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0xff6600" id="wall">
+				<component type="wall"/>
+			</hit>
+			<hit color="0xffcc00" id="ceiling">
+				<component type="ceiling"/>
+			</hit>
+		</hits>
+	</file>
+
+<file path="/dialog.xml">
+		<dialogs>
+			<character id="player">
+				<statement linkEntityId="athena" id="whatAbout" link="forNow">What about Zeus?</statement>
+				<statement triggerEventArgs="player_become_god" triggeredByEvent="look_player" triggerEvent="triggerEvent">Not if I can help it!</statement>
+				<statement>Time to get clouds before I lose my ride!</statement>
+			</character>
+			<!-- ZEUS -->
+			<character id="zeus">
+				<statement triggeredByEvent="zeus_boom" link="suffer">Foolish mortal! How dare you trespass in my realm!?</statement>
+				<statement id="suffer" triggerEventArgs="look_player" triggerEvent="triggerEvent">Now you and my brothers will suffer my wrath!</statement>
+			</character>
+			<!-- ATHENA -->
+			<character id="athena">
+				<statement event="gotItem_medalMythology">Well done. You saved Poptropica!</statement>
+				<statement linkEntityId="player" link="whatAbout">Well done. You saved Poptropica!</statement>
+				<statement id="forNow" link="giveToken">He'll have to be satisfied with ruling the Heavens of Mythology Island for now.</statement>
+				<statement id="giveToken" triggerEventArgs="getMedal" triggerEvent="triggerEvent">Please take this reward as a token of my gratitude.</statement>
+			</character>
+		</dialogs>
+	</file>
+
+<file path="/npcs.xml">
+		<npcs>
+
+			<npc id="zeus">
+				<scale>0.6</scale>
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xfde6b6</skinColor>
+					<hairColor>0xffffff</hairColor>
+					<mouth>shadyCop</mouth>
+					<marks>zeus</marks>
+					<hair>zeus</hair>
+					<shirt>zeus</shirt>
+					<pants>zeus</pants>
+					<pack>zeus</pack>
+					<item>zeus</item>
+					<overshirt>zeus</overshirt>
+					<overpants>zeus</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>-500</x>
+					<y>-500</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+			</npc>
+
+			<npc event="returned_items" id="athena">
+				<scale>0.5</scale>
+				<skin>
+					<gender>female</gender>
+					<skinColor>0xE6BC7D</skinColor>
+					<hairColor>0x0</hairColor>
+					<eyes>eyes</eyes>
+					<mouth>athena</mouth>
+					<marks>athena</marks>
+					<hair>athena</hair>
+					<shirt>athena</shirt>
+					<pants>athena</pants>
+					<pack>athena</pack>
+					<item>athena</item>
+					<overpants>athena</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>1609</x>
+					<y>1187</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+			</npc>
+		</npcs>
+	</file>
+
+<file path="/sounds.xml">
+		<sounds>
+			<sound type="ambient">
+				<asset fade="true" exclusiveType="true" loop="true">nighttime_crickets.mp3</asset>
+			</sound>
+
+			<sound type="music">
+				<asset fade="true" exclusiveType="true" loop="true" triggeredByEvent="showZeus">epic_boss_battle.mp3</asset>
+			</sound>
+
+			<sound action="impact" type="effects">
+				<asset id="baseGround">ls_concrete_01.mp3,ls_concrete_02.mp3</asset>
+				<asset id="stone">ls_concrete_01.mp3,ls_concrete_02.mp3</asset>
+				<asset id="cloth">ls_cloth_01.mp3,ls_cloth_02.mp3</asset>
+			</sound>
+
+			<sound action="step" type="effects">
+				<asset id="baseGround">fs_concrete_01.mp3,fs_concrete_02.mp3,fs_concrete_03.mp3,fs_concrete_04.mp3</asset>
+				<asset id="stone">fs_concrete_01.mp3,fs_concrete_02.mp3,fs_concrete_03.mp3,fs_concrete_04.mp3</asset>
+				<asset id="cloth">fs_cloth_01.mp3,fs_cloth_02.mp3,fs_cloth_03.mp3,fs_cloth_04.mp3</asset>
+			</sound>
+
+			<sound type="effects">
+				<asset triggeredByEvent="light_up_statue">myth_light_up_statue_01.mp3</asset>
+				<asset triggeredByEvent="zeus_boom">myth_enter_zues_01.mp3</asset>
+				<asset triggeredByEvent="player_transform">myth_transform_01.mp3</asset>
+				<asset triggeredByEvent="victory">medallion_fanfare_02.mp3</asset>
+			</sound>
+		</sounds>
+	</file>
+
+<file path="/scene.xml">
+		<scene>
+			<sceneType>default</sceneType>
+			<cameraLimits>
+				<left>100</left>
+				<top>0</top>
+				<right>2450</right>
+				<bottom>1334</bottom>
+			</cameraLimits>
+			<bounds>
+				<left>100</left>
+				<top>0</top>
+				<right>2509</right>
+				<bottom>1384</bottom>
+			</bounds>
+			<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+			<assets>bundle.zip</assets>
+			<absoluteFilePaths prependTypePath="true">scenes/myth/shared/sounds.xml, scenes/myth/shared/dialog.xml</absoluteFilePaths>
+			<layers>
+				<layer>
+					<asset>background.zip</asset>
+				</layer>
+				<layer hit="true">
+					<asset>bitmap_hits.zip</asset>
+				</layer>
+				<layer hit="true">
+					<asset>interactive.zip</asset>
+				</layer>
+			</layers>
+			<player>
+				<defaultPosition>
+					<x>259</x>
+					<y>1165</y>
+				</defaultPosition>
+				<defaultDirection>right</defaultDirection>
+			</player>
+		</scene>
+	</file>
+
+<file path="/doors.xml">
+		<doors>
+			<door id="doorOlympus">
+				<scene>game.scenes.myth.mountOlympus.MountOlympus</scene>
+				<x>2116</x>
+				<y>100</y>
+				<label>
+					<text>Exit</text>
+					<type>exitDown</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+		</doors>
+	</file>
+
+</merged>

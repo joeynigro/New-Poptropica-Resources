@@ -1,0 +1,198 @@
+
+<merged>
+	<file path="/hits.xml">
+		<hits>
+			<hit color="0xff6600" id="wall">
+				<component type="wall"/>
+			</hit>
+
+			<hit color="0x640BE5" id="stone" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit color="0xC90BE5" id="seat" platform="true">
+				<component type="platform"/>
+			</hit>
+			<hit id="baseGround" platform="true">
+				<component type="platform"/>
+			</hit>
+		</hits>
+	</file>
+
+<file path="/dialog.xml">
+		<dialogs>
+			<character id="player">
+				<!-- <statement linkEntityId="hades" link="countMeIn">Hades, I could use your help with ZEUS.</statement> -->
+				<statement id="helpMe" linkEntityId="hades" link="takeCrown">Can you stop him?</statement>
+				<statement id="howUse" linkEntityId="hades" link="spoilerAlert">Thanks. What do I do with it?</statement>
+				<statement id="makesSense">Makes sense.</statement>
+			</character>
+			<!-- HADES -->
+			<character id="hades">
+				<conversation>
+					<exchange>
+						<question>Hades, I could use your help with ZEUS.</question>
+						<answer linkEntityId="player" link="helpMe" triggerEventArgs="talked_with_hades" triggerEvent="completeEvent">If you're planning on taking him down count me in.</answer>
+					</exchange>
+				</conversation>
+				<!-- <statement id="countMeIn" linkEntityId="player" link="helpMe">If you're planning on taking him down count me in.</statement> -->
+				<statement id="takeCrown" linkEntityId="player" link="howUse" triggerEventArgs="hadesCrown" triggerEvent="giveItem">I can't leave the Underworld but my crown can. Take this with you.</statement>
+				<statement id="spoilerAlert" linkEntityId="player" link="makesSense">You'll see. I don't want to spoil the ending of this story.</statement>
+				<!-- <conversation>
+					<exchange>
+						<question>Hades, I could use your help with ZEUS.</question>
+						<answer>If you're planning on taking him down count me in.</answer>
+					</exchange>
+					<exchange>
+						<question>Can you stop him?</question>
+						<answer triggerEventArgs="hadesCrown" triggerEvent="giveItem">I can't leave the Underworld but my crown can. Take this with you.</answer>
+					</exchange>
+					<exchange>
+						<question>Thanks. What do I do with it?</question>
+						<answer linkEntityId="player" link="makesSense">You'll see. I don't want to spoil the ending of this story.</answer>
+					</exchange>
+				</conversation>
+				<conversation event="hasItem_hadesCrown">
+					<exchange>
+						<question>Hades, I could use your help with ZEUS.</question>
+						<answer>If you're planning on taking him down count me in.</answer>
+					</exchange>
+					<exchange>
+						<question>Can you stop him?</question>
+						<answer>I can't leave the Underworld but my crown can. Take this with you.</answer>
+					</exchange>
+					<exchange>
+						<question>Thanks! What do I do with it?</question>
+						<answer linkEntityId="player" link="makesSense">You'll see. I don't want to spoil the ending of this story.</answer>
+					</exchange>
+				</conversation> -->
+
+				<statement event="hasItem_medalMythology">Your battle in the clouds with Zeus was legendary.</statement>
+
+			</character>
+		</dialogs>
+	</file>
+
+<file path="/npcs.xml">
+		<npcs>
+			<npc id="hades" questMarker="talked_with_hercMainStreet,talked_with_hades">
+				<skin>
+					<gender>male</gender>
+					<skinColor>0xffffff</skinColor>
+					<hairColor>0x000000</hairColor>
+					<mouth>hades</mouth>
+					<marks>hades</marks>
+					<hair>hades</hair>
+					<shirt>hades</shirt>
+					<pants>hades</pants>
+					<pack>hades</pack>
+					<item>hades</item>
+					<overpants>hades</overpants>
+					<eyeState>squint</eyeState>
+				</skin>
+				<position>
+					<x>835</x>
+					<y>451.3</y>
+				</position>
+				<range>
+					<x>0</x>
+					<y>0</y>
+				</range>
+				<direction>left</direction>
+				<scale>.65</scale>
+			</npc>
+
+			<npc event="hasItem_hadesCrown" id="hades">
+				<skin>
+					<hair>hades2</hair>
+					<pack>hades</pack>
+					<item>hades</item>
+					<overpants>hades</overpants>
+				</skin>
+			</npc>
+		</npcs>
+	</file>
+
+<file path="/sounds.xml">
+		<sounds>
+			<sound type="music">
+				<asset fade="true" exclusiveType="true" baseVolume=".5" loop="true">hades_realm.mp3</asset>
+			</sound>
+
+			<sound type="ambient">
+				<asset loop="true">eerie_moaning_muffled.mp3</asset>
+			</sound>
+
+			<sound action="doorOpened" type="effects">
+				<asset id="doorCerberus">door_hatch_01.mp3</asset>
+			</sound>
+
+			<sound action="impact" type="effects">
+				<asset id="stone">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+				<asset id="seat">ls_leather_01.mp3</asset>
+				<asset id="baseGround">ls_carpet_01.mp3, ls_carpet_02.mp3</asset>
+			</sound>
+			<sound action="step" type="effects">
+				<asset id="stone">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+				<asset id="seat">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+				<asset id="baseGround">fs_carpet_01.mp3, fs_carpet_02.mp3, fs_carpet_03.mp3, fs_carpet_04.mp3</asset>
+			</sound>
+		</sounds>
+	</file>
+
+<file path="/scene.xml">
+		<scene>
+			<sceneType>default</sceneType>
+			<cameraLimits>
+				<left>0</left>
+				<top>0</top>
+				<right>1656.65</right>
+				<bottom>550</bottom>
+			</cameraLimits>
+			<bounds>
+				<left>0</left>
+				<top>0</top>
+				<right>1656.65</right>
+				<bottom>514</bottom>
+			</bounds>
+			<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+			<assets>bundle.zip</assets>
+			<absoluteFilePaths prependTypePath="true">scenes/myth/shared/sounds.xml, scenes/myth/shared/dialog.xml</absoluteFilePaths>
+			<layers>
+		<layer>
+					<asset>background.zip</asset>
+		</layer>
+				<layer hit="true">
+					<asset>bitmap_hits.zip</asset>
+		</layer>
+				<layer hit="true">
+					<asset>interactive.zip</asset>
+		</layer>
+			</layers>
+			<player>
+				<defaultPosition>
+					<x>354.35</x>
+					<y>514</y>
+				</defaultPosition>
+				<defaultDirection>right</defaultDirection>
+			</player>
+		</scene>
+	</file>
+
+<file path="/doors.xml">
+		<doors>
+			<door id="doorCerberus">
+				<scene>game.scenes.myth.cerberus.Cerberus</scene>
+				<x>2800</x>
+				<y>433.7</y>
+				<label>
+					<text>Exit</text>
+					<type>exit3D</type>
+					<offset>
+						<x>0</x>
+						<y>0</y>
+					</offset>
+				</label>
+			</door>
+		</doors>
+	</file>
+</merged>

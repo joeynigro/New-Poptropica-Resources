@@ -1,0 +1,423 @@
+<merged>
+
+<file path="/vendor_cart/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<layers>
+		<layer hit="true">
+			<asset>vendorCart.zip</asset><offsetX>1343</offsetX>
+			<offsetY>1675</offsetY>
+		</layer>
+	</layers>
+</scene></file>
+
+<file path="/photo_booth.xml"><scene>
+	<layers>
+		<layer id="PhotoBooth">
+			<offsetX>3835</offsetX>
+			<offsetY>1665</offsetY>
+		</layer>
+	</layers>
+</scene></file>
+
+<file path="/custom.xml"><ad>
+	<offset>
+		<x>4503</x>
+		<y>1679</y>
+	</offset>
+</ad></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xCC6600" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xFF3300" id="tile" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-800</y>
+			</velocity>
+		</component>
+	</hit>
+	<hit id="climb">
+		<component type="climb"/>
+	</hit>
+	<hit color="0x00eeff" id="air">
+		<component type="mover">
+			<acceleration>
+				<x>0</x>
+				<y>-1600</y>
+			</acceleration>
+			<friction>
+				<x>6</x>
+				<y>0</y>
+			</friction>
+			<stickToPlatforms>false</stickToPlatforms>
+		</component>
+	</hit>
+</hits></file>
+
+<file path="/vendor_cart.xml"><vendor_cart>
+</vendor_cart></file>
+
+<file path="/blimp.xml"><scene>
+	<layers>
+		<layer id="blimp">
+			<offsetX>3773.9</offsetX>
+			<offsetY>1249.8</offsetY> <!-- 10 pixels lower than in-scene blimp -->
+		</layer>
+	</layers>
+</scene></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="stop" triggerEventArgs="run_off" triggerEvent="triggerEvent">I'll stop them!</statement>
+		<statement linkEntityId="tex" id="well" link="no_no">Well Marshal, I appreciate all your help.</statement>
+    </character>
+	<character id="lady">
+		<statement id="stop" triggerEventArgs="stop" triggerEvent="triggerEvent">Stop, thief!</statement>
+		<statement>I'm just waiting for Indigo here to do her business.</statement>
+		<statement id="after_theif">Someone needs to stop that thief. Indigo here needs to be calm to do her business.</statement>
+		<statement id="after_medal">You look just like that horrible booted bandit!</statement>
+    </character>
+	<character id="muscles">
+		<statement>It's a crime that some pets drink grape soda. I just saw a dog with a purple tongue.</statement>
+		<statement id="after_theif">If that bandit comes back here, I'll have a thing or two to say!</statement>
+		<statement id="after_medal">I hope the booted bandit stays locked up for good!</statement>
+    </character>
+	<character id="blades">
+		<statement>No time to chat!</statement>
+		<statement id="oof" triggerEventArgs="blades_hit" triggerEvent="triggerEvent">Oof!</statement>
+		<statement id="after_theif">I think I'll just sit here for a while... ugh..</statement>
+		<statement id="after_medal">You swam all the way across the bay? Amazing!</statement>
+    </character>
+	<character id="tex">
+		<statement id="no_no" triggerEventArgs="get_medallion" triggerEvent="triggerEvent">No, no, thank you! In fact, here, take this!</statement>
+		<statement id="great_job">Great job!</statement>
+    </character>
+	<character id="patches">
+		<statement>I thought I'd never make it out of that cage. You're a lifesaver.</statement>
+    </character>
+	<character id="nostrand">
+		<statement link="final_dialog">Thanks for helping with my parole.</statement>
+		<statement id="final_dialog">The city is even more beautiful up close. I'll never run out of things to paint!</statement>
+    </character>
+	<character id="marion">
+		<statement link="final_dialog">Thanks for helping with my parole.</statement>
+		<statement id="final_dialog">Time to hit up the help wanted ads!</statement>
+    </character>
+	<character id="flambe">
+		<statement>They say you can't un-collapse a souffle, but now I've got a second chance and I'm going to prove them wrong!</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="dog" variant="creature">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd9cd9b</skinColor>
+			<hairColor>0xd9cd9b</hairColor>
+			<mouth>wkgrmpa</mouth>
+			<marks>maintenanceman</marks>
+			<facial>pr_dog</facial>
+			<hair>is_video</hair>
+			<shirt>1</shirt>
+			<pants>1</pants>
+			<pack>pr_dog</pack>
+			<overshirt>pr_dog</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>333</x>
+			<y>1690</y>
+		</position>
+		<range>
+			<x>50</x>
+		<y>0</y>
+		</range>
+	</npc>
+	<npc id="lady">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xffffff</hairColor>
+			<mouth>MTHfishmonger</mouth>
+			<facial>5</facial>
+			<hair>1</hair>
+			<shirt>1</shirt>
+			<pants>pinkskirt</pants>
+			<overshirt>vest1</overshirt>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>193</x>
+			<y>1685</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc id="muscles">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0x513b2b</hairColor>
+			<mouth>5</mouth>
+			<marks>beardmed2</marks>
+			<hair>poptropicon_kman</hair>
+			<shirt>pr_muscle</shirt>
+			<pants>sears6</pants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>3140</x>
+			<y>1685</y>
+		</position>
+		<range>
+			<x>200</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<scale>.4</scale>
+	</npc>
+	<npc id="blades">
+		<skin>
+			<gender>male</gender>
+				<skinColor>0xfee0d8</skinColor>
+				<hairColor>0x999999</hairColor>
+				<mouth>greekWiseGuy</mouth>
+				<facial>pr_blader</facial>
+				<hair>empty</hair>
+				<shirt>pr_blader</shirt>
+				<pants>pkarateboy3</pants>
+				<pack>2</pack>
+				<eyeState>open</eyeState>
+				<lineWidth></lineWidth>
+		</skin>
+		<position>
+			<x>1537</x>
+			<y>1692</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="tex">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x754a2f</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>pPirateGuy1</mouth>
+			<marks>3</marks>
+			<facial>pr_tex</facial>
+			<hair>1</hair>
+			<shirt>pr_tex</shirt>
+			<pants>adams</pants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>0</x>
+			<y>1590</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc id="bandit">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0x999999</hairColor>
+			<mouth>teethGrin2</mouth>
+			<facial>pr_bandit</facial>
+			<hair>1</hair>
+			<shirt>pr_bandit</shirt>
+			<pants>2</pants>
+			<item>pr_moneybag</item>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>4000</x>
+			<y>1690</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc id="npc_friend">
+		<skin>
+		  <gender>male</gender>
+		  <skinColor>0x000000</skinColor>
+		  <hairColor>0x000000</hairColor>
+		</skin>
+		<position>
+		  <x>3900</x>
+		  <y>1693</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+	</npc>
+	<npc id="npc_friend_bitmap">
+		<bitmap>Blank.zip</bitmap>
+		<position>
+		  <x>3900</x>
+		  <y>1693</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<ignoreDepth>true</ignoreDepth>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset baseVolume="0.5" loop="true">free_poptropican.mp3</asset>
+		<asset event="saw_bandit" baseVolume="0.5" loop="true">Dramatic_Chase.mp3</asset>
+		<asset event="bandit_captured" baseVolume="0.5" loop="true">free_poptropican.mp3</asset>
+	</sound>
+	<sound type="ambient">
+		<asset baseVolume="0.3" loop="true">beach_waves_loop.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="baseGround">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="tile">ls_tile_01.mp3, ls_tile_02.mp3</asset>
+		<asset id="bounce">ls_bounce_01.mp3, ls_bounce_02.mp3, ls_bounce_03.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="floor">fs_concrete_01.mp3, fs_concrete_02.mp3,fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="baseGround">fs_concrete_01.mp3, fs_concrete_02.mp3,fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3,fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="tile">fs_tile_01.mp3, fs_tile_02.mp3,fs_tile_03.mp3, fs_tile_04.mp3</asset>
+	</sound>
+	<sound action="climb" type="effects">
+		<asset allowOverlap="false" id="climb">ls_rope_01.mp3, ls_rope_02.mp3</asset>
+	</sound>
+	<sound action="climbDown" type="effects">
+		<asset allowOverlap="false" id="climb">slide_down_rope_01.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>mainstreet</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>5164</right>
+		<bottom>1775</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>-110</left>
+		<top>0</top>
+		<right>5164</right>
+		<bottom>1698</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,custom.xml,blimp.xml,vendor_cart.xml</data>
+	<!--this scene is wide so use standard bundled GAF assets-->
+	<assets>bundle.zip,backdrop.zip</assets>
+	<layers>
+		<layer>
+			<asset>backdrop.zip</asset>
+		</layer>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer>
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>3700</x>
+			<y>1750</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="doorHill">
+	<scene>game.scenes.prison.adStreet1.AdStreet1</scene>
+		<x>20</x>
+		<y>1620</y>
+		<direction>right</direction>
+		<label>
+		<text>GO RIGHT</text>
+			<type>exitRight</type>
+			<offset>
+				<x>150</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.prison.mainStreet.MainStreet</scene>
+				<x>5100</x>
+					<y>1693</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.prison.hill.Hill</scene>
+						<x>20</x>
+						<y>2965</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	<door id="doorCommon">
+		<scene>game.scenes.prison.common.Common</scene>
+		<x>634</x>
+		<y>361.6</y>
+		<direction>right</direction>
+		<label>
+			<text>COMMON ROOM</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+	<door id="exitToMap">
+		<scene>game.scenes.map.map.Map</scene>
+		<x>0</x>
+		<y>0</y>
+		<label>
+			<text>TRAVEL</text>
+			<type>exitUp</type>
+			<offset>
+				<x>0</x>
+				<y>50</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

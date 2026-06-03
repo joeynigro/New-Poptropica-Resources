@@ -1,0 +1,880 @@
+<merged>
+
+<file path="/items.xml"><items>
+	<item triggeredByEvent="started_food_fight">
+		<id>mixer</id>
+		<asset>mixer.zip</asset>
+		<x>1720</x>
+		<y>1035</y>
+		<label>
+			<text>Examine</text>
+			<type>exitDown</type>
+		</label>
+	</item>
+</items></file>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x33CCFF" id="table" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x00ff00" id="concrete" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x9966FF" id="pipe" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xFF0099" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x996666" id="kitchenBlocker">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xCC6600" id="foodfightwall">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0x003300" id="escapeWall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0x006666" id="escapeFloor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x00eeff" id="escapeAir">
+		<component type="mover">
+			<acceleration>
+				<x>0</x>
+				<y>-3000</y>
+			</acceleration>
+			<friction>
+				<x>6</x>
+				<y>0</y>
+			</friction>
+			<stickToPlatforms>false</stickToPlatforms>
+		</component>
+	</hit>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="job">How can I get a job in the kitchen?</statement>
+		<statement id="eggs" triggerEventArgs="need_eggs, true" triggerEvent="triggerEvent">Three cage-free eggs it is.</statement>
+		<statement id="give_eggs">Three free-range eggs, just like you asked.</statement>
+		
+		<statement id="yuck">Yuck, this food is gross.</statement>
+		
+		<statement id="spoon">Can't eat this without a spoon.</statement>
+		
+		<statement id="gum">Here's three sticks of gum, now how do i get a spoon?</statement>
+		
+		<statement id="block">These Potatoes are as hard as plaster, maybe i can carve them into something useful.</statement>
+		
+		<statement id="pasta">This kind of Pasta looks like drill bits.</statement>
+		
+		<statement id="stealMixer">How can I get Flambe to drop that mixer?</statement>
+		
+		<statement id="mishap">I probably shouldn't touch the potatoes again, after that last mishap.</statement>
+		<statement id="no_taters">Can't stir an empty pot.</statement>
+		<statement id="blockPlaster">I don't think Flambe will let me get away with ruining the potatoes a second time!</statement>
+	</character>
+	
+	<character id="nightingale">
+		<conversation event="mess_day_1_complete">
+			<exchange>
+				<question>Never mind.</question>
+			</exchange>
+			<exchange>
+				<question>I'm done eating.</question>
+				<answer triggerEventArgs="done_for_day" triggerEvent="triggerEvent">Okay, return your spoon.</answer>
+			</exchange>
+		</conversation>
+		<conversation event="spoon_distraction">
+			<exchange>
+				<question>Can I have my spoon now?</question>
+				<answer triggerEventArgs="second_spoon" triggerEvent="triggerEvent">Sure, here's a spoon. Bring it back when you're done.</answer>
+			</exchange>
+		</conversation>	
+		<statement>Enjoy your meal-time, there will be no seconds.</statement>
+    </character>
+    
+    <character id="ratchet">
+        <statement id="take_over">We got a disturbance over there. Nightingale, take over for me.</statement>
+        <statement id="what">What's the problem you old coot?</statement>
+        <statement id="return">You aren't sick! Another outburst like this and you'll spend the night in solitary.</statement>
+        <statement event="spoon_distraction">Not now.</statement>
+    	<statement id="spoon">Here's your spoon. Bring it back when you're done eating.</statement>
+    	<statement event="hasItem_cafe_spoon">Only one spoon allowed per inmate. Go eat your Gruel.</statement>
+    	<statement triggerEventArgs="cafe_spoon" triggerEvent="giveItem">Here's your spoon. Bring it back when you're done eating.</statement>
+    	
+    	<statement id="sit">Sit down, narcissus!</statement>
+    	<statement id="cage">That's it. Lockdown for everyone!</statement>
+    </character>
+    
+    <character id="florian">
+    	<statement>This is the best seat in the house. Everyone can see me here!</statement>
+    	<statement id="reject">We're not friends Booted Bandit, go sit somewhere else.</statement>
+    	<statement id="dead">My beautiful hair! Someone's going to pay for this!</statement>
+    	<statement id="make">Make me!</statement>
+    	<statement id="hole">I know you set me up, Booted Bandit! When I get out of the hole, you're done for!</statement>
+    </character>
+    
+    <character id="flambe">
+    	<statement id="back_off">The food's already at the tables! Go away!</statement>    	
+<!--     <statement link="job" linkEntityId="player">I said trained chefs only!</statement> -->
+    	<statement id="back_off2">Go away and eat your food!</statement>
+    	<statement id="two_ways">One of two ways: you can either get trained at Le Cordon Bleu in Paris...</statement>
+    	<statement id="omelette">Or you can find me three eggs to make my signature omelette. This farm-raised stuff isn't cutting it.</statement>
+    	    	
+    	<conversation event="traded_eggs">
+    		<exchange>
+	    		<question>How do I mix the mashed Potatoes?</question>
+	    		<answer link="mixer">Stir that big pot over there, and don't add anything weird to them.</answer>
+	    	</exchange>
+	    	<exchange>
+	    		<question>Say, could I borrow that mixer?</question>
+	    		<answer linkEntityId="player" link="stealMixer">The mixer doesn't leave my side. I'd take this thing into battle!</answer>
+    		</exchange>
+    	</conversation>
+
+		<statement id="take_eggs">Did you find me three free-range eggs yet?</statement>
+    	
+    	<statement id="take_eggs2">Finally, I can make a decent omelette! All right, you can be my sous chef.</statement>
+    	
+    	<statement id="start_work">You're still new at this, so the only thing I'll trust you to do is stir the mashed potatoes.</statement>
+    	<statement id="mixer">Remember, good mashed potatoes are smooth and creamy. All potatoes, no filler!</statement>
+    	<statement id="rock">This is inedible! It's like a block of marble! I'll never get that Michelin star now.</statement>
+    	<statement id="good">Smooth and creamy, fit for human consumption. Good work.</statement>
+    	<statement id="waste">It's against prison policy to give out seconds! You trying to set the Warden after us?</statement>
+    	   
+   		<statement id="sweat">How can they treat my cuisine like that? I put my blood, sweat, and tears into my food!</statement>
+  		<statement id="literally">Well, not literally.</statement>
+  		<statement id="stop">I've got to stop them!</statement>
+  		<statement id="save">Please... save my mixer...</statement>
+  		<statement event="started_food_fight">Please... save my mixer...</statement>
+  		<statement id="prize">I've never had a sous chef with such dedication. You may keep my prized possession.</statement>
+  		<statement id="child">Treat it as you would your own child!</statement>
+  		<statement event="gotItem_mixer">Take care of my precious mixer.</statement>
+  		
+  		<statement event="drilled_plate">My sentence is almost up. Every day I dream of opening a French restaurant up in Napa.</statement>
+    </character>    
+    
+    <character id="patches">
+        <statement id="seconds">Hey! a second helping!</statement>
+    	<statement id="metal">You just need something metal. I'll help you get "seconds" if you give me Three sticks of gum.</statement>
+    	<statement>Meal-time is the best time of the day!</statement>
+    	<statement event="mess_day_1_complete">I'll help you get 'seconds' if you give me Three sticks of gum.</statement>
+    	<statement id="help2">Got some gum for me yet?</statement>
+    	    	
+    	<statement id="help">I'll make a distraction, go do what you need to do!</statement>
+    	<statement id="fake">Oh noooo, my stomach hurts! guard come help!</statement>
+    	<statement id="fake2">The pain!</statement>
+    	
+    	<statement event="smuggled_spoon">This food all looks the same, been that way for years!</statement>
+    </character>
+    
+    <character id="marion">
+      	<statement event="started_food_fight">It's chaos over there!</statement>
+    	<statement>Man, I'd love to see Flashy Florian's perfect hair splattered with some of this potato sludge.</statement>
+    </character>
+    
+    <character id="les">
+    	<statement id="walls">These walls are crumbling, you know.</statement>
+     	<statement>The cook says that the air vent in the kitchen really sucks.</statement>
+     	<statement id="seconds">look, table service!</statement>
+     	
+     	<statement id="foodfight">FOOD FIGHT!!!</statement>
+     	
+     	<statement id="swing">You're not the only one who can swing a spoon.</statement>
+     	<statement id="raft">We've been making a raft and lifejackets.</statement>
+     	
+     	<statement id="bust">It's time to bust out of this joint!</statement>
+    </character>
+
+    <character id="sal">
+    	<statement id="crumbling">Crumbling down! Someone could chisel their way out if they weren't careful.</statement>
+    	<statement>What am I even eating today?</statement>
+    	<statement id="seconds">Is this a one star restuarant now?</statement>
+    	
+    	<statement id="foodfight">FOOD FIGHT!!!</statement>
+    
+    	<statement id="outside">But you'll need more than that on the outside. And we can help.</statement>
+    	<statement id="night">But we need one more night to finish them.</statement>
+    	
+    	<statement id="first">We'll go first and set up the rafts.</statement>
+    	
+    	<statement id="toobad">You'll have to find another way, we'll meet you at the water.</statement>
+    </character>
+</dialogs></file>
+
+<file path="/male/npcs.xml"><npcs>
+	
+	<npc id="flambe">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xe75c2e</hairColor>
+			<mouth>14</mouth>
+			<marks>pr_flambe</marks>
+			<hair>pr_flambe</hair>
+			<shirt>pr_flambe</shirt>
+			<pants>pr_prisoner</pants>
+			<item>pr_mixer</item>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>930</x>
+			<y>1071</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc event="ended_food_fight" id="flambe">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xe75c2e</hairColor>
+			<mouth>14</mouth>
+			<marks>pr_flambe</marks>
+			<hair>pr_flambe</hair>
+			<shirt>pr_flambe</shirt>
+			<pants>pr_prisoner</pants>
+			<item>empty</item>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>930</x>
+			<y>1075</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="les">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>15</mouth>
+			<facial>pr_les_sal</facial>
+			<hair>1</hair>
+			<shirt>pr_les</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1445</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="sal">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>16</mouth>
+			<facial>pr_les_sal</facial>
+			<hair>1</hair>
+			<shirt>pr_sal</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1230</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc event="escaped_big_tuna" id="les">
+		<animations loop="false">
+			<animation>game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>15</mouth>
+			<facial>pr_les_sal</facial>
+			<hair>1</hair>
+			<shirt>pr_les</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1445</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc event="escaped_big_tuna" id="sal">
+		<animations loop="false">
+			<animation>game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>16</mouth>
+			<facial>pr_les_sal</facial>
+			<hair>1</hair>
+			<shirt>pr_sal</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1230</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="patches">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0x7c5d3e</skinColor>
+			<hairColor>0xe0e0e0</hairColor>
+			<mouth>gcrone</mouth>
+			<marks>pr_patches</marks>
+			<hair>pr_patches</hair>
+			<shirt>pr_prisoner</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>squint</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1850</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc id="florian">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfae0c9</skinColor>
+			<hairColor>0xefa618</hairColor>
+			<mouth>limited_franklin_pain</mouth>
+			<marks>beautymark</marks>
+			<hair>pr_florian</hair>
+			<shirt>pr_prisoner</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>casual</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>2130</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc id="marion">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>17</mouth>
+			<marks>mthbonsaiwoman</marks>
+			<hair>pr_marion</hair>
+			<shirt>pr_prisoner</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1650</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="ratchet">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0x875927</hairColor>
+			<mouth>14</mouth>
+			<hair>pr_ratchet</hair>
+			<shirt>pr_guard2</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2353</x>
+			<y>1071</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc id="nightingale">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x513b2b</hairColor>
+			<mouth>prisoner1</mouth>
+			<facial>pr_nightingale</facial>
+			<hair>1</hair>
+			<shirt>pr_guard</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2600</x>
+			<y>1071</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+</npcs></file>
+
+<file path="/male/scene.xml"><scene>
+	<sceneType>default</sceneType>&gt;
+	<data>npcs.xml</data>
+</scene></file>
+
+<file path="/npcs.xml"><npcs>
+	
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">Prisoner.mp3</asset>
+	</sound>
+	<sound type="ambient">
+		<asset fade="true" exclusiveType="true" loop="true">crowd_muffled_loop.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="baseGround">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="concrete">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="pipe">ls_general_metal_verb_01.mp3, ls_general_metal_verb_02.mp3</asset>
+		<asset id="table">ls_thin_metal_01.mp3, ls_thin_metal_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="concrete">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="pipe">fs_general_metal_verb_01.mp3, fs_general_metal_verb_02.mp3, fs_general_metal_verb_03.mp3, fs_general_metal_verb_04.mp3</asset>
+		<asset id="table">fs_thin_metal_01.mp3, fs_thin_metal_02.mp3, fs_thin_metal_03.mp3, fs_thin_metal_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/female/npcs.xml"><npcs>
+	<npc id="ratchet">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0x875927</hairColor>
+			<mouth>14</mouth>
+			<hair>pr_ratchetf</hair>
+			<shirt>pr_guard2</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2353</x>
+			<y>1071</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc id="nightingale">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x513b2b</hairColor>
+			<mouth>athena</mouth>
+			<facial>pr_nightingalef</facial>
+			<hair>1</hair>
+			<shirt>pr_guard</shirt>
+			<pants>mtpoliceman</pants>
+			<overpants>shadycop</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2600</x>
+			<y>1071</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="flambe">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xe75c2e</hairColor>
+			<mouth>14</mouth>
+			<hair>pr_flambe</hair>
+			<shirt>pr_flambe</shirt>
+			<pants>pr_prisoner</pants>
+			<item>pr_mixer</item>
+			<eyeState>open</eyeState>			
+		</skin>
+		<position>
+			<x>930</x>
+			<y>1071</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	<npc event="ended_food_fight" id="flambe">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfee0d8</skinColor>
+			<hairColor>0xe75c2e</hairColor>
+			<mouth>14</mouth>
+			<hair>pr_flambe</hair>
+			<shirt>pr_flambe</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>empty</item>
+		</skin>
+		<position>
+			<x>930</x>
+			<y>1075</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="les">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>15</mouth>
+			<facial>pr_les_salf</facial>
+			<hair>1</hair>
+			<shirt>pr_les</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1445</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="sal">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>sponsorlm_stella</mouth>
+			<facial>pr_les_salf</facial>
+			<hair>1</hair>
+			<shirt>pr_sal</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1230</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc event="escaped_big_tuna" id="les">
+		<animations loop="false">
+			<animation>game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>15</mouth>
+			<facial>pr_les_salf</facial>
+			<hair>1</hair>
+			<shirt>pr_les</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1445</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc event="escaped_big_tuna" id="sal">
+		<animations loop="false">
+			<animation>game.data.animation.entity.character.Stand</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfbdfcb</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>sponsorlm_stella</mouth>
+			<facial>pr_les_salf</facial>
+			<hair>1</hair>
+			<shirt>pr_sal</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1230</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="patches">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0x7c5d3e</skinColor>
+			<hairColor>0xe0e0e0</hairColor>
+			<mouth>gcrone</mouth>
+			<marks>pr_patchesf</marks>
+			<hair>pr_patchesf</hair>
+			<shirt>pr_prisoner</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>squint</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1850</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc id="florian">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfae0c9</skinColor>
+			<hairColor>0xefa618</hairColor>
+			<mouth>limited_franklin_pain</mouth>
+			<marks>beautymark</marks>
+			<hair>pr_florianf</hair>
+			<shirt>pr_prisoner</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>casual</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>2130</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	
+	<npc id="marion">
+		<animations loop="true">
+			<animation>game.data.animation.entity.character.Eat</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>17</mouth>
+			<marks>mthbonsaiwoman</marks>
+			<hair>pr_marionf</hair>
+			<shirt>pr_prisoner</shirt>
+			<pants>pr_prisoner</pants>
+			<eyeState>open</eyeState>
+			<item>pr_spoon</item>
+		</skin>
+		<position>
+			<x>1650</x>
+			<y>1024</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+</npcs></file>
+
+<file path="/female/scene.xml"><scene>
+	<sceneType>default</sceneType>&gt;
+	<data>npcs.xml</data>
+</scene></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>450</top>
+		<right>2820</right>
+		<bottom>1150</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>20</left>
+		<top>450</top>
+		<right>3200</right>
+		<bottom>1070</bottom>
+	</bounds>
+	<data>dialog.xml,npcs.xml,sounds.xml,hits.xml,items.xml</data>
+	<absoluteFilePaths>scenes/prison/shared/dialog.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>2600</x>
+			<y>1070</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+	<suppressAbility>true</suppressAbility>
+	<suppressFollower>true</suppressFollower>
+</scene></file>
+
+</merged>

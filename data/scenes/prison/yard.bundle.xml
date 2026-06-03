@@ -309,7 +309,7 @@
 			<gender>male</gender>
 			<skinColor>0xd2aa72</skinColor>
 			<hairColor>0xf5c455</hairColor>
-			<mouth>angry</mouth>
+			<mouth>wwgsevil</mouth>
 			<marks>pr_tuna</marks>
 			<facial>pr_tuna</facial>
 			<hair>pr_tuna</hair>
@@ -341,7 +341,7 @@
 			<gender>male</gender>
 			<skinColor>0xfae0c9</skinColor>
 			<hairColor>0xefa618</hairColor>
-			<mouth>15</mouth>
+			<mouth>limited_franklin_pain</mouth>
 			<marks>beautymark</marks>
 			<hair>pr_florian</hair>
 			<shirt>pr_prisoner</shirt>
@@ -420,7 +420,7 @@
 			<gender>male</gender>
 			<skinColor>0x7c5d3e</skinColor>
 			<hairColor>0xe0e0e0</hairColor>
-			<mouth>wkgrmpa</mouth>
+			<mouth>gcrone</mouth>
 			<marks>pr_patches</marks>
 			<hair>pr_patches</hair>
 			<shirt>pr_prisoner</shirt>
@@ -545,7 +545,7 @@
 			<gender>female</gender>
 			<skinColor>0xd2aa72</skinColor>
 			<hairColor>0xf5c455</hairColor>
-			<mouth>angry</mouth>
+			<mouth>wwgsevil</mouth>
 			<marks>pr_tunaf</marks>
 			<facial>pr_tuna</facial>
 			<hair>pr_tuna</hair>
@@ -577,7 +577,7 @@
 			<gender>female</gender>
 			<skinColor>0xfae0c9</skinColor>
 			<hairColor>0xefa618</hairColor>
-			<mouth>15</mouth>
+			<mouth>limited_franklin_pain</mouth>
 			<marks>beautymark</marks>
 			<hair>pr_florianf</hair>
 			<shirt>pr_prisoner</shirt>
@@ -655,7 +655,7 @@
 			<gender>female</gender>
 			<skinColor>0x7c5d3e</skinColor>
 			<hairColor>0xe0e0e0</hairColor>
-			<mouth>wkgrmpa</mouth>
+			<mouth>gcrone</mouth>
 			<marks>pr_patchesf</marks>
 			<hair>pr_patchesf</hair>
 			<shirt>pr_prisoner</shirt>

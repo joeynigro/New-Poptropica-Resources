@@ -109,11 +109,104 @@
 	</character>
 	
 	<character id="npcDriver">
-		<statement link="help">Did you know you can play islands for credits!</statement>
-		<statement id="help" link="response">Do you want 24 Carrot Island?</statement>
-		<conversation id="response">
+	    <statement event="carrot" link="help_carrot">Someone's stolen all our carrots! Oh, and some kids too.</statement>
+		<statement id="help_carrot" link="response_carrot">Will you help us?</statement>
+		<conversation id="response_carrot">
 			<exchange>
-				<question triggerEventArgs="load_island_carrot_mainStreet" triggerEvent="triggerEvent">Sure!</question>
+				<question triggerEventArgs="load_island_carrot_mainStreet" triggerEvent="triggerEvent">Sure.</question>
+			</exchange>
+			<exchange>
+				<question>Maybe later.</question>
+			</exchange>
+		</conversation>
+		
+	    <statement event="myth" link="help_myth">The winds whisper of your potential, mortal. Do you seek the power of the gods?</statement>
+		<statement id="help_myth" link="response_myth">Prove yourself in the trials, and you may ascend to immortality!</statement>
+		<conversation id="response_myth">
+			<exchange>
+				<question triggerEventArgs="load_island_myth_mainStreet" triggerEvent="triggerEvent">I accept the challenge!</question>
+			</exchange>
+			<exchange>
+				<question>I need more time.</question>
+			</exchange>
+		</conversation>
+	
+	    <statement event="arab1" link="help_arab">The thieves have taken everything! Our goods, our gold—gone!</statement>
+		<statement id="help_arab" link="response_arab">Will you help bring justice to our town?</statement>
+		<conversation id="response_arab">
+			<exchange>
+				<question triggerEventArgs="load_island_arab1_bazaar" triggerEvent="triggerEvent">I’ll stop them!</question>
+			</exchange>
+			<exchange>
+				<question>Maybe later.</question>
+			</exchange>
+		</conversation>
+	
+	    <statement event="con1" link="help_con">Welcome to PoptropiCon! Need help finding your way around?</statement>
+		<statement id="help_con" link="response_con">I can guide you to the main events or help you with your costume.</statement>
+		<conversation id="response_con">
+			<exchange>
+				<question triggerEventArgs="load_island_con1_center" triggerEvent="triggerEvent">Yes, please!</question>
+			</exchange>
+			<exchange>
+				<question>Maybe later.</question>
+			</exchange>
+		</conversation>
+	
+	    <statement event="survival1" link="survival_intro">Ah, you must be freezing! Lucky for you, I found you just in time.</statement>
+		<statement id="survival_intro" link="survival_hunt">Rest up, my dear guest. Tomorrow, we hunt.</statement>
+		<statement id="survival_hunt" link="survival_offer">You’ll be part of the grandest sport there is! The thrill of the chase, the glory of the hunt.</statement>
+		<statement id="survival_offer" link="response_survival">I insist you stay.</statement>
+		<conversation id="response_survival">
+			<exchange>
+				<question triggerEventArgs="load_island_survival1_crashLanding" triggerEvent="triggerEvent">What kind of hunt?</question>
+			</exchange>
+			<exchange>
+				<question>Actually, I should be going.</question>
+			</exchange>
+		</conversation>
+	
+	    <statement event="prison" link="prison_intro">We've got a problem. A thief is on the loose, and they look just like you!</statement>
+		<statement id="prison_intro" link="prison_description">Well, almost like you. The crook wears boots.</statement>
+		<statement id="prison_description" link="response_prison">Help me track them down before they strike again!</statement>
+		<conversation id="response_prison">
+			<exchange>
+				<question triggerEventArgs="load_island_prison_mainStreet" triggerEvent="triggerEvent">I'm on it!</question>
+			</exchange>
+			<exchange>
+				<question>Uh... sounds risky.</question>
+			</exchange>
+		</conversation>
+	
+	    <statement event="timmy" link="timmy_intro">Ah, a fellow detective! Welcome to the world of Timmy Failure, the greatest detective ever!</statement>
+		<statement id="timmy_intro" link="timmy_case">I need your help to solve the case of the missing pants!</statement>
+		<statement id="timmy_case" link="response_timmy">Are you ready to assist me in this grand adventure?</statement>
+		<conversation id="response_timmy">
+			<exchange>
+				<question triggerEventArgs="load_island_timmy_mainStreet" triggerEvent="triggerEvent">Absolutely! Let's crack this case wide open!</question>
+			</exchange>
+			<exchange>
+				<question>I'm not sure about this...</question>
+			</exchange>
+		</conversation>
+	
+	    <statement event="time" link="time_intro">Welcome! You've arrived just in time. My time machine is in disarray, and I need your help to fix it!</statement>
+		<statement id="time_intro" link="time_explain">You see, something went wrong, and the timeline has been disrupted. We need to restore the missing people and objects to the right time periods!</statement>
+		<statement id="time_explain" link="response_time">Are you ready to help me fix the timeline and save history?</statement>
+		<conversation id="response_time">
+			<exchange>
+				<question triggerEventArgs="load_island_time_mainStreet" triggerEvent="triggerEvent">Yes, let's set things right!</question>
+			</exchange>
+			<exchange>
+				<question>I'm not sure. This sounds complicated.</question>
+			</exchange>
+		</conversation>
+		
+		<statement event="replay" link="help_replay">Did you know you can replay islands for credits!</statement>
+		<statement id="help_replay" link="response_replay">Do you want to replay one right now?</statement>
+		<conversation id="response_replay">
+			<exchange>
+				<question triggerEventArgs="load_island_map_map" triggerEvent="triggerEvent">Sure!</question>
 			</exchange>
 			<exchange>
 				<question>I've got enough credits, kid.</question>
@@ -123,6 +216,25 @@
 </dialogs></file>
 
 <file path="/npcs.xml"><npcs>
+	<npc id="amelia">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xfdd9c8</skinColor>
+			<hairColor>0xf5894e</hairColor>
+			<eyeState>open</eyeState>
+			<mouth>mthfishmonger</mouth>
+			<hair>home_crash</hair>
+			<shirt>home_crash</shirt>
+			<pants>adams</pants>
+			<overshirt>home_crash</overshirt>
+		</skin>
+		<direction>right</direction>
+		<position>
+			<x>2208</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
 	<npc id="amelia2">
 		<animations random="false" loop="true">
 			<animation>game.data.animation.entity.character.Tremble</animation>
@@ -133,6 +245,7 @@
 			<hairColor>0xf5894e</hairColor>
 			<eyeState>open</eyeState>
 			<mouth>farmerboy</mouth>
+			<facial>scared_eyes</facial>
 			<hair>home_crash</hair>
 			<shirt>home_crash</shirt>
 			<pants>adams</pants>
@@ -155,6 +268,7 @@
 			<hairColor>0xf5894e</hairColor>
 			<eyeState>open</eyeState>
 			<mouth>mthfishmonger</mouth>
+			<facial>empty</facial>
 			<hair>home_crash</hair>
 			<shirt>home_crash</shirt>
 			<pants>adams</pants>
@@ -167,7 +281,195 @@
 		</position>
 		<faceSpeaker>false</faceSpeaker>
 	</npc>
-	<npc event="has_home" id="npcDriver">
+<!-- shows up after has_home, but will be determined based on island completions and a priority determined via code -->
+	
+	<npc event="carrot" id="npcDriver" variant="human">
+        <skin>
+            <gender>male</gender>
+            <skinColor>0xB77E48</skinColor>
+            <hairColor>0x4A2C17</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>14</mouth>
+            <marks>empty</marks>
+            <facial>empty</facial>
+            <hair>mayor</hair>
+            <shirt>mayor</shirt>
+            <pants>1</pants>
+            <pack>empty</pack>
+            <item>empty</item>
+            <overshirt>empty</overshirt>
+            <overpants>empty</overpants>
+            <eyeState>squint</eyeState>
+        </skin>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="myth" id="npcDriver" variant="human">
+        <skin>
+            <gender>male</gender>
+            <skinColor>0xDFECFD</skinColor>
+            <hairColor>0x175EA4</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>sponsorec2</mouth>
+            <marks>aeolus</marks>
+            <facial>empty</facial>
+            <hair>aeolus</hair>
+            <shirt>aeolus</shirt>
+            <pants>aeolus</pants>
+            <pack>empty</pack>
+            <item>empty</item>
+            <overshirt>empty</overshirt>
+            <overpants>aeolus</overpants>
+            <eyeState>open</eyeState>
+        </skin>
+		<scale>.5</scale>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="arab1" id="npcDriver" variant="human">
+        <skin>
+            <gender>male</gender>
+            <skinColor>0xd2aa72</skinColor>
+            <hairColor>0x453929</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>scuba</mouth>
+            <marks>beardshort4</marks>
+            <facial>empty</facial>
+            <hair>an_townie2</hair>
+            <shirt>an_lady2</shirt>
+            <pants>an_townie2</pants>
+            <pack>empty</pack>
+            <item>empty</item>
+            <overshirt>an_townie2</overshirt>
+            <overpants>an_townie2</overpants>
+            <eyeState>casual</eyeState>
+        </skin>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="con1" id="npcDriver" variant="human">
+        <skin>
+            <gender>female</gender>
+            <skinColor>0xffe9e6</skinColor>
+            <hairColor>0xf05a28</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>9</mouth>
+            <marks>poptropicon_fantasy</marks>
+            <facial>empty</facial>
+            <hair>poptropicon_fantasy</hair>
+            <shirt>poptropicon_fantasy</shirt>
+            <pants>poptropicon_fantasy</pants>
+            <pack>viking3</pack>
+            <item>empty</item>
+            <overshirt>poptropicon_fantasy</overshirt>
+            <overpants>poptropicon_fantasy</overpants>
+            <eyeState>squint</eyeState>
+        </skin>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="survival1" id="npcDriver" variant="human">
+        <skin>
+            <gender>male</gender>
+            <skinColor>0xCEA384</skinColor>
+            <hairColor>0x999999</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>15</mouth>
+            <marks>survival_vanburen</marks>
+            <facial>survival_vanburen</facial>
+            <hair>survival_vanburen</hair>
+            <shirt>egyptarch</shirt>
+            <pants>astromanure</pants>
+            <pack>empty</pack>
+            <item>empty</item>
+            <overshirt>survival_vanburen</overshirt>
+            <overpants>empty</overpants>
+            <eyeState>squint</eyeState>
+        </skin>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="prison" id="npcDriver" variant="human">
+        <skin>
+            <gender>male</gender>
+            <skinColor>0x754a2f</skinColor>
+            <hairColor>0x0</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>ppirateguy1</mouth>
+            <marks>shadow2</marks>
+            <facial>pr_tex</facial>
+            <hair>1</hair>
+            <shirt>pr_tex</shirt>
+            <pants>adams</pants>
+            <pack>empty</pack>
+            <item>empty</item>
+            <overshirt>empty</overshirt>
+            <overpants>empty</overpants>
+            <eyeState>squint</eyeState>
+        </skin>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="timmy" id="npcDriver" variant="movieclip">
+        <movieClip>scenes/hub/homeHub/timmyNPC.zip</movieClip>
+        <talkMouth>mouth</talkMouth>
+		<direction>left</direction>
+		<position>
+			<x>3160</x> <!-- from left edge of ad unit -->
+			<y>830</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="time" id="npcDriver" variant="human">
+        <skin>
+            <gender>female</gender>
+            <skinColor>0xFFE271</skinColor>
+            <hairColor>0xD26231</hairColor>
+            <eyes>eyes</eyes>
+            <mouth>10</mouth>
+            <marks>empty</marks>
+            <facial>4</facial>
+            <hair>42</hair>
+            <shirt>rat</shirt>
+            <pants>bartholdi</pants>
+            <pack>empty</pack>
+            <item>empty</item>
+            <overshirt>apron</overshirt>
+            <overpants>empty</overpants>
+            <eyeState>open</eyeState>
+        </skin>
+		<direction>left</direction>
+		<position>
+			<x>3170</x> <!-- from left edge of ad unit -->
+			<y>832</y> <!-- add 5 pixels to custom Y value -->
+		</position>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+	<npc event="replay" id="npcDriver" variant="human">
         <skin>
             <gender>male</gender>
             <skinColor>0xD2AA72</skinColor>

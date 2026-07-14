@@ -1,0 +1,153 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+</hits></file>
+
+<file path="/dialog.xml"><dialogs>
+	<character id="sultan">
+		<conversation id="quest">
+			<exchange>
+				<question>What happened here?</question>
+				<answer>The forty thieves happened! They ransacked my palace and left me with nothing.</answer>
+			</exchange>
+			<exchange>
+				<question>You mean, you're broke?</question>
+				<answer>Money can be replaced, But the thieves took one precious thing from me: a lamp that is like no other. Find it, and I will grant you a fabulous reward.</answer>
+			</exchange>
+			<exchange>
+				<question>How can I find the lamp?</question>
+				<answer triggerEventArgs="questAccepted, true" triggerEvent="triggerEvent">I don't know. But perhaps you can start your quest with this. It is my last jewel. Trade it wisely.</answer>
+			</exchange>
+		</conversation>
+		<statement id="findMyLamp">Find my lamp, and I will grant you a fabulous reward.</statement>
+		<statement id="lamp">That is nothing but an ordinary lamp. The lamp I seek is like no other.</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="sultan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0xffffff</hairColor>
+			<mouth>HunterGiveUp</mouth>
+			<marks>an_sultan</marks>
+			<hair>an_sultan</hair>
+			<shirt>an_sultan</shirt>
+			<pants>an_sultan</pants>
+			<overpants>an_sultan</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>290</x>
+			<y>700</y>
+		</position>
+		<direction>right</direction>
+	</npc>
+	<npc event="questAccepted" id="sultan">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0xffffff</hairColor>
+			<mouth>HunterGiveUp</mouth>
+			<marks>an_sultan</marks>
+			<hair>an_sultan2</hair>
+			<shirt>an_sultan</shirt>
+			<pants>an_sultan</pants>
+			<overpants>an_sultan</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>290</x>
+			<y>700</y>
+		</position>
+		<direction>right</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">Ancient_Greece.mp3</asset>
+	</sound>
+	<sound action="doorOpened" type="effects">
+		<asset>openDoor_pushBar.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="baseGround">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="floor">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>2075</right>
+		<bottom>825</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>25</left>
+		<top>0</top>
+		<right>2050</right>
+		<bottom>775</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml</data>
+	<absoluteFilePaths>scenes/arab1/shared/dialog.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>1000</x>
+			<y>920</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.arab1.palaceExterior.PalaceExterior</scene>
+		<x>800</x>
+		<y>1280</y>
+		<label>
+			<text>Exit</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file>
+
+</merged>

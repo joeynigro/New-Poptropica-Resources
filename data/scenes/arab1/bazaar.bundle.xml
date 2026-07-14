@@ -1,0 +1,389 @@
+<merged>
+
+<file path="/hits.xml"><hits>
+	<hit id="baseGround" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0x666666" id="minaret" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xEFE9D9" id="concrete" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xBAAB9D" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xDAC4A9" id="basket" platform="true">
+		<component type="platform"/>
+	</hit>
+	<hit color="0xff0000" id="bounce" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-1350</y>
+			</velocity>
+		</component>
+	</hit>
+	<hit color="0xcc0000" id="bounce2" platform="true">
+		<component type="bounce">
+			<velocity>
+				<x>0</x>
+				<y>-1000</y>
+			</velocity>
+		</component>
+	</hit>
+</hits></file>
+	<file path="/vendor_cart/scene.xml"><scene>
+		<sceneType>default</sceneType>
+		<layers>
+			<layer hit="true">
+				<asset>vendorCart.zip</asset>
+				<offsetX>330</offsetX>
+				<offsetY>1500</offsetY>
+			</layer>
+		</layers>
+	</scene></file>
+<file path="/dialog.xml"><dialogs>
+	<character id="npc1">
+		<statement>Watch your valuables! There are thieves about.</statement>
+    </character>
+    
+	<character id="npc2">
+		<statement>The sultan holes himself up in the palace with his riches, while the people are terrorized by the 40 thieves!</statement>
+    </character>
+    
+    <character id="npc3">
+		<statement>I've tried to sneak into the palace, but the guards are too quick.</statement>
+    </character>
+    
+    <character id="npc4">
+		<statement>The view from the top is amazing! You can see the whole desert.</statement>
+    </character>
+
+	<character id="trader1">
+		<statement id="comment">I can tell you have a good eye! This is, indeed, a magical lamp.</statement>
+		<statement triggerEventArgs="trader1" triggerEvent="triggerEvent" lockInput="true">Let's trade!</statement>
+    </character>
+    
+	<character id="trader2">
+		<statement id="comment">My spyglass will let you see things you could never have imagined.</statement>
+		<statement triggerEventArgs="trader2" triggerEvent="triggerEvent" lockInput="true">Let's trade!</statement>
+    </character>
+    
+    <character id="trader3">
+    	<statement id="comment">Isn't this the most beautiful camel you've ever seen? Shame about the biting...</statement>
+		<statement triggerEventArgs="trader3" triggerEvent="triggerEvent" lockInput="true">Let's trade!</statement>
+		<statement id="gave_camel_harness">If you can control him, this camel will follow you just about anywhere.</statement>
+    </character>
+    
+    <character id="player">
+		<statement id="smoke_bomb_left">Looks like they left something behind.</statement>
+		<statement id="camel_taken">So that's where their hideout is!</statement>
+		<statement id="need_spy_glass">Looks like it's meant to hold a spyglass.</statement>
+    </character>
+</dialogs></file>
+
+<file path="/npcs.xml"><npcs>
+	<npc id="npc1">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>wwRuby</mouth>
+			<marks>bangs4</marks>
+			<hair>an_lady3</hair>
+			<shirt>an_lady3</shirt>
+			<pants>an_lady3</pants>
+			<overshirt>an_lady3</overshirt>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>800</x>
+			<y>1500</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="npc2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x453929</hairColor>
+			<mouth>scuba</mouth>
+			<marks>beardshort4</marks>
+			<hair>an_townie2</hair>
+			<shirt>an_lady2</shirt>
+			<pants>an_townie2</pants>
+			<overshirt>an_townie2</overshirt>
+			<overpants>an_townie2</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>2200</x>
+			<y>1500</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="npc3">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>14</mouth>
+			<hair>an_townie3</hair>
+			<shirt>an_lady2</shirt>
+			<pants>an_townie3</pants>
+			<overshirt>an_townie3</overshirt>
+			<overpants>an_townie3</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1700</x>
+			<y>815</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="npc4">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>wwPrettyWoman</mouth>
+			<marks>blackwidow1</marks>
+			<hair>an_lady2</hair>
+			<shirt>an_lady2</shirt>
+			<pants>an_lady2</pants>
+			<overshirt>an_lady2</overshirt>
+			<overpants>an_lady2</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>3150</x>
+			<y>440</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="trader1">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>astroQueen</mouth>
+			<marks>an_lady1</marks>
+			<facial>an_lady1</facial>
+			<hair>an_lady1</hair>
+			<shirt>an_lady1</shirt>
+			<pants>an_lady1</pants>
+			<overshirt>an_lady1</overshirt>
+			<overpants>an_lady1</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>2600</x>
+			<y>965</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="trader2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd1a971</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>greekWarrior</mouth>
+			<marks>arab_merchant01</marks>
+			<hair>arab_merchant01</hair>
+			<shirt>arab_merchant01</shirt>
+			<pants>arab_merchant01</pants>
+			<overpants>arab_merchant01</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1100</x>
+			<y>815</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	<npc id="trader3">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xb79660</skinColor>
+			<hairColor>0x2f1b1a</hairColor>
+			<mouth>greekWiseGuy</mouth>
+			<marks>arab_merchant02</marks>
+			<facial>arab_merchant02</facial>
+			<hair>arab_merchant02</hair>
+			<shirt>arab_merchant02</shirt>
+			<pants>arab_merchant02</pants>
+			<overpants>arab_merchant02</overpants>
+			<eyeState>open</eyeState>
+		</skin>
+		<position>
+			<x>1200</x>
+			<y>1525</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+</npcs></file>
+
+<file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" baseVolume="0.8" loop="true">arab1_main_theme.mp3</asset>
+	</sound>
+	<sound action="impact" type="effects">
+		<asset id="baseGround">ls_sand_01.mp3, ls_sand_02.mp3</asset>
+		<asset id="basket">ls_wicker_01.mp3, ls_wicker_02.mp3</asset>
+		<asset id="bounce">ls_bounce_01.mp3, ls_bounce_02.mp3</asset>
+		<asset id="bounce2">ls_bounce_01.mp3, ls_bounce_02.mp3</asset>
+		<asset id="concrete">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="minaret">ls_concrete_01.mp3, ls_concrete_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+	</sound>
+	<sound action="step" type="effects">
+		<asset id="baseGround">fs_sand_01.mp3, fs_sand_02.mp3, fs_sand_03.mp3, fs_sand_04.mp3</asset>
+		<asset id="basket">fs_wicker_01.mp3, fs_wicker_02.mp3, fs_wicker_03.mp3, fs_wicker_04.mp3</asset>
+		<asset id="concrete">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="minaret">fs_concrete_01.mp3, fs_concrete_02.mp3, fs_concrete_03.mp3, fs_concrete_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+	</sound>
+</sounds></file>
+
+<file path="/scene.xml"><scene>
+	<sceneType>shortmain</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>30</top>
+		<right>3640</right>
+		<bottom>1620</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>-100</left>
+		<top>0</top>
+		<right>3750</right>
+		<bottom>1550</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,vendor_cart.xml</data>
+	<absoluteFilePaths>scenes/arab1/shared/dialog.xml</absoluteFilePaths>
+	<assets>bundle.zip</assets>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>3400</x>
+			<y>1550</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+</scene></file>
+
+<file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.arab1.adMixed1.AdMixed1</scene> 
+		<x>1874</x>
+		<y>1045</y>
+		<label>
+			<text>Go Left</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.arab1.palaceExterior.PalaceExterior</scene>
+				<x>2500</x>
+				<y>1280</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.arab1.bazaar.Bazaar</scene>
+				<x>150</x>
+				<y>1550</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	<door id="door2">
+		<scene>game.scenes.arab1.adMixed2.AdMixed2</scene>
+		<x>50</x>
+		<y>1045</y>
+		<direction>right</direction>
+		<label>
+			<text>Go Right</text>
+			<type>exitRight</type>
+			<offset>
+				<x>-50</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.arab1.bazaar.Bazaar</scene>
+				<x>3400</x>
+				<y>1550</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.arab1.desert.Desert</scene>
+				<x>120</x>
+				<y>1440</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	<door id="door_common">
+		<scene>game.scenes.arab1.common.Common</scene>
+		<x>610</x>
+		<y>1600</y>
+		<direction>left</direction>
+		<label>
+			<text>COMMON ROOM</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>	
+</doors></file>
+
+</merged>

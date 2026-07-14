@@ -1,0 +1,200 @@
+<merged><file path="/dialog.xml"><dialogs>
+	<character id="player">
+<!-- <statement triggeredByEvent="player_disguised">I can fool the guards with this black outfit.</statement> -->
+		<statement id="useful">Neat! this magic sand could be useful.</statement>
+		<statement id="crazy">that's crazy! There's gunpowder in here!</statement>
+		<statement id="oil">A pot of sticky black oil.</statement>
+		<statement id="labretry">That wasn't quite right, i should try again</statement>
+		<statement id="labmissingitems">I need all of the ingredients before i use this.</statement>
+		<statement id="labnoformula">This must be the crafting table the thieves use to make smoke bombs.</statement>
+		<statement id="burnedoutfit">so much for my highly flammable disguise...</statement>
+    </character>
+	<character id="master">
+		<statement id="what">What was that noise? Who's there?</statement>
+		<statement id="burnedOut">These lamps never hold enough oil!</statement>
+		<statement id="refilled">That's better, now back to planning our next big heist!</statement>
+		<statement id="caught" triggerEventArgs="get_caught" triggerEvent="triggerEvent">Caught you, Interloper!</statement>
+		<statement triggerEventArgs="get_caught" triggerEvent="triggerEvent">Caught you, Interloper!</statement>
+		<statement event="player_disguised">I told you minions to get back to work!</statement>
+		<statement id="throw" triggerEventArgs="throwfire" triggerEvent="triggerEvent">I'll teach you to sneak around!</statement>
+    </character>
+</dialogs></file><file path="/doors.xml"><doors>
+	<door id="door1">
+		<scene>game.scenes.arab2.adMixed2.AdMixed2</scene> 
+		<x>1800</x>
+		<y>1000</y>
+		<label>
+			<text>Go Left</text>
+			<type>exitLeft</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.arab2.treasureKeep.TreasureKeep</scene>
+				<x>2800</x>
+				<y>1150</y>
+				<direction>left</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.arab2.sanctum.Sanctum</scene>
+				<x>50</x>
+				<y>1000</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+</doors></file><file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="floor" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0x003300" id="wood" platform="true">
+		<component type="platform"/>
+	</hit>
+
+	<hit color="0x009900" id="sand" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="magicSandPlat0">
+		<component type="movingPlatform">
+	 		<velocity>0</velocity>
+	 		<loop>false</loop>
+		</component>
+	</hit>
+
+	<hit id="closetGate">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	
+	<hit color="0xffff00" id="climb">
+		<component type="climb"/>
+	</hit>
+
+	<hit color="0x0000ff" id="water">
+		<component type="water">
+			<splashColor1>0x6BC3D9</splashColor1>
+			<splashColor2>0xE1E8FF</splashColor2>
+		</component>
+	</hit>
+
+</hits></file><file path="/items.xml"><items>
+	<item>
+		<id>gunpowder</id>
+		<asset>gunpowder.zip</asset>
+		<x>2349</x>
+		<y>216</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+</items></file><file path="/npcs.xml"><npcs>
+	<npc id="master">
+		<animations>
+			<animation>game.data.animation.entity.character.Read</animation>
+		</animations>
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>fortuneHunter</mouth>
+			<marks>an2_master</marks>
+			<facial>an2_master</facial>
+			<hair>an2_master</hair>
+			<shirt>an2_master</shirt>
+			<pants>an2_master</pants>
+			<pack>an2_master</pack>
+			<item>empty</item>
+			<item2>paper</item2>
+			<overshirt>an2_master</overshirt>
+			<overpants>an2_master</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>1400</x>
+			<y>665</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<faceSpeaker>false</faceSpeaker>
+	</npc>
+</npcs></file><file path="/scene.xml"><scene>
+	<sceneType>default</sceneType>
+	<cameraLimits>
+		<left>15</left>
+		<top>0</top>
+		<right>2750</right>
+		<bottom>1200</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>-100</left>
+		<top>0</top>
+		<right>2700</right>
+		<bottom>1260</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,items.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths prependTypePath="true">scenes/arab2/shared/dialog.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>200</x>
+			<y>920</y>
+		</defaultPosition>
+		<defaultDirection>right</defaultDirection>
+	</player>
+</scene></file><file path="/sounds.xml"><sounds>
+	<sound type="ambient">
+<!-- <asset loop="true" baseVolume="1.6">winter_wind_01_loop.mp3</asset> -->
+	</sound>
+	
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">thieves_lair.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="floor">ls_concrete_verb_01.mp3, ls_concrete_verb_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="sand">ls_sand_01.mp3, ls_sand_02.mp3</asset>
+		<asset id="climb">ls_rope_01.mp3,ls_rope_02.mp3</asset>
+		<asset id="water">ls_water_splash_01.mp3, ls_water_splash_02.mp3</asset>
+		<asset id="magicSandPlat0">ls_sand_01.mp3, ls_sand_02.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="floor">fs_concrete_verb_01.mp3, fs_concrete_verb_02.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="sand">fs_sand_01.mp3, fs_sand_02.mp3, fs_sand_03.mp3, fs_sand_04.mp3</asset>
+		<asset id="climb">fs_rope_01.mp3,fs_rope_02.mp3,fs_rope_03.mp3,fs_rope_04.mp3</asset>
+		<asset id="water">fs_water_01.mp3, fs_water_02.mp3, fs_water_03.mp3, fs_water_04.mp3</asset>
+		<asset id="magicSandPlat0">fs_sand_01.mp3, fs_sand_02.mp3, fs_sand_03.mp3, fs_sand_04.mp3</asset>
+	</sound>
+</sounds></file></merged>

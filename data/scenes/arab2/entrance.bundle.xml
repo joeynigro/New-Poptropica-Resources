@@ -1,0 +1,424 @@
+<merged><file path="/dialog.xml"><dialogs>
+	<character id="player">
+		<statement id="blew_up">I guess his plans for catching me really blew up in his face.</statement>
+		<statement id="open">Open sesame!</statement>
+	</character>
+	
+	<character id="enforcer">
+		<statement id="run">Looks like there's nowhere for you to run!</statement>
+	</character>
+	
+	<character id="master_thief">
+		<statement id="myself">I'm amazed you got past Brutus. Looks like I have to do everything myself.</statement>
+    </character>
+    
+    <character id="thief1">
+		<statement id="hello">Hello fellow thief!</statement>
+    </character>
+    
+    <character id="thief2">
+		<statement id="hello">Hello fellow thief!</statement>
+    </character>
+    
+    <character id="thief3">
+		<statement id="hello">Hello fellow thief!</statement>
+    </character>
+    
+    <character id="thief4">
+		<statement id="hello">Hello fellow thief!</statement>
+    </character>
+</dialogs></file>
+	<file path="/vendor_cart/scene.xml"><scene>
+		<sceneType>default</sceneType>
+		<layers>
+			<layer hit="true">
+				<asset>vendorCart.zip</asset>
+				<offsetX>1250</offsetX>
+				<offsetY>2310</offsetY>
+			</layer>
+		</layers>
+	</scene></file>
+	<file path="/doors.xml"><doors>
+	<door id="doorTreasureKeep">
+		<!--<scene>game.scenes.arab2.treasureKeep.TreasureKeep</scene> <x>650</x><y>260</y><label><text>Go Down</text><type>exitDown</type><offset><x>0</x><y>0</y></offset></label>-->
+		<scene>game.scenes.arab2.adMixed1.AdMixed1</scene> 
+		<x>200</x>
+		<y>100</y>
+		<label>
+			<text>Go Down</text>
+			<type>exitDown</type>
+			<offset>
+				<x>0</x>
+				<y>-50</y>
+			</offset>
+		</label>
+		<connectingSceneDoors>
+			<door id="doorLeft">
+				<scene>game.scenes.arab2.entrance.Entrance</scene>
+				<x>725</x>
+				<y>2300</y>
+				<direction>right</direction>
+			</door>
+			<door id="doorRight">
+				<scene>game.scenes.arab2.treasureKeep.TreasureKeep</scene>
+				<x>750</x>
+				<y>150</y>
+				<direction>right</direction>
+			</door>
+		</connectingSceneDoors>
+	</door>
+	
+	<door id="doorCommonRoom">
+		<scene>game.scenes.arab2.common.Common</scene>
+		<x>635</x>
+		<y>839</y>
+		<label>
+			<text>COMMON ROOM</text>
+			<type>exit3D</type>
+			<offset>
+				<x>0</x>
+				<y>0</y>
+			</offset>
+		</label>
+	</door>
+</doors></file><file path="/hits.xml"><hits>
+	<hit color="0x00ff00" id="concrete" platform="true">
+		<component type="platform"/>
+		<component type="platformRebound">
+			<bounce>0</bounce>
+		</component>
+	</hit>
+
+	<hit color="0xffff00" id="climb">
+		<component type="climb"/>
+	</hit>
+	
+	
+	<hit color="0x00CCCC" id="barrelRoll" platform="true">
+		<component type="platform"/>
+		<component type="platformRebound">
+			<bounce>0</bounce>
+		</component>
+	</hit>
+	
+	<hit color="0x66FFFF" id="pool">
+		<component type="water">
+			<splashColor1>0xFF508660</splashColor1>
+			<splashColor2>0x66508660</splashColor2>
+		</component>
+	</hit>
+	
+	<hit color="0xAC9F92" id="wood" platform="true">
+		<component type="platform"/>
+		<component type="platformRebound">
+			<bounce>0</bounce>
+		</component>
+	</hit>
+	
+	<hit color="0x996699" id="enforcerIgnore" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xD1BCA2" id="sand" platform="true">
+		<component type="platform"/>
+		<component type="platformRebound">
+			<bounce>0</bounce>
+		</component>
+	</hit>
+	
+	<hit color="0xff6600" id="wall">
+		<component type="wall"/>
+	</hit>
+	
+	<hit color="0xffcc00" id="ceiling">
+		<component type="ceiling"/>
+	</hit>
+	
+	<hit color="0x0099FF" id="elevatorButton" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit id="magicSandPlat0">
+		<component type="movingPlatform">
+	 		<velocity>0</velocity>
+	 		<loop>false</loop>
+		</component>
+		<component type="platformRebound">
+			<bounce>0</bounce>
+		</component>
+	</hit>
+	
+	<hit id="magicSandPlat1">
+		<component type="movingPlatform">
+	 		<velocity>0</velocity>
+	 		<loop>false</loop>
+		</component>
+		<component type="platformRebound">
+			<bounce>0</bounce>
+		</component>
+	</hit>
+	
+	<hit id="magicSandPlat2">
+		<component type="movingPlatform">
+	 		<velocity>0</velocity>
+	 		<loop>false</loop>
+		</component>
+		<component type="platformRebound">
+			<bounce>0</bounce>
+		</component>
+	</hit>
+	
+	<hit color="0x66CCCC" id="post" platform="true">
+		<component type="platform"/>
+	</hit>
+	
+	<hit color="0xCCFFFF" id="postDestroyed" platform="true">
+		<component type="platform"/>
+	</hit>
+</hits></file><file path="/items.xml"><items>
+	<item>
+		<id>borax</id>
+		<asset>borax.zip</asset>
+		<x>1720</x>
+		<y>1650</y>
+		<label>
+			<text>Examine</text>
+			<type>click</type>
+		</label>
+	</item>
+</items></file><file path="/npcs.xml"><npcs>
+	<npc id="enforcer">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>MTHscaredSumo</mouth>
+			<marks>an2_enforcer</marks>
+			<hair>an2_enforcer</hair>
+			<shirt>1</shirt>
+			<pants>an_townie3</pants>
+			<overpants>an2_enforcer</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>625</x>
+			<y>2325</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+		<scale>.43</scale>
+	</npc>
+	
+	<npc id="master_thief">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>fortuneHunter</mouth>
+			<marks>an2_master</marks>
+			<facial>an2_master</facial>
+			<hair>an2_master</hair>
+			<shirt>an2_master</shirt>
+			<pants>an2_master</pants>
+			<pack>an2_master</pack>
+			<item>an_bomb</item>
+			<overshirt>an2_master</overshirt>
+			<overpants>an2_master</overpants>
+			<eyeState>squint</eyeState>
+		</skin>
+		<position>
+			<x>660</x>
+			<y>532</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="thief1">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<marks>skullmainfarmer2</marks>
+			<facial>an_thief1</facial>
+			<hair>an_thief1</hair>
+			<shirt>an_thief1</shirt>
+			<pants>an_thief1</pants>
+			<pack>an_thief1</pack>
+			<item>an_thief1</item>
+			<overshirt>an_thief1</overshirt>
+			<overpants>an_thief1</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1016</x>
+			<y>1100</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="thief2">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<marks>ce_ranger</marks>
+			<facial>an_thief1</facial>
+			<hair>an_thief2</hair>
+			<shirt>an_thief2</shirt>
+			<pants>an_thief2</pants>
+			<overpants>an_thief2</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>126</x>
+			<y>1405</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>right</direction>
+	</npc>
+	
+	<npc id="thief3">
+		<skin>
+			<gender>female</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>19</mouth>
+			<marks>snootygirl</marks>
+			<facial>an_thief1</facial>
+			<hair>an_thief1</hair>
+			<shirt>an_thief2</shirt>
+			<pants>an_thief2</pants>
+			<overshirt>an_thief1</overshirt>
+			<overpants>an_thief2</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1572</x>
+			<y>1676</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+	
+	<npc id="thief4">
+		<skin>
+			<gender>male</gender>
+			<skinColor>0xd2aa72</skinColor>
+			<hairColor>0x0</hairColor>
+			<mouth>1</mouth>
+			<marks>vchunter</marks>
+			<facial>an_thief1</facial>
+			<hair>an_thief2</hair>
+			<shirt>an_thief1</shirt>
+			<pants>an_thief1</pants>
+			<overpants>an_thief1</overpants>
+			<eyeState>casual</eyeState>
+		</skin>
+		<position>
+			<x>1770</x>
+			<y>1670</y>
+		</position>
+		<range>
+			<x>0</x>
+			<y>0</y>
+		</range>
+		<direction>left</direction>
+	</npc>
+</npcs></file><file path="/scene.xml"><scene>
+	<sceneType>shortmain</sceneType>
+	<cameraLimits>
+		<left>0</left>
+		<top>0</top>
+		<right>1850</right>
+		<bottom>2360</bottom>	
+	</cameraLimits>
+	<bounds>
+		<left>25</left>
+		<top>0</top>
+		<right>1800</right>
+		<bottom>2500</bottom>
+	</bounds>
+	<data>dialog.xml,doors.xml,npcs.xml,sounds.xml,hits.xml,items.xml,vendor_cart.xml</data>
+	<assets>bundle.zip</assets>
+	<absoluteFilePaths prependTypePath="true">scenes/arab2/shared/dialog.xml</absoluteFilePaths>
+	<layers>
+		<layer>
+			<asset>background.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>bitmap_hits.zip</asset>
+		</layer>
+		<layer hit="true">
+			<asset>interactive.zip</asset>
+		</layer>
+		<layer>
+			<asset>foreground.zip</asset>
+		</layer>
+	</layers>
+	<player>
+		<defaultPosition>
+			<x>975</x>
+			<y>530</y>
+		</defaultPosition>
+		<defaultDirection>left</defaultDirection>
+	</player>
+</scene></file><file path="/sounds.xml"><sounds>
+	<sound type="music">
+		<asset fade="true" exclusiveType="true" loop="true">thieves_lair.mp3</asset>
+		<asset event="player_escaped_wlamp" fade="true" exclusiveType="true" loop="true">thief_chase_2.mp3</asset>
+	</sound>
+	
+	<sound action="impact" type="effects">
+		<asset id="concrete">ls_concrete_verb_01.mp3, ls_concrete_verb_02.mp3</asset>
+		<asset id="elevatorButton">ls_concrete_verb_01.mp3, ls_concrete_verb_02.mp3</asset>
+		<asset id="wood">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="post">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="postDestroyed">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="enforcerIgnore">ls_wood_01.mp3, ls_wood_02.mp3</asset>
+		<asset id="sand">ls_fine_sand_01.mp3, ls_fine_sand_02.mp3</asset>
+		<asset id="magicSandPlat0">ls_fine_sand_01.mp3, ls_fine_sand_02.mp3</asset>
+		<asset id="magicSandPlat1">ls_fine_sand_01.mp3, ls_fine_sand_02.mp3</asset>
+		<asset id="magicSandPlat2">ls_fine_sand_01.mp3, ls_fine_sand_02.mp3</asset>
+		<asset id="barrelRoll">ls_fine_sand_01.mp3, ls_fine_sand_02.mp3</asset>
+		<asset id="pool">ls_water_splash_01.mp3, ls_water_splash_02.mp3, ls_water_splash_03.mp3</asset>
+		
+		<asset id="thief1">small_pow_04.mp3, small_pow_05.mp3, whack_02.mp3, whack_03.mp3</asset>
+		<asset id="thief2">small_pow_04.mp3, small_pow_05.mp3, whack_02.mp3, whack_03.mp3</asset>
+		<asset id="thief3">small_pow_04.mp3, small_pow_05.mp3, whack_02.mp3, whack_03.mp3</asset>
+		<asset id="thief4">small_pow_04.mp3, small_pow_05.mp3, whack_02.mp3, whack_03.mp3</asset>
+	</sound>
+	
+	<sound action="step" type="effects">
+		<asset id="concrete">fs_concrete_verb_01.mp3, fs_concrete_verb_02.mp3, fs_concrete_verb_03.mp3, fs_concrete_verb_04.mp3</asset>
+		<asset id="elevatorButton">fs_concrete_verb_01.mp3, fs_concrete_verb_02.mp3, fs_concrete_verb_03.mp3, fs_concrete_verb_04.mp3</asset>
+		<asset id="wood">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="post">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="postDestroyed">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="enforcerIgnore">fs_wood_01.mp3, fs_wood_02.mp3, fs_wood_03.mp3, fs_wood_04.mp3</asset>
+		<asset id="sand">fs_fine_sand_01.mp3, fs_fine_sand_02.mp3, fs_fine_sand_03.mp3, fs_fine_sand_04.mp3</asset>
+		<asset id="magicSandPlat0">fs_fine_sand_01.mp3, fs_fine_sand_02.mp3, fs_fine_sand_03.mp3, fs_fine_sand_04.mp3</asset>
+		<asset id="magicSandPlat1">fs_fine_sand_01.mp3, fs_fine_sand_02.mp3, fs_fine_sand_03.mp3, fs_fine_sand_04.mp3</asset>
+		<asset id="magicSandPlat2">fs_fine_sand_01.mp3, fs_fine_sand_02.mp3, fs_fine_sand_03.mp3, fs_fine_sand_04.mp3</asset>
+		<asset id="barrelRoll">fs_sand_01.mp3, fs_sand_02.mp3, fs_sand_03.mp3, fs_sand_04.mp3</asset>
+		<asset id="pool">fs_water_01.mp3, fs_water_01.mp3, fs_water_03.mp3, fs_water_04.mp3</asset>
+	</sound>
+</sounds></file></merged>

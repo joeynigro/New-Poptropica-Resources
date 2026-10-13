@@ -38481,20 +38481,20 @@ $jscomp.polyfill("String.prototype.endsWith", function (ab) {
                 __class__: SR
             };
             var RR = function () {
-                this.shirtBoth = "wkshop sponsorec1 26 ad_wizard pretzelvendor charon".split(" ");
-                this.shirtGirl = "sponsorchipwrecked_zoe ad_pranks_kim limited_camazotz3 sponsor_selenag bl_mom02 valentine_g1_shirt 23 barbiepinkshirt1 12 sponsorauntopal ad_smurfs2_badgirl shirtvest1 sponsorlm_stella sponsor_lilly ad_landofstories_alex ad_liv bopbop pinkv sponsor_ramona may_outfit_g2 realitygirl wkmsgloop sponsorlm_olivia".split(" ");
-                this.shirtBoy = "may_outfit_b1 townie2 spring_outfit_b3 limited_charles is_video realityboy camoshirt poptropicon_scifi 11 limited_rafe dressgate_blue stor_fallf_stripe srflask dressgate_gold gotgame ad_pranks_oliver limited_kyle ad_dxd7d_bashful ad_spiritanimals_boy1 counterres2 shadycop".split(" ");
-                this.pantsBoth = "directord ad_caprisun_guide mtedison leo astrozone store_mutton_chops sponsornm2guard skullpirate4 stor_winter_jack sponsorfarmkid frenchman poptropicon_fashionninja patron1 july_b1 july_g2".split(" ");
-                this.pantsGirl = "bblue spring_bunny store_pride2 ad_legendsofoz_dorothy sponsormargo mythpes7 12 towerprep_girls sponsoryellowranger aztecwarrior wkviolet01 girlskirt3 4 aztecking aeolus steamcaptain".split(" ");
-                this.pantsBoy = "gasdude char2 limited_kyle".split(" ");
+                this.shirtBoth = "26 ad_wizard charon pretzelvendor sponsorec1".split(" ");
+                this.shirtGirl = "12 23 ad_landofstories_alex ad_liv ad_pranks_kim ad_smurfs2_badgirl barbiepinkshirt1 bl_mom02 bopbop may_outfit_g2 limited_camazotz3 pinkv realitygirl shirtvest1 sponsor_lilly sponsor_ramona sponsor_selenag sponsorauntopal sponsorchipwrecked_zoe sponsorlm_olivia sponsorlm_stella valentine_g1_shirt wkmsgloop".split(" ");
+                this.shirtBoy = "11 ad_dxd7d_bashful ad_pranks_oliver ad_spiritanimals_boy1 camoshirt counterres2 dressgate_blue dressgate_gold gotgame is_video limited_charles limited_kyle limited_rafe may_outfit_b1 poptropicon_scifi realityboy shadycop spring_outfit_b3 srflask stor_fallf_stripe townie2".split(" ");
+                this.pantsBoth = "ad_caprisun_guide astrozone directord frenchman july_b1 july_g2 leo mtedison patron1 poptropicon_fashionninja skullpirate4 sponsorfarmkid sponsornm2guard stor_winter_jack store_mutton_chops".split(" ");
+                this.pantsGirl = "4 12 ad_legendsofoz_dorothy aeolus aztecking aztecwarrior bblue girlskirt3 mythpes7 sponsormargo sponsoryellowranger spring_bunny steamcaptain store_pride2 towerprep_girls wkviolet01".split(" ");
+                this.pantsBoy = "char2 gasdude limited_kyle".split(" ");
                 this.hairBoth = [1,6,"ad_tip"];
-                this.hairGirl = "40 gulliver sponsorwimpy1 soccer sears1 43 sponsor_kerstie poptropicon_dealer sponsor_selenag 29 pgscore sponsorcitygirl mtdancer girlhair4 sears2 16 char34 mythbeach2 skullchinamerch greeklady store_flannel_tank bartenderpub 32 sponsorastro2 mime2".split(" ");
-                this.hairBoy = "9 bartholdi 36 sponsor_kk_bully01 store_soccer_outfit poptropicon_forrest hades2 is_stockman 34 42 srsilva wwprisoner subguide sponsorpercyjackson bl_critic02 sponsor_kk_bully02 bl_drem prisoner1 7 agentgirl gardener mythpes5 nw_hat01".split(" ");
+                this.hairGirl = "16 29 32 40 43 bartenderpub char34 girlhair4 greeklady gulliver mime2 mtdancer mythbeach2 pgscore poptropicon_dealer sears1 sears2 skullchinamerch soccer sponsor_kerstie sponsor_selenag sponsorastro2 sponsorcitygirl sponsorfarmmom sponsorwimpy1 store_flannel_tank".split(" ");
+                this.hairBoy = "7 9 34 36 42 ad_nightmuseum3_caveman agentgirl bartholdi bl_critic02 bl_drem gardener hades2 is_stockman mythpes5 nw_hat01 poptropicon_forrest prisoner1 sponsor_kk_bully01 sponsor_kk_bully02 sponsorpercyjackson srsilva store_soccer_outfit subguide wwprisoner".split(" ");
                 this.facialBoth = "empty empty empty empty empty empty empty empty empty 6 7 bl_critic02 explorer nateg".split(" ");
                 this.facialGirl = "curator funglasses1 pinkglasses triton".split(" ");
                 this.facialBoy = ["mk_disgruntled_programmer","mk_writer","z_survivalist"];
-                this.mouthBoth = "6 wkcharlie sponsorcwmb1 sponsorpinopino magician 1 pnerd 15 fm7 14 prisoner4 huntergiveup mthprisoner distressedmom skimask".split(" ");
-                this.mouthGirl = "18 19 astroprincess curator mythpes1 ppopgirlle sponsorpinofairy".split(" ");
+                this.mouthBoth = "1 6 14 15 distressedmom fm7 huntergiveup magician mthprisoner pnerd prisoner4 skimask sponsorcwmb1 sponsorpinopino wkcharlie".split(" ");
+                this.mouthGirl = "18 19 451 astroprincess astroqueen gfiona ppopgirlle pshedevil sponsor_mh sponsortinkerbell4 srcj witch".split(" ");
                 this.mouthBoy = [];
                 this.marksBoth = ["empty","empty","empty","empty","freckles","freckles"];
                 this.marksGirl = "astroprincess bangs1 bangs2 bangs3 bangs4 beautymark".split(" ");

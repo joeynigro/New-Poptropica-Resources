@@ -38488,8 +38488,8 @@ $jscomp.polyfill("String.prototype.endsWith", function (ab) {
                 this.pantsGirl = "4 12 ad_legendsofoz_dorothy aeolus aztecking aztecwarrior bblue girlskirt3 mythpes7 sponsormargo sponsoryellowranger spring_bunny steamcaptain store_pride2 towerprep_girls wkviolet01".split(" ");
                 this.pantsBoy = "char2 gasdude limited_kyle".split(" ");
                 this.hairBoth = [1,6,"ad_tip"];
-                this.hairGirl = "16 29 32 40 43 bartenderpub char34 girlhair4 greeklady gulliver mime2 mtdancer mythbeach2 pgscore poptropicon_dealer sears1 sears2 skullchinamerch soccer sponsor_kerstie sponsor_selenag sponsorastro2 sponsorcitygirl sponsorfarmmom sponsorwimpy1 store_flannel_tank".split(" ");
-                this.hairBoy = "7 9 34 36 42 ad_nightmuseum3_caveman agentgirl bartholdi bl_critic02 bl_drem gardener hades2 is_stockman mythpes5 nw_hat01 poptropicon_forrest prisoner1 sponsor_kk_bully01 sponsor_kk_bully02 sponsorpercyjackson srsilva store_soccer_outfit subguide wwprisoner".split(" ");
+                this.hairGirl = "16 29 32 40 43 bartenderpub char34 girlhair4 greeklady gulliver mime2 mtdancer mythbeach2 pgscore poptropicon_dealer sears1 sears2 skullchinamerch soccer sponsor_kerstie sponsor_selenag sponsorastro2 sponsorcitygirl sponsorfarmmom sponsorwimpy1 store_flannel_tank wint_outft_g1".split(" ");
+                this.hairBoy = "7 9 28 34 36 42 ad_nightmuseum3_caveman agentgirl bartholdi bl_critic02 bl_drem gardener hades2 is_stockman mythpes5 nw_hat01 poptropicon_forrest prisoner1 sponsor_kk_bully01 sponsor_kk_bully02 sponsorpercyjackson srsilva store_soccer_outfit subguide wwprisoner".split(" ");
                 this.facialBoth = "empty empty empty empty empty empty empty empty empty 6 7 bl_critic02 explorer nateg".split(" ");
                 this.facialGirl = "curator funglasses1 pinkglasses triton".split(" ");
                 this.facialBoy = ["mk_disgruntled_programmer","mk_writer","z_survivalist"];
